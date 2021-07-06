@@ -43,8 +43,8 @@ public class SignUpSteps {
         sp.enterSShortPassword();
     }
 
-    @Then("^Validation message should dislayed for password$")
-    public void validationMessageShouldDislayedForPassword() throws InterruptedException {
+    @Then("^Validation message should displayed for password$")
+    public void validationMessageShouldDisplayedForPassword() throws InterruptedException {
             sp.isShortPasswordMessageDislayed();
     }
 }

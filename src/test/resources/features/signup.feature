@@ -21,6 +21,6 @@ Feature: signup
     Given I am on the home page
     And I click on signup in button
     When I enter ShortPassword
-    Then Validation message should dislayed for password
+    Then Validation message should displayed for password
 
 
