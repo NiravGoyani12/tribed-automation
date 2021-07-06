@@ -47,4 +47,24 @@ public class SignUpSteps {
     public void validationMessageShouldDisplayedForPassword() throws InterruptedException {
             sp.isShortPasswordMessageDislayed();
     }
+
+    @When("^I enter existing email details$")
+    public void iEnterExistingEmailDetails() {
+        sp.enterSignUpDetailsWithExistingEmail();
+    }
+
+    @And("^I click on build Company profile$")
+    public void iClickOnBuildCompanyProfile() {
+        sp.clickOnBuildCompanyProfileButton();
+    }
+
+    @Then("^I should be able to open profile page$")
+    public void iShouldBeAbleToOpenProfilePage() throws InterruptedException {
+        sp.isProfilePageOpen();
+    }
+
+    @And("^I enter company profile details$")
+    public void iEnterCompanyProfileDetails() {
+        sp.EnterCompanyDetails();
+    }
 }

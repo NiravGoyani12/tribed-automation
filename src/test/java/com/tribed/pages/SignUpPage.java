@@ -36,22 +36,37 @@ public class SignUpPage extends DriverManager {
     @FindBy(xpath="//label[text()='Password too weak: Please make sure your password is at least 8 characters long.']")
     private  WebElement msgShortPassword;
 
+    @FindBy(xpath="//button[text()='Build company profile']")
+    private  WebElement btnBuildCompanyProfile;
+
+
+
     public void clickonSignupbutton() throws InterruptedException {
         Thread.sleep(3000);
         clickOnElement(signupbutton);
     }
 
-
+    public static String CompanyName;
     public void enterSignUpDetails() {
-        sendKeys(txtfullname,getUserName());
-        sendKeys(txtCompanyEmail,getUserName()+"@gmail.com");
-        sendKeys(txtCompanyName,getUserName()+" & Co");
-        sendKeys(txtPassword,getUserName());
+        CompanyName="Company_"+getRandomString(5);
+        sendKeys(txtfullname,CompanyName);
+        sendKeys(txtCompanyEmail,CompanyName+"@gmail.com");
+        sendKeys(txtCompanyName,CompanyName+" & Ltd");
+        sendKeys(txtPassword,CompanyName);
+        //sendKeys(passwordField,getPassword(userType));
+    }
+
+    public void enterSignUpDetailsWithExistingEmail() {
+        //CompanyName="Company_"+getRandomString(5);
+        sendKeys(txtfullname,CompanyName);
+        sendKeys(txtCompanyEmail,CompanyName+"@gmail.com");
+        sendKeys(txtCompanyName,CompanyName+" & Ltd");
+        sendKeys(txtPassword,CompanyName);
         //sendKeys(passwordField,getPassword(userType));
     }
 
     public void enterSShortPassword() {
-        sendKeys(txtPassword,"abc");
+        sendKeys(txtPassword,getInvalidPassword());
         //sendKeys(passwordField,getPassword(userType));
     }
 
@@ -59,26 +74,70 @@ public class SignUpPage extends DriverManager {
         clickOnElement(btnCreateAccount);
     }
 
+    public void clickOnBuildCompanyProfileButton() {
+        clickOnElement(btnBuildCompanyProfile);
+    }
+
     public boolean isCongratulationMessageDislayed() throws InterruptedException {
-        Thread.sleep(3000);
+        waitForElementVisibility(msgCongratulations, 5, "Congratulations Message not appears");
         return msgCongratulations.isDisplayed();
     }
 
     public boolean isAlreadyExistEmailMessageDisplayed() throws InterruptedException {
-        Thread.sleep(3000);
+        waitForElementVisibility(msgEmailExist, 5, "Validation message not displayed");
         return msgEmailExist.isDisplayed();
     }
 
     public boolean isShortPasswordMessageDislayed() throws InterruptedException {
-        Thread.sleep(3000);
+        waitForElementVisibility(msgShortPassword, 5, "Short passowrd validation message not displayed");
         return msgShortPassword.isDisplayed();
     }
 
-    public String getUserName() {
+    public String getUserName() { return NEW_USERNAME; }
+    public String getInvalidPassword() { return INVALID_PASSWORD; }
 
-                return NEW_USERNAME;
 
-        }
+    @FindBy(xpath="//h3[text()='Company page']")
+    private  WebElement tabCompanyProfile;
 
+    public boolean isProfilePageOpen() throws InterruptedException {
+        waitForElementVisibility(tabCompanyProfile, 5, "Short passowrd validation message not displayed");
+        return tabCompanyProfile.isDisplayed();
+    }
+
+
+    @FindBy(xpath="//input[@name='slogan']")
+    private  WebElement txtSlogan;
+
+    @FindBy(xpath="//input[@name='foundationYear']")
+    private  WebElement txtFoundationYear;
+
+    @FindBy(xpath="//input[@name='sector']")
+    private  WebElement txtSector;
+
+    @FindBy(xpath="//input[@name='numberOfEmployees']")
+    private  WebElement txtNoOfEmployee;
+
+    @FindBy(xpath="//input[@name='aboutUsTitle']")
+    private  WebElement txtAboutUs;
+
+    public static String Slogan;
+    public static String FoundationYear;
+    public static String Sector;
+    public static int NoOfEmp;
+    public static String AboutUs;
+    public void EnterCompanyDetails() {
+        Slogan=getRandomString(25);
+        Sector=getRandomString(5);
+        NoOfEmp=getRandomInt(50);
+        AboutUs=getRandomString(25);
+        sendKeys(txtFoundationYear,getFoundationYear());
+        sendKeys(txtSlogan,Slogan);
+        sendKeys(txtSector,Sector);
+        sendKeys(txtNoOfEmployee,String.valueOf(NoOfEmp));
+        sendKeys(txtAboutUs,AboutUs);
+    }
+
+    public String getFoundationYear() { return YEAR; }
 
 }
