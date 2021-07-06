@@ -1,0 +1,7 @@
+image: maven:3.3.9
+pipelines:
+  default:
+    - step:
+        name:Build and Test
+        script:
+          - mvn -version
