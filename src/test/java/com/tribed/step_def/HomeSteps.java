@@ -24,4 +24,9 @@ public class HomeSteps  {
     public void iClickOnSignInButton() {
         homePage.clickOnSignIn();
     }
+
+    @And("^I click on sign up button$")
+    public void iClickOnSignUpButton() {
+        homePage.clickOnSignUp();
+    }
 }

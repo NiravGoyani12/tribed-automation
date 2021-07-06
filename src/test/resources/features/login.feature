@@ -1,4 +1,4 @@
-@login
+@sanity
 Feature: login
 
   Scenario Outline: login with valid email and password

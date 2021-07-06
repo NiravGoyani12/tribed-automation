@@ -9,19 +9,19 @@ public class LoginPage extends DriverManager {
 
 
     @FindBy(name = "email")
-    private  WebElement emmailField;
+    public   WebElement emmailField;
 
     @FindBy(name = "password")
-    private  WebElement passwordField;
+    public   WebElement passwordField;
 
     @FindBy(xpath = "//*[@id=\"root\"]/div[1]/div/div/div/form/button")
-    private  WebElement logInButton;
+    public   WebElement loginBtn;
 
     @FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div/div[4]")
-    private  WebElement validlogInText;
+    public  WebElement validlogInText;
 
     @FindBy(xpath = "//*[@id=\"root\"]/div[1]/div/div/div/form/label")
-    private  WebElement invalidlogInText;
+    public  WebElement invalidlogInText;
 
 
     public void enterEmailAndPassword(String userType) {
@@ -30,7 +30,7 @@ public class LoginPage extends DriverManager {
     }
 
     public void clickOnLogInBtn() {
-        clickOnElement(logInButton);
+        clickOnElement(loginBtn);
     }
 
     public String getUserName(String userType) {
@@ -67,7 +67,7 @@ public class LoginPage extends DriverManager {
     }
 
     public boolean checkStateOfButton() {
-        return logInButton.isEnabled();
+        return loginBtn.isEnabled();
     }
 
 }
