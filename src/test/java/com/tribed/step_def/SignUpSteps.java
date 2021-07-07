@@ -16,6 +16,7 @@ import static org.hamcrest.Matchers.is;
 public class SignUpSteps {
 
     SignUpPage signUpPage =new SignUpPage();
+    List<Map<String, String>> data;
 
     @And("^I click on 'Create account' button$")
     public void iClickOnCreateAccountButton() {
@@ -24,29 +25,20 @@ public class SignUpSteps {
 
     @When("^I enter following details to sign up for new company$")
     public void iEnterFollowingDetailsToSignUpForNewCompany(DataTable dataTable) {
-        List<Map<String, String>> data =  dataTable.asMaps(String.class, String.class);
-        signUpPage.enterSignUpDetails(data.get(0).get("Name"),
-                data.get(0).get("Email") ,
-                data.get(0).get("CompanyName"),
-                data.get(0).get("CreatePassword"));
+        data =  dataTable.asMaps(String.class, String.class);
+        signUpPage.enterSignUpDetails(data.get(0).get("Name"), data.get(0).get("Email") , data.get(0).get("CompanyName"), data.get(0).get("CreatePassword"));
     }
 
     @When("^I enter following existing details to sign up for new company$")
     public void iEnterFollowingExistingDetailsToSignUpForNewCompany(DataTable dataTable) {
-        List<Map<String, String>> data =  dataTable.asMaps(String.class, String.class);
-        signUpPage.enterExistingDetailsForSignUp(data.get(0).get("Name"),
-                data.get(0).get("Email") ,
-                data.get(0).get("CompanyName"),
-                data.get(0).get("CreatePassword"));
+        data =  dataTable.asMaps(String.class, String.class);
+        signUpPage.enterExistingDetailsForSignUp(data.get(0).get("Name"), data.get(0).get("Email") , data.get(0).get("CompanyName"), data.get(0).get("CreatePassword"));
     }
 
     @When("^I enter following details with incorrect short password to sign up for new company$")
     public void iEnterFollowingDetailsWithIncorrectShortPasswordToSignUpForNewCompany(DataTable dataTable) {
-        List<Map<String, String>> data =  dataTable.asMaps(String.class, String.class);
-        signUpPage.enterShortPasswordDetailsForSignUp(data.get(0).get("Name"),
-                data.get(0).get("Email") ,
-                data.get(0).get("CompanyName"),
-                data.get(0).get("CreatePassword"));
+        data =  dataTable.asMaps(String.class, String.class);
+        signUpPage.enterShortPasswordDetailsForSignUp(data.get(0).get("Name"), data.get(0).get("Email") , data.get(0).get("CompanyName"), data.get(0).get("CreatePassword"));
     }
 
     @Then("^I should be able to see \"([^\"]*)\" message$")
