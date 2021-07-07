@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -100,6 +101,12 @@ public class DriverManager {
 
     public  void clickOnElement(WebElement e){
         e.click();
+    }
+
+    public  void MoveOnElement(WebElement e){
+        Actions builder = new Actions(driver);
+        builder.moveToElement(e).perform();
+
     }
 
     public  void sendKeys(WebElement e, String text){

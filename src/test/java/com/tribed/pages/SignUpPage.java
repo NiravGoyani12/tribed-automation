@@ -38,21 +38,6 @@ public class SignUpPage extends DriverManager {
     @FindBy(xpath="//h3[text()='Company page']")
     public  WebElement companyPageTab;
 
-//    future use
-@FindBy(xpath="//input[@name='slogan']")
-public  WebElement sloganTxt;
-
-    @FindBy(xpath="//input[@name='foundationYear']")
-    public  WebElement foundationYearTxt;
-
-    @FindBy(xpath="//input[@name='sector']")
-    public  WebElement sectorTxt;
-
-    @FindBy(xpath="//input[@name='numberOfEmployees']")
-    public  WebElement noOfEmployeeTxt;
-
-    @FindBy(xpath="//input[@name='aboutUsTitle']")
-    public  WebElement aboutUsTxt;
 
     public void enterSignUpDetails(String name, String email, String companyName, String createPassword) {
         sendKeys(fullNameTxt, name);
@@ -84,6 +69,7 @@ public  WebElement sloganTxt;
     }
 
     public void clickOnBuildCompanyProfileButton() {
+        waitForElementVisibility(buildCompanyProfileBtn, 5, "Build Company profile button not displayed");
         clickOnElement(buildCompanyProfileBtn);
     }
 
