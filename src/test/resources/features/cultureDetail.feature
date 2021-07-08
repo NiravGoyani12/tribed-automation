@@ -1,8 +1,8 @@
-@sanity1
-Feature: Company Profile
+@sanity2
+Feature: Culture Page
 
 
-  Scenario: Build company profile
+  Scenario: Build Culture Page
     Given I am on the home page
     And I click on sign up button
     When I enter following details to sign up for new company
@@ -14,7 +14,7 @@ Feature: Company Profile
       |Slogan|Year|Sector|NoOfEmployee|AboutUsTitle|AboutUs|InfoTitle|CoreValueFirst|CoreValueSecond|CoreValueThird|TestimonialQuote|TestimonialName|TestimonialRole|
       |  Jobs for you  |  2021   |  Information         |    52 | Find Job | We are IT organization | Software Service | Problem Solving | Amazing People | Fast Response | Best Company to work in UK | Peter John | CEO |
     And i click on 'Save and go to cultural page'
-    Then I should be able to Cultural page
+
 
 
 
