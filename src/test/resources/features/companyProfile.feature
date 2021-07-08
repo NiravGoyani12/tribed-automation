@@ -11,8 +11,8 @@ Feature: Company Profile
     And I click on 'Create account' button
     When I click on 'Build company profile' button
     And I enter below company profile details
-      |Slogan|Year|Sector|NoOfEmployee|AboutUsTitle|AboutUs|InfoTitle|CoreValueFirst|CoreValueSecond|CoreValueThird|TestimonialQuote|TestimonialName|TestimonialRole|
-      |  Jobs for you  |  2021   |  Information         |    52 | Find Job | We are IT organization | Software Service | Problem Solving | Amazing People | Fast Response | Best Company to work in UK | Peter John | CEO |
+      |Slogan|Year|Sector|NoOfEmployee | BrandColor|AboutUsTitle|AboutUs|InfoTitle|MoreInfo|CoreValueFirst |FirstDescription|CoreValueSecond|SecondDescription|CoreValueThird|ThirdDescription|TestimonialQuote|TestimonialName|TestimonialRole|
+      |  Jobs for you  |  2021   |  Information         |    52 |Green| Find Job | We are IT organization | Software Service | Contact for more info | Problem Solving |Problem Solving Description | Amazing People|Amazing People Description | Fast Response|Fast Response Description | Best Company to work in UK | Peter John | CEO |
     And i click on 'Save and go to cultural page'
     Then I should be able to Cultural page
 

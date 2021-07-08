@@ -22,7 +22,7 @@ public class CompanyProfileSteps {
     @And("^I enter below company profile details$")
     public void iEnterBelowCompanyProfileDetails(DataTable dataTable) {
         data =  dataTable.asMaps(String.class, String.class);
-        CompanyProfilePage.enterProfileDetail(data.get(0).get("Slogan"), data.get(0).get("Year") , data.get(0).get("Sector"), data.get(0).get("NoOfEmployee"),data.get(0).get("AboutUsTitle"),data.get(0).get("AboutUs"),data.get(0).get("InfoTitle"),data.get(0).get("CoreValueFirst"),data.get(0).get("CoreValueSecond"),data.get(0).get("CoreValueThird"),data.get(0).get("TestimonialQuote"),data.get(0).get("TestimonialName"),data.get(0).get("TestimonialRole"));
+        CompanyProfilePage.enterProfileDetail(data.get(0).get("Slogan"), data.get(0).get("Year") , data.get(0).get("Sector"), data.get(0).get("NoOfEmployee"), data.get(0).get("BrandColor"),data.get(0).get("AboutUsTitle"),data.get(0).get("AboutUs"),data.get(0).get("InfoTitle"),data.get(0).get("MoreInfo"),data.get(0).get("CoreValueFirst"),data.get(0).get("FirstDescription"),data.get(0).get("CoreValueSecond"),data.get(0).get("SecondDescription"),data.get(0).get("CoreValueThird"),data.get(0).get("ThirdDescription"),data.get(0).get("TestimonialQuote"),data.get(0).get("TestimonialName"),data.get(0).get("TestimonialRole"));
     }
 
     @And("^i click on 'Save and go to cultural page'$")

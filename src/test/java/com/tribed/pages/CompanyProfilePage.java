@@ -32,11 +32,20 @@ public class CompanyProfilePage extends DriverManager {
     @FindBy(xpath="//textarea[@name='coreValue1.title']")
     public  WebElement coreValue1Txt;
 
+    @FindBy(xpath="//textarea[@name='coreValue1.description']")
+    public  WebElement coreValue1DescTxt;
+
     @FindBy(xpath="//textarea[@name='coreValue2.title']")
     public  WebElement coreValue2Txt;
 
+    @FindBy(xpath="//textarea[@name='coreValue2.description']")
+    public  WebElement coreValue2DescTxt;
+
     @FindBy(xpath="//textarea[@name='coreValue3.title']")
     public  WebElement coreValue3Txt;
+
+    @FindBy(xpath="//textarea[@name='coreValue3.description']")
+    public  WebElement coreValue3DescTxt;
 
     @FindBy(xpath="//textarea[@name='testimonial.quote']")
     public  WebElement testimonialQuoteTxt;
@@ -69,19 +78,31 @@ public class CompanyProfilePage extends DriverManager {
     public   WebElement publishBtn;
 
 
-    public void enterProfileDetail(String slogan, String year, String sector, String noOfEmp, String aboutUsTitle, String aboutUs, String moreInfoTitle, String coreValue1, String coreValue2, String coreValue3, String testimonialQuote, String testimonialName, String testimonialRole) {
+    @FindBy(xpath="//input[@name='brandColor']")
+    public  WebElement brandColorTxt;
+
+    @FindBy(xpath="//textarea[@name='moreInfo']")
+    public  WebElement moreInfoTxt;
+
+
+    public void enterProfileDetail(String slogan, String year, String sector, String noOfEmp, String brandcolor, String aboutUsTitle, String aboutUs, String moreInfoTitle,String moreInfo, String coreValue1,String coreValue1Description, String coreValue2,String coreValue2Description, String coreValue3,String coreValue3Description, String testimonialQuote, String testimonialName, String testimonialRole) {
 
         waitForElementVisibility(sloganTxt, 5, "Profile page not open");
         sendKeys(sloganTxt, slogan);
         sendKeys(foundationYearTxt, year);
         sendKeys(sectorTxt, sector);
         sendKeys(noOfEmployeeTxt,noOfEmp);
+        sendKeys(brandColorTxt,brandcolor);
         sendKeys(aboutUsTitleTxt, aboutUsTitle);
         sendKeys(aboutUsTxt, aboutUs);
         sendKeys(moreInfoTitleTxt, moreInfoTitle);
+        sendKeys(moreInfoTxt, moreInfo);
         sendKeys(coreValue1Txt, coreValue1);
+        sendKeys(coreValue1DescTxt, coreValue1Description);
         sendKeys(coreValue2Txt, coreValue2);
+        sendKeys(coreValue2DescTxt, coreValue2Description);
         sendKeys(coreValue3Txt, coreValue3);
+        sendKeys(coreValue3DescTxt, coreValue3Description);
         sendKeys(testimonialQuoteTxt, testimonialQuote);
         sendKeys(testimonialNameTxt, testimonialName);
         sendKeys(testimonialRoleTxt, testimonialRole);

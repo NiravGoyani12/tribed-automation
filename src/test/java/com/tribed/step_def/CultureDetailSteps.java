@@ -19,49 +19,26 @@ public class CultureDetailSteps {
 
 
 
-    @And("^I enter below company profile details$")
-    public void iEnterBelowCompanyProfileDetails(DataTable dataTable) {
-        data =  dataTable.asMaps(String.class, String.class);
-        CompanyProfilePage.enterProfileDetail(data.get(0).get("Slogan"), data.get(0).get("Year") , data.get(0).get("Sector"), data.get(0).get("NoOfEmployee"),data.get(0).get("AboutUsTitle"),data.get(0).get("AboutUs"),data.get(0).get("InfoTitle"),data.get(0).get("CoreValueFirst"),data.get(0).get("CoreValueSecond"),data.get(0).get("CoreValueThird"),data.get(0).get("TestimonialQuote"),data.get(0).get("TestimonialName"),data.get(0).get("TestimonialRole"));
+    @And("^I add some culture$")
+    public void iAddSomeCulture() {
+        
     }
 
-    @And("^i click on 'Save and go to cultural page'$")
-    public void iClickOnSaveAndGoToCulturalPage() {
-        CompanyProfilePage.clickonSaveAndGoToCulturalPageButton();
-
+    @And("^I add some devlopment$")
+    public void iAddSomeDevlopment() {
+        
     }
 
-    @Then("^I should be able to Cultural page$")
-    public void iShouldBeAbleToCulturalPage() throws InterruptedException {
-        assertThat(CompanyProfilePage.isCulturalPageOpen(), is(true));
+    @And("^I add some wellbeing$")
+    public void iAddSomeWellbeing() {
+        
     }
 
-    @When("^I enter valid email and password$")
-    public void iEnterValidEmailAndPassword(DataTable dataTable) {
-        data =  dataTable.asMaps(String.class, String.class);
-        CompanyProfilePage.enterEmailAndPassword(data.get(0).get("Email"), data.get(0).get("CreatePassword"));
+    @And("^I add some benifits$")
+    public void iAddSomeBenifits() {
     }
 
-    @And("^i click on Preview button$")
-    public void iClickOnPreviewButton() {
-        CompanyProfilePage.clickOnPreviewButton();
-    }
-
-    @Then("^i should able to see preview of company$")
-    public void iShouldAbleToSeePreviewOfCompany(DataTable dataTable) {
-        data =  dataTable.asMaps(String.class, String.class);
-        assertThat(CompanyProfilePage.isPreviewWorking(data.get(0).get("Slogan")), is(true));
-
-
-    }
-
-    @And("^i click on publish button$")
-    public void iClickOnPublishButton() {
-        CompanyProfilePage.clickOnPublishButton();
-    }
-
-    @Then("^i should able to see 'Congratulations!' message$")
-    public void iShouldAbleToSeeCongratulationsMessage() {
-        assertThat(CompanyProfilePage.isPublishWorking(), is(true));
+    @Then("^I should be able to all added items$")
+    public void iShouldBeAbleToAllAddedItems() {
     }
 }
