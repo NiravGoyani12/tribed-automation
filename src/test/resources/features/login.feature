@@ -9,8 +9,8 @@ Feature: login
     Then I should be able to see "<loggedMessage>" for "<userType>"
 
     Examples:
-      | userType   | loggedMessage |
-      | Valid User | My profile    |
+      | userType     | loggedMessage       |
+      | Valid User   | My profile          |
       | Invalid User | Invalid credentials |
 
   Scenario: Default Login button should be Disabled

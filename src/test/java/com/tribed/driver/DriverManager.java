@@ -3,18 +3,19 @@ package com.tribed.driver;
 import cucumber.api.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class DriverManager {
@@ -24,6 +25,8 @@ public class DriverManager {
     public static String testDataPropertyFile = "testData.properties";
     private String browser = "chrome";
 
+    String username = System.getenv("qateam185");
+    String accessKey = System.getenv("U43eLsDGGubF1ioXzTfQ");
 
     public DriverManager() {
         PageFactory.initElements(driver, this);
@@ -40,11 +43,28 @@ public class DriverManager {
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
                 log.info("Launched Chrome Instance");
-
                 break;
             default:
                 driver = new FirefoxDriver();
         }
+    }
+
+    public void runHeadless() {
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
+        log.info("Launched Chrome Instance");
+    }
+
+    public void runOnRemoteHost() throws MalformedURLException {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("os", "Windows");
+        capabilities.setCapability("os_version", "10");
+        capabilities.setCapability("browser", "Chrome");
+        capabilities.setCapability("browser_version", "latest");
+        driver = new RemoteWebDriver(new URL("https://" + username + ":" + accessKey + "@hub-cloud.browserstack.com/wd/hub"), capabilities);
+
     }
 
     public void maxBroser() {
@@ -59,7 +79,7 @@ public class DriverManager {
         driver.quit();
     }
 
-    public String getCurrentUrl(){
+    public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
 
@@ -75,45 +95,39 @@ public class DriverManager {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-    public void waitForElementVisibility(WebElement element, int timeout, String failureMessage)
-    {
+    public void waitForElementVisibility(WebElement element, int timeout, String failureMessage) {
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         wait.withMessage(failureMessage);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
-/*
-    public void waitForElementInvisibility(WebElement element, int timeout, String failureMessage)
-    {
+
+    public void waitForElementInvisibility(WebElement element, int timeout, String failureMessage) {
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         wait.withMessage(failureMessage);
         wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
-    public void scrollIntoViewSelenium(WebElement element){
+    public void scrollIntoViewSelenium(WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
         sleep(500);
-    }*/
+    }
 
     public void takeSceenShot(Scenario scenario) {
         byte[] screenShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
         scenario.embed(screenShot, "image/png");
     }
 
-    public  void clickOnElement(WebElement e){
+    public void clickOnElement(WebElement e) {
         e.click();
     }
 
-    public  void MoveOnElement(WebElement e){
-        Actions builder = new Actions(driver);
-        builder.moveToElement(e).perform();
-
-    }
-
-    public  void sendKeys(WebElement e, String text){
+    public void clearAndSendKeys(WebElement e, String text) {
+        e.clear();
         e.sendKeys(text);
     }
 
-    public String getElementText(WebElement e){
+
+    public String getElementText(WebElement e) {
         return e.getText();
     }
 }

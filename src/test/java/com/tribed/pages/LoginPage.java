@@ -14,19 +14,19 @@ public class LoginPage extends DriverManager {
     @FindBy(name = "password")
     public   WebElement passwordField;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div[1]/div/div/div/form/button")
+    @FindBy(xpath="//button[text()='Log in']")
     public   WebElement loginBtn;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div/div[4]")
-    public  WebElement validlogInText;
+    @FindBy(xpath="//div[text()='My profile']")
+    public  WebElement validLogInText;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div[1]/div/div/div/form/label")
-    public  WebElement invalidlogInText;
+    @FindBy(xpath="//label[text()='Invalid credentials']")
+    public  WebElement invalidLogInText;
 
 
     public void enterEmailAndPassword(String userType) {
-        sendKeys(emmailField,getUserName(userType));
-        sendKeys(passwordField,getPassword(userType));
+        clearAndSendKeys(emmailField,getUserName(userType));
+        clearAndSendKeys(passwordField,getPassword(userType));
     }
 
     public void clickOnLogInBtn() {
@@ -58,12 +58,12 @@ public class LoginPage extends DriverManager {
     }
 
     public String getLoggedText() {
-        waitForElementVisibility(validlogInText, 5, "Logged in Text not Visible");
-        return getElementText(validlogInText);
+        waitForElementVisibility(validLogInText, 5, "Logged in Text not Visible");
+        return getElementText(validLogInText);
     }
 
     public String getLogInnErrorText() {
-        return getElementText(invalidlogInText);
+        return getElementText(invalidLogInText);
     }
 
     public boolean checkStateOfButton() {

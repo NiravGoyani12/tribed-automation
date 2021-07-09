@@ -65,7 +65,4 @@ public class SignUpSteps {
     public void shouldBeAbleToSeeShortPasswordErrorMessage(String shortPasswordErrorMsg) throws Throwable {
         assertThat(signUpPage.getShortPasswordMessage(), containsString(shortPasswordErrorMsg));
     }
-
-
-
 }
