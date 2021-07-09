@@ -35,9 +35,4 @@ public class CultureDetailPage extends DriverManager {
     @FindBy(xpath="//img[contains(@src,'dental-benefits')]")
     public  WebElement dentalBenifitsile;
 
-
-
-
-
-
 }

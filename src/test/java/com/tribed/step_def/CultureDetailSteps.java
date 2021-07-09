@@ -1,6 +1,7 @@
 package com.tribed.step_def;
 
 import com.tribed.pages.CompanyProfilePage;
+import com.tribed.pages.CultureDetailPage;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
@@ -14,10 +15,8 @@ import static org.hamcrest.Matchers.is;
 
 public class CultureDetailSteps {
 
-    CompanyProfilePage CompanyProfilePage =new CompanyProfilePage();
+    CultureDetailPage cultureDetailPage =new CultureDetailPage();
     List<Map<String, String>> data;
-
-
 
     @And("^I add some culture$")
     public void iAddSomeCulture() {
