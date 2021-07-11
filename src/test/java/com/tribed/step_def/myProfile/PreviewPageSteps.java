@@ -2,6 +2,7 @@ package com.tribed.step_def.myProfile;
 
 import com.tribed.pages.myProfile.PreviewPage;
 import cucumber.api.DataTable;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -32,5 +33,10 @@ public class PreviewPageSteps {
     @When("^I click on 'Return to edit' button$")
     public void iClickOnReturnToEditButton() {
         previewPage.clickOnReturnToEdit();
+    }
+
+    @And("^I click on culture tab after preview$")
+    public void iClickOnCultureTabAfterPreview() {
+        previewPage.clickCultureTabAfterPreview();
     }
 }

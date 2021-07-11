@@ -2,9 +2,15 @@ package com.tribed.pages.myProfile;
 
 import com.tribed.driver.DriverManager;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.MoveMouseAction;
 import org.openqa.selenium.support.FindBy;
 
 public class CulturePage extends DriverManager {
+
+
+    @FindBy(xpath = "//h3[text()='Culture page']")
+    public WebElement culturePageTab;
 
     @FindBy(xpath = "//span[text()='Add to Culture']")
     public WebElement textOnCulturePage;
@@ -36,8 +42,38 @@ public class CulturePage extends DriverManager {
     @FindBy(xpath = "//img[contains(@src,'dental-benefits')]")
     public WebElement dentalBenifitsile;
 
+
+
+
     public String getTextOnCulturePage() {
         scrollIntoViewSelenium(textOnCulturePage);
         return getElementText(textOnCulturePage);
     }
+
+    public void clickOnTabCulturePage()
+    {
+        waitForElementVisibility(culturePageTab, 8, "Culture page tab not displayed");
+
+        clickOnElement(culturePageTab);
+    }
+    public void clickAddCultureTile()
+    {
+        waitForElementVisibility(addToCultureImg, 8, "Add to Culture tile not displayed");
+        scrollIntoViewSelenium(addToCultureImg);
+        clickOnElement(textOnCulturePage);
+    }
+    public void selectCultureAndSave()
+    {
+
+        clickOnElement(casualDressTile);
+        clickOnElement(saveAndExitBtn);
+    }
+
+    public boolean isAddCultureSavedAndDisplayed() {
+        waitForElementVisibility(casualDressTile, 5, "Added Culture not displayed");
+        return casualDressTile.isDisplayed();
+    }
+
+
+
 }

@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -112,6 +113,11 @@ public class DriverManager {
         sleep(500);
     }
 
+    public void scrollWindow() {
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(150,100)", "");
+        sleep(500);
+    }
+
     public void takeSceenShot(Scenario scenario) {
         byte[] screenShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
         scenario.embed(screenShot, "image/png");
@@ -119,6 +125,13 @@ public class DriverManager {
 
     public void clickOnElement(WebElement e) {
         e.click();
+    }
+
+    public void moveOnElement(WebElement e) {
+        Actions action = new Actions(driver);
+        action.moveToElement(e).build().perform();
+        //action.moveToElement(we).moveToElement(driver.findElement(By.xpath("/expression-here"))).click().build().perform();
+
     }
 
     public void clearAndSendKeys(WebElement e, String text) {
