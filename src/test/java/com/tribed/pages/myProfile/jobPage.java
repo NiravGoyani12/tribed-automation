@@ -23,10 +23,10 @@ public class jobPage extends DriverManager {
     public WebElement basicsPreferencesOfficeLocationTxt;
 
     @FindBy(xpath = "//input[@placeholder='Select option']/following-sibling::img")
-    public WebElement jobLocationDP;
+    public WebElement jobFlexDP;
 
-    @FindBy(xpath = "//input[@value='Remote']/following-sibling::input")
-    public WebElement jobLocationRemote;
+    @FindBy(xpath = "//input[@value='Office']")
+    public WebElement jobFlexRemote;
 
     @FindBy(xpath = "(//input[@placeholder='Select type']/following-sibling::img)[1]")
     public WebElement contractTypeDP;
@@ -177,10 +177,25 @@ public class jobPage extends DriverManager {
         SendKeys(jobTitleTxt, jobTitle);
         SendKeys(basicsTeamTxt, team);
         SendKeys(basicsPreferencesOfficeLocationTxt, officeLocation);
+        scrollWindow();
+        clickOnElement(jobFlexDP);
+        clickOnElement(jobFlexRemote);
+        clickOnElement(jobFlexDP);
+        clickOnElement(contractTypeDP);
+        clickOnElement(fullTimeContract);
+        clickOnElement(contractTypeDP);
+        scrollWindow();
+        clickOnElement(roleLevelDP);
+        clickOnElement(entryLevelRole);
+        clickOnElement(roleLevelDP);
         SendKeys(minSalaryTxt, minSalary);
         SendKeys(maxSalaryTxt, maxSalary);
         SendKeys(infoTitleTxt, infoTitle);
         SendKeys(infoTxt, info);
+        clickAddTechnicalSkill();
+        selectAndSaveTechnicalSkill();
+
+
     }
 
 

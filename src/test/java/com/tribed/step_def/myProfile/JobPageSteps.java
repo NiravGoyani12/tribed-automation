@@ -100,5 +100,6 @@ public class JobPageSteps {
                 data.get(0).get("Office Location"), data.get(0).get("MinSalary"), data.get(0).get("MaxSalary"),
                 data.get(0).get("InfoTitle"),data.get(0).get("Info"));
 
+
     }
 }
