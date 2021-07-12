@@ -139,6 +139,11 @@ public class DriverManager {
         e.sendKeys(text);
     }
 
+    public void SendKeys(WebElement e, String text) {
+        e.clear();
+        e.sendKeys(text);
+    }
+
 
     public String getElementText(WebElement e) {
         return e.getText();

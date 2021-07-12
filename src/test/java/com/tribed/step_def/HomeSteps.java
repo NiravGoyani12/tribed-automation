@@ -29,4 +29,6 @@ public class HomeSteps  {
     public void iClickOnSignUpButton() {
         homePage.clickOnSignUp();
     }
+
+
 }

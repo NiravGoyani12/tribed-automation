@@ -39,4 +39,17 @@ public class PreviewPageSteps {
     public void iClickOnCultureTabAfterPreview() {
         previewPage.clickCultureTabAfterPreview();
     }
+
+    @When("^I click on Preview button of Job Page$")
+    public void iClickOnPreviewButtonOfJobPage() throws InterruptedException {
+        previewPage.clickOnPreviewButton();
+    }
+
+
+    @Then("^I should see following details on preview page of job$")
+    public void iShouldSeeFollowingDetailsOnPreviewPageOfJob(DataTable dataTable) {
+        data =  dataTable.asMaps(String.class, String.class);
+        assertThat(previewPage.isJobTitleOnPreviewDisplayed(data.get(0).get("JobTitle")), is(true));
+        assertThat(previewPage.isTeamOnPreviewDisplayed(data.get(0).get("Team")), is(true));
+    }
 }

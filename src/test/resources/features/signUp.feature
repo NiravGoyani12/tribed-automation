@@ -1,12 +1,13 @@
 @sanity
 Feature: Sign up
 
+
   Scenario: Sign up for new company
     Given I am on the home page
     And I click on sign up button
     When I enter following details to sign up for new company
-    |Name|Email|CompanyName|CreatePassword|
-    |  Joe Bloggs  |  joeBloggs@gmail.com   |  Tribed         |    Test@123          |
+      |Name|Email|CompanyName|CreatePassword|
+      |  Joe Bloggs  |  joeBloggs@gmail.com   |  Tribed         |    Test@123          |
     And I click on 'Create account' button
     Then I should be able to see "Congratulations for registering on tribed!" message
 
@@ -38,3 +39,11 @@ Feature: Sign up
       |  Joe Bloggs  |  joeBloggs@gmail.com   |  Tribed         |    Test          |
     When I click on 'Create account' button
     Then I should be able to see password error "Password too weak: Please make sure your password is at least 8 characters long." message
+
+  Scenario: Logout functionality
+    Given I am on the home page
+    And I click on sign in button
+    And I enter email and password for "Valid User"
+    And I click on log in button
+    And I click on logout button
+    Then I should be able to SingIn button

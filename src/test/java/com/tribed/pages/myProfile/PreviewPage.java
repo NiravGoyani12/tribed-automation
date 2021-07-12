@@ -13,6 +13,9 @@ public class PreviewPage extends DriverManager {
     @FindBy(xpath = "(//h3[text()='Culture'])[1]")
     public WebElement cultureTab;
 
+    @FindBy(xpath = "//button[text()='Preview']")
+    public WebElement previewBtn;
+
     public String getTextOnPreviewPage() {
         scrollIntoViewSelenium(textOnPreviewPage);
         return getElementText(textOnPreviewPage);
@@ -40,5 +43,23 @@ public class PreviewPage extends DriverManager {
         waitForElementVisibility(cultureTab, 8, "Culture tab not displayed after preview");
         scrollWindow();
         clickOnElement(cultureTab);
+    }
+
+    public void clickOnPreviewButton() throws InterruptedException {
+        Thread.sleep(3000);
+        waitForElementVisibility(previewBtn, 5, "Preview button not displayed");
+        clickOnElement(previewBtn);
+    }
+
+    public boolean isJobTitleOnPreviewDisplayed(String jobTitle) {
+        WebElement element = driver.findElement(By.xpath("(//h1[text()='" + jobTitle + "'])[1]"));
+        waitForElementVisibility(element, 5, "Preview page not open");
+        return element.isDisplayed();
+    }
+
+    public boolean isTeamOnPreviewDisplayed(String team) {
+        WebElement element = driver.findElement(By.xpath("//li[contains(text(),'"+team+"')]"));
+        waitForElementVisibility(element, 5, "Preview page not open");
+        return element.isDisplayed();
     }
 }

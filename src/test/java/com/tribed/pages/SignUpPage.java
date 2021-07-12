@@ -38,6 +38,14 @@ public class SignUpPage extends DriverManager {
     @FindBy(xpath="//h3[text()='Company page']")
     public  WebElement companyPageTab;
 
+    @FindBy(xpath="//div[text()='Log out']")
+    public  WebElement logoutBtn;
+
+    @FindBy(xpath = "(//div[text()='Sign in'])[2]")
+    public WebElement signInBtn;
+
+
+
 //    future use
 @FindBy(xpath="//input[@name='slogan']")
 public  WebElement sloganTxt;
@@ -99,4 +107,14 @@ public  WebElement sloganTxt;
     public String getShortPasswordMessage() {
         return getElementText(shortPasswordMsg);
     }
+
+    public void clickOnLogoutBtn() {
+        clickOnElement(logoutBtn);
+    }
+
+    public boolean isSignInButtonDisplayed() throws InterruptedException {
+        waitForElementVisibility(signInBtn,5, "SingIn button not displayed");
+        return signInBtn.isDisplayed();
+    }
+
 }
