@@ -65,14 +65,4 @@ public class SignUpSteps {
     public void shouldBeAbleToSeeShortPasswordErrorMessage(String shortPasswordErrorMsg) throws Throwable {
         assertThat(signUpPage.getShortPasswordMessage(), containsString(shortPasswordErrorMsg));
     }
-
-    @And("^I click on logout button$")
-    public void iClickOnLogoutButton() {
-        signUpPage.clickOnLogoutBtn();
-    }
-
-    @Then("^I should be able to SingIn button$")
-    public void iShouldBeAbleToSingInButton() throws InterruptedException {
-        assertThat(signUpPage.isSignInButtonDisplayed(), is(true));
-    }
 }

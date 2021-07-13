@@ -1,4 +1,4 @@
-@sanity3
+@sanity
 Feature: Preview page
 
   Scenario: Preview on company page

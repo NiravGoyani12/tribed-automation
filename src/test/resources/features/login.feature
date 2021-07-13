@@ -23,3 +23,11 @@ Feature: login
     And I click on sign in button
     When I enter email and password for "Valid User"
     Then Log in button should be "enabled"
+
+  Scenario: Logout functionality
+    Given I am on the home page
+    And I click on sign in button
+    And I enter email and password for "Valid User"
+    And I click on log in button
+    And I click on logout button
+    Then I should be able to SingIn button

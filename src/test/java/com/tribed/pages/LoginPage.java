@@ -23,6 +23,12 @@ public class LoginPage extends DriverManager {
     @FindBy(xpath="//label[text()='Invalid credentials']")
     public  WebElement invalidLogInText;
 
+    @FindBy(xpath="//div[text()='Log out']")
+    public  WebElement logoutBtn;
+
+    @FindBy(xpath = "(//div[text()='Sign in'])[2]")
+    public WebElement signInBtn;
+
 
     public void enterEmailAndPassword(String userType) {
         clearAndSendKeys(emmailField,getUserName(userType));
@@ -68,6 +74,15 @@ public class LoginPage extends DriverManager {
 
     public boolean checkStateOfButton() {
         return loginBtn.isEnabled();
+    }
+
+    public void clickOnLogoutBtn() {
+        clickOnElement(logoutBtn);
+    }
+
+    public boolean isSignInButtonDisplayed() throws InterruptedException {
+        waitForElementVisibility(signInBtn,5, "SingIn button not displayed");
+        return signInBtn.isDisplayed();
     }
 
 }

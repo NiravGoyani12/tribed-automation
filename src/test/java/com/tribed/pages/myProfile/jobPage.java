@@ -177,6 +177,7 @@ public class jobPage extends DriverManager {
         SendKeys(jobTitleTxt, jobTitle);
         SendKeys(basicsTeamTxt, team);
         SendKeys(basicsPreferencesOfficeLocationTxt, officeLocation);
+
         scrollWindow();
         clickOnElement(jobFlexDP);
         clickOnElement(jobFlexRemote);
@@ -184,6 +185,7 @@ public class jobPage extends DriverManager {
         clickOnElement(contractTypeDP);
         clickOnElement(fullTimeContract);
         clickOnElement(contractTypeDP);
+
         scrollWindow();
         clickOnElement(roleLevelDP);
         clickOnElement(entryLevelRole);

@@ -54,4 +54,14 @@ public class LoginSteps {
     public void logInButtonShouldBe(String state) throws Throwable {
         assertThat(loginPage.checkStateOfButton(), is(state.equals("enabled") ? true : false));
     }
+
+    @And("^I click on logout button$")
+    public void iClickOnLogoutButton() {
+        loginPage.clickOnLogoutBtn();
+    }
+
+    @Then("^I should be able to SingIn button$")
+    public void iShouldBeAbleToSingInButton() throws InterruptedException {
+        assertThat(loginPage.isSignInButtonDisplayed(), is(true));
+    }
 }
