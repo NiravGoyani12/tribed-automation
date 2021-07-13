@@ -19,6 +19,7 @@ public class CommonUtils {
 	public static String NEW_USERNAME;
 	public static String INVALID_PASSWORD;
 	public static String YEAR;
+	public static String IMAGE;
 
 
 	public static void loadTestDataProp(String testDataPropertyFile) {
@@ -41,6 +42,7 @@ public class CommonUtils {
 		NEW_USERNAME=prop.getProperty("valid.new.user");
 		INVALID_PASSWORD=prop.getProperty("invalid.password");
 		YEAR=prop.getProperty("year");
+		IMAGE=prop.getProperty("image");
 	}
 
 

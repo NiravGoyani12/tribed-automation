@@ -14,7 +14,10 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import java.awt.Robot;
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -144,6 +147,23 @@ public class DriverManager {
         e.sendKeys(text);
     }
 
+    public void uploadFile(String image) throws AWTException {
+
+        Robot robot = new Robot();
+        robot.delay(300);
+
+        String currentDir = System.getProperty("user.dir");
+        String Path=currentDir+"\\src\\test\\resources\\Images\\"+image;
+        StringSelection str = new StringSelection(Path);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.delay(200);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+    }
 
     public String getElementText(WebElement e) {
         return e.getText();

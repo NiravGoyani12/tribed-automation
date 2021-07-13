@@ -1,4 +1,6 @@
 package com.tribed.pages.myProfile;
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
 
 import com.tribed.driver.DriverManager;
 import org.openqa.selenium.WebElement;
@@ -73,6 +75,8 @@ public class CulturePage extends DriverManager {
         waitForElementVisibility(casualDressTile, 5, "Added Culture not displayed");
         return casualDressTile.isDisplayed();
     }
+
+
 
 
 

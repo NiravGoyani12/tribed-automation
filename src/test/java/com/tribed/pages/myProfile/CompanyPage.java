@@ -5,6 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.awt.*;
+
+import static com.tribed.utilities.CommonUtils.*;
+
 public class CompanyPage extends DriverManager {
 
 
@@ -72,10 +76,15 @@ public class CompanyPage extends DriverManager {
     @FindBy(xpath = "//textarea[@name='moreInfo']")
     public WebElement moreInfoTxt;
 
+    @FindBy(xpath = "(//div[text()='Upload image'])[1]")
+    public WebElement btnUploadImage;
 
-    public void enterProfileDetail(String slogan, String year, String sector, String noOfEmp, String brandcolor, String aboutUsTitle, String aboutUs, String moreInfoTitle, String moreInfo, String coreValue1, String coreValue1Description, String coreValue2, String coreValue2Description, String coreValue3, String coreValue3Description, String testimonialQuote, String testimonialName, String testimonialRole) {
+
+    public void enterProfileDetail(String slogan, String year, String sector, String noOfEmp, String brandcolor, String aboutUsTitle, String aboutUs, String moreInfoTitle, String moreInfo, String coreValue1, String coreValue1Description, String coreValue2, String coreValue2Description, String coreValue3, String coreValue3Description, String testimonialQuote, String testimonialName, String testimonialRole) throws AWTException {
 
         waitForElementVisibility(sloganTxt, 5, "Profile page not open");
+        clickOnElement(btnUploadImage);
+        uploadFile(getImage());
         clearAndSendKeys(sloganTxt, slogan);
         clearAndSendKeys(foundationYearTxt, year);
         clearAndSendKeys(sectorTxt, sector);
@@ -94,6 +103,10 @@ public class CompanyPage extends DriverManager {
         clearAndSendKeys(testimonialQuoteTxt, testimonialQuote);
         clearAndSendKeys(testimonialNameTxt, testimonialName);
         clearAndSendKeys(testimonialRoleTxt, testimonialRole);
+    }
+
+    private String getImage() {
+        return IMAGE;
     }
 
     public void clickonSaveAndGoToCulturalPageButton() {

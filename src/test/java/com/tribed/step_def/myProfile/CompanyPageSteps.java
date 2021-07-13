@@ -4,6 +4,7 @@ import com.tribed.pages.myProfile.CompanyPage;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 
+import java.awt.*;
 import java.util.List;
 import java.util.Map;
 
@@ -13,7 +14,7 @@ public class CompanyPageSteps {
     List<Map<String, String>> data;
 
     @And("^I enter following details for company page$")
-    public void iEnterFollowingDetailsForCompanyPage(DataTable dataTable) {
+    public void iEnterFollowingDetailsForCompanyPage(DataTable dataTable) throws AWTException {
         data =  dataTable.asMaps(String.class, String.class);
         companyPage.enterProfileDetail(data.get(0).get("Slogan"), data.get(0).get("Year") ,
                 data.get(0).get("Sector"), data.get(0).get("NoOfEmployee"), data.get(0).get("BrandColor"),
