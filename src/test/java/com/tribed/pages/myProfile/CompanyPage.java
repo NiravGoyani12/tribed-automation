@@ -77,14 +77,19 @@ public class CompanyPage extends DriverManager {
     public WebElement moreInfoTxt;
 
     @FindBy(xpath = "(//div[text()='Upload image'])[1]")
-    public WebElement btnUploadImage;
+    public WebElement uploadImageLogo;
 
+    @FindBy(xpath = "(//div[text()='Upload image'])[3]")
+    public WebElement uploadSupportImage;
 
-    public void enterProfileDetail(String slogan, String year, String sector, String noOfEmp, String brandcolor, String aboutUsTitle, String aboutUs, String moreInfoTitle, String moreInfo, String coreValue1, String coreValue1Description, String coreValue2, String coreValue2Description, String coreValue3, String coreValue3Description, String testimonialQuote, String testimonialName, String testimonialRole) throws AWTException {
+    @FindBy(xpath = "(//div[text()='Upload image'])[2]")
+    public WebElement uploadEmpImage;
+
+    public void enterProfileDetail(String slogan, String year, String sector, String noOfEmp, String brandcolor, String aboutUsTitle, String aboutUs, String moreInfoTitle, String moreInfo, String coreValue1, String coreValue1Description, String coreValue2, String coreValue2Description, String coreValue3, String coreValue3Description, String testimonialQuote, String testimonialName, String testimonialRole) throws AWTException, InterruptedException {
 
         waitForElementVisibility(sloganTxt, 5, "Profile page not open");
-        clickOnElement(btnUploadImage);
-        uploadFile(getImage());
+        clickOnElement(uploadImageLogo);
+        uploadFile(COMPANY_LOGO);
         clearAndSendKeys(sloganTxt, slogan);
         clearAndSendKeys(foundationYearTxt, year);
         clearAndSendKeys(sectorTxt, sector);
@@ -92,8 +97,14 @@ public class CompanyPage extends DriverManager {
         clearAndSendKeys(brandColorTxt, brandcolor);
         clearAndSendKeys(aboutUsTitleTxt, aboutUsTitle);
         clearAndSendKeys(aboutUsTxt, aboutUs);
+        //waitForElementClickable(uploadSupportImage,10,"Upload support email not displayed");
+        //clickOnElement(uploadSupportImage);
+        //uploadFile(COMPANY_SUPPORT_IMAGE);
         clearAndSendKeys(moreInfoTitleTxt, moreInfoTitle);
         clearAndSendKeys(moreInfoTxt, moreInfo);
+
+        //clickOnElement(uploadEmpImage);
+        //uploadFile(COMPANY_IMP_IMAGE);
         clearAndSendKeys(coreValue1Txt, coreValue1);
         clearAndSendKeys(coreValue1DescTxt, coreValue1Description);
         clearAndSendKeys(coreValue2Txt, coreValue2);
@@ -103,11 +114,13 @@ public class CompanyPage extends DriverManager {
         clearAndSendKeys(testimonialQuoteTxt, testimonialQuote);
         clearAndSendKeys(testimonialNameTxt, testimonialName);
         clearAndSendKeys(testimonialRoleTxt, testimonialRole);
+        //clickOnElement(uploadEmpImage);
+        //uploadFile(JOB_TEAM_IMAGE);
     }
 
-    private String getImage() {
-        return IMAGE;
-    }
+    //private String getCompanyLogo() {
+      //  return COMPANY_LOGO;
+    //}
 
     public void clickonSaveAndGoToCulturalPageButton() {
         scrollIntoViewSelenium(saveBtn);

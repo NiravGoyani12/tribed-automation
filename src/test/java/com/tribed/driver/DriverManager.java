@@ -105,10 +105,11 @@ public class DriverManager {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public void waitForElementInvisibility(WebElement element, int timeout, String failureMessage) {
+    public void waitForElementClickable(WebElement element, int timeout, String failureMessage) throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         wait.withMessage(failureMessage);
-        wait.until(ExpectedConditions.invisibilityOf(element));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+        Thread.sleep(2000);
     }
 
     public void scrollIntoViewSelenium(WebElement element) {
@@ -147,11 +148,11 @@ public class DriverManager {
         e.sendKeys(text);
     }
 
-    public void uploadFile(String image) throws AWTException {
+    public void uploadFile(String image) throws AWTException, InterruptedException {
 
         Robot robot = new Robot();
         robot.delay(300);
-
+        Thread.sleep(2000);
         String currentDir = System.getProperty("user.dir");
         String Path=currentDir+"\\src\\test\\resources\\Images\\"+image;
         StringSelection str = new StringSelection(Path);
@@ -163,6 +164,7 @@ public class DriverManager {
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.delay(200);
         robot.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(2000);
     }
 
     public String getElementText(WebElement e) {

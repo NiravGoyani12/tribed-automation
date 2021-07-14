@@ -19,7 +19,11 @@ public class CommonUtils {
 	public static String NEW_USERNAME;
 	public static String INVALID_PASSWORD;
 	public static String YEAR;
-	public static String IMAGE;
+	public static String COMPANY_LOGO;
+	public static String COMPANY_SUPPORT_IMAGE;
+	public static String COMPANY_IMP_IMAGE;
+	public static String JOB_LOGO;
+	public static String JOB_TEAM_IMAGE;
 
 
 	public static void loadTestDataProp(String testDataPropertyFile) {
@@ -42,7 +46,11 @@ public class CommonUtils {
 		NEW_USERNAME=prop.getProperty("valid.new.user");
 		INVALID_PASSWORD=prop.getProperty("invalid.password");
 		YEAR=prop.getProperty("year");
-		IMAGE=prop.getProperty("image");
+		COMPANY_LOGO=prop.getProperty("company.page.logo");
+		COMPANY_SUPPORT_IMAGE=prop.getProperty("company.page.supportimg");
+		COMPANY_IMP_IMAGE=prop.getProperty("company.page.empimg");
+		JOB_LOGO=prop.getProperty("job.mainlogo");
+		JOB_TEAM_IMAGE=prop.getProperty("job.teamimage");
 	}
 
 

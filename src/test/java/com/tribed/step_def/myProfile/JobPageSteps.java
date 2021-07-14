@@ -28,12 +28,12 @@ public class JobPageSteps {
 
     @And("^I select any technical skill and save$")
     public void iSelectAnyTechnicalSkillAndSave() {
-        jobPage.selectAndSaveTechnicalSkill();
+        jobPage.selectAndSaveSkillAndExperienced();
     }
 
     @Then("^added technical skill should saved and displayed$")
     public void addedTechnicalSkillShouldSavedAndDisplayed() {
-        assertThat(jobPage.isAddTechnicalSkillSavedAndDisplayed(), is(true));
+        assertThat(jobPage.isAddSkillSavedAndDisplayed(), is(true));
     }
 
     @And("^I click on Add Job button$")
@@ -41,39 +41,14 @@ public class JobPageSteps {
         jobPage.clickAddJobBtn();
 
     }
-
-    @And("^I click on add leadership button$")
-    public void iClickOnAddLeadershipButton() {
-        jobPage.clickAddLeaderShipSkill();
-    }
-
-    @And("^I select any leadership skill and save$")
-    public void iSelectAnyLeadershipSkillAndSave() {
-        jobPage.selectLeaderShipSkill();
-        jobPage.clickonSaveAndExitBtn();
-    }
-
-    @Then("^added leadership skill should saved and displayed$")
-    public void addedLeadershipSkillShouldSavedAndDisplayed() {
-        assertThat(jobPage.isAddedLeadershipSkillSavedAndDisplayed(), is(true));
-
-    }
-
     @And("^I click on add sector button$")
     public void iClickOnAddSectorButton() {
         jobPage.clickAddSector();
     }
 
-    @And("^I select any sector and save$")
-    public void iSelectAnySectorAndSave() {
-        jobPage.selectSectors();
-        jobPage.clickonSaveAndExitBtn();
-
-    }
-
-    @Then("^added sector should saved and displayed$")
-    public void addedSectorShouldSavedAndDisplayed() {
-        assertThat(jobPage.isAddedSectorSavedAndDisplayed(), is(true));
+    @And("^I click on add leadership button$")
+    public void iClickOnAddLeadershipButton() {
+        jobPage.clickAddLeaderShipSkill();
     }
 
     @And("^I click on add qualification button$")
@@ -81,17 +56,6 @@ public class JobPageSteps {
         jobPage.clickAddQualification();
     }
 
-    @And("^I select any qualification and save$")
-    public void iSelectAnyQualificationAndSave() {
-        jobPage.selectQualification();
-        jobPage.clickonSaveAndExitBtn();
-
-    }
-
-    @Then("^added qualification should saved and displayed$")
-    public void addedQualificationShouldSavedAndDisplayed() {
-        assertThat(jobPage.isAddedQualificationSavedAndDisplayed(), is(true));
-    }
 
     @When("^I enter following details for job page$")
     public void iEnterFollowingDetailsForJobPage(DataTable dataTable) throws InterruptedException {
