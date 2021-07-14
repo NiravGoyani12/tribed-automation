@@ -1,4 +1,4 @@
-@sanity
+@sanity4
 Feature: Culture page
 
   Scenario: Build Culture page
@@ -30,3 +30,5 @@ Feature: Culture page
     And I click on culture page tab
     And I click on publish button
     Then I should able to see "Congratulations!" message
+
+

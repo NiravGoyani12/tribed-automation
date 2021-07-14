@@ -194,9 +194,6 @@ public class jobPage extends DriverManager {
         SendKeys(maxSalaryTxt, maxSalary);
         SendKeys(infoTitleTxt, infoTitle);
         SendKeys(infoTxt, info);
-        clickAddTechnicalSkill();
-        selectAndSaveTechnicalSkill();
-
 
     }
 

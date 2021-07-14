@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 
 import com.tribed.driver.DriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.MoveMouseAction;
@@ -22,6 +23,9 @@ public class CulturePage extends DriverManager {
 
     @FindBy(xpath = "//img[contains(@src,'casual-dress')]")
     public WebElement casualDressTile;
+
+    @FindBy(xpath = "//div[contains(@class,'modal')]//img[contains(@src,'cultureIcon')]/following-sibling::span/parent::div/parent::div[not(contains(@class,'selected'))]//span")
+    public WebElement notSelectedCulture;
 
     @FindBy(xpath = "//button[text()='Save and exit']")
     public WebElement saveAndExitBtn;
@@ -44,7 +48,7 @@ public class CulturePage extends DriverManager {
     @FindBy(xpath = "//img[contains(@src,'dental-benefits')]")
     public WebElement dentalBenifitsile;
 
-
+    public static String cultureName;
 
 
     public String getTextOnCulturePage() {
@@ -66,14 +70,15 @@ public class CulturePage extends DriverManager {
     }
     public void selectCultureAndSave()
     {
-
-        clickOnElement(casualDressTile);
+        cultureName=getElementText(notSelectedCulture);
+        clickOnElement(notSelectedCulture);
         clickOnElement(saveAndExitBtn);
     }
 
     public boolean isAddCultureSavedAndDisplayed() {
+        WebElement element= driver.findElement(By.xpath("//img[contains(@src,'cultureIcon')]/following-sibling::span[text()='"+cultureName+"']"));
         waitForElementVisibility(casualDressTile, 5, "Added Culture not displayed");
-        return casualDressTile.isDisplayed();
+        return element.isDisplayed();
     }
 
 

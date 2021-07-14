@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources",
         dryRun = false,
-        tags = "@sanity",
+        tags = "@sanity4",
         monochrome=true,
         plugin = {
                 "html:target/cucumber-reports/report.html", "json:target/cucumber-reports/cucumber.json",
