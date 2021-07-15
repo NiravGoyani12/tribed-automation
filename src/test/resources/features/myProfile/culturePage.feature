@@ -9,7 +9,7 @@ Feature: Culture page
     And I click on culture page tab
     And I click on Add to Culture button
     When I select any culture and save
-    Then added culture should saved and displayed
+    Then added culture should be saved and displayed
 
   Scenario: Preview on Culture page
     Given I am on the home page
@@ -20,7 +20,7 @@ Feature: Culture page
     When I click on Preview button
     Then the "Return to edit" text is displayed on preview page
     And I click on culture tab after preview
-    Then added culture should saved and displayed
+    Then added culture should be saved and displayed
 
   Scenario: Publish on Culture page
     Given I am on the home page

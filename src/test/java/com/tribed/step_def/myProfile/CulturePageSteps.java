@@ -39,7 +39,7 @@ public class CulturePageSteps {
         culturePage.selectCultureAndSave();
     }
 
-    @Then("^added culture should saved and displayed$")
+    @Then("^added culture should be saved and displayed$")
     public void addedCultureShouldSavedAndDisplayed() {
         assertThat(culturePage.isAddCultureSavedAndDisplayed(), is(true));
     }
