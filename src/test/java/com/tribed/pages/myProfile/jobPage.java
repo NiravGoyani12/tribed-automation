@@ -131,7 +131,7 @@ public class jobPage extends DriverManager {
         clickOnElement(saveAndExitBtn);
     }
 
-    public boolean isAddSkillSavedAndDisplayed() {
+    public boolean isAddedSkillSavedAndDisplayed() {
         WebElement element= driver.findElement(By.xpath("//div[contains(@class,'SkillItemStrip')]//div[text()='"+skill+"']"));
         waitForElementVisibility(element, 5, "Added  Skill not displayed");
         return element.isDisplayed();

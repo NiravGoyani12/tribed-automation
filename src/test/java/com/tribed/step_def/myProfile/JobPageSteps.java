@@ -33,7 +33,7 @@ public class JobPageSteps {
 
     @Then("^added technical skill should saved and displayed$")
     public void addedTechnicalSkillShouldSavedAndDisplayed() {
-        assertThat(jobPage.isAddSkillSavedAndDisplayed(), is(true));
+        assertThat(jobPage.isAddedSkillSavedAndDisplayed(), is(true));
     }
 
     @And("^I click on Add Job button$")
@@ -65,5 +65,20 @@ public class JobPageSteps {
                 data.get(0).get("InfoTitle"),data.get(0).get("Info"));
 
 
+    }
+
+    @Then("^added leadership skill should saved and displayed$")
+    public void addedLeadershipSkillShouldSavedAndDisplayed() {
+        assertThat(jobPage.isAddedSkillSavedAndDisplayed(), is(true));
+    }
+
+    @Then("^added sectors skill should saved and displayed$")
+    public void addedSectorsSkillShouldSavedAndDisplayed() {
+        assertThat(jobPage.isAddedSkillSavedAndDisplayed(), is(true));
+    }
+
+    @Then("^added qualifications skill should saved and displayed$")
+    public void addedQualificationsSkillShouldSavedAndDisplayed() {
+        assertThat(jobPage.isAddedSkillSavedAndDisplayed(), is(true));
     }
 }
