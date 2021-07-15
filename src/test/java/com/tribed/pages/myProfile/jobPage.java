@@ -1,6 +1,7 @@
 package com.tribed.pages.myProfile;
 
 import com.tribed.driver.DriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -70,6 +71,9 @@ public class jobPage extends DriverManager {
     @FindBy(xpath = "//div[text()='Jira']")
     public WebElement jiraTech;
 
+    @FindBy(xpath = "//div[contains(@class,'modal')]//div[contains(@class,'Tag__Label')]/parent::div/parent::div[not(contains(@class,'selected'))]/div/div")
+    public WebElement notSelectedSkills;
+
     @FindBy(xpath = "//button[text()='Save and exit']")
     public WebElement saveAndExitBtn;
 
@@ -91,6 +95,14 @@ public class jobPage extends DriverManager {
     @FindBy(xpath = "//div[text()='Amazon Web Services']")
     public WebElement amazonWebService;
 
+    @FindBy(xpath = "(//p[text()='Upload image']")
+    public WebElement uploadImageLogo;
+
+    @FindBy(xpath = "(//p[text()='Upload image of team or company']")
+    public WebElement uploadTeamImage;
+
+    public static String skill;
+
     public void clickOnTabJobPage()
     {
         waitForElementVisibility(jobPageTab, 8, "Job page tab not displayed");
@@ -108,10 +120,10 @@ public class jobPage extends DriverManager {
         scrollIntoViewSelenium(infoTxt);
         clickOnElement(addTechnicalTile);
     }
-    public void selectAndSaveTechnicalSkill()
+    public void selectAndSaveSkillAndExperienced()
     {
-
-        clickOnElement(jiraTech);
+        skill=getElementText(notSelectedSkills);
+        clickOnElement(notSelectedSkills);
         clickOnElement(saveAndExitBtn);
     }
     public void clickonSaveAndExitBtn()
@@ -119,9 +131,10 @@ public class jobPage extends DriverManager {
         clickOnElement(saveAndExitBtn);
     }
 
-    public boolean isAddTechnicalSkillSavedAndDisplayed() {
-        waitForElementVisibility(jiraTech, 5, "Added Technical Skill not displayed");
-        return jiraTech.isDisplayed();
+    public boolean isAddSkillSavedAndDisplayed() {
+        WebElement element= driver.findElement(By.xpath("//div[contains(@class,'SkillItemStrip')]//div[text()='"+skill+"']"));
+        waitForElementVisibility(element, 5, "Added  Skill not displayed");
+        return element.isDisplayed();
     }
 
     public void clickAddLeaderShipSkill()
@@ -130,15 +143,7 @@ public class jobPage extends DriverManager {
         scrollIntoViewSelenium(addTechnicalTile);
         clickOnElement(addLeadershipTile);
     }
-    public void selectLeaderShipSkill()
-    {
-        clickOnElement(coachingShip);
-    }
 
-    public boolean isAddedLeadershipSkillSavedAndDisplayed() {
-        waitForElementVisibility(coachingShip, 5, "Added Leadership Skill not displayed");
-        return coachingShip.isDisplayed();
-    }
 
     public void clickAddSector()
     {
@@ -146,35 +151,20 @@ public class jobPage extends DriverManager {
         scrollIntoViewSelenium(addTechnicalTile);
         clickOnElement(sectorTile);
     }
-    public void selectSectors()
-    {
-        clickOnElement(regionsSector);
-    }
 
-    public boolean isAddedSectorSavedAndDisplayed() {
-        waitForElementVisibility(regionsSector, 5, "Added Secotor not displayed");
-        return regionsSector.isDisplayed();
-    }
     public void clickAddQualification()
     {
         waitForElementVisibility(qualificationTile, 8, "Add Qualification Tile not displayed");
         scrollIntoViewSelenium(addTechnicalTile);
         clickOnElement(qualificationTile);
     }
-    public void selectQualification()
-    {
-        clickOnElement(amazonWebService);
-    }
-
-    public boolean isAddedQualificationSavedAndDisplayed() {
-        waitForElementVisibility(amazonWebService, 5, "Added Qualification not displayed");
-        return amazonWebService.isDisplayed();
-    }
 
     public void enterJobDetail(String jobTitle, String team, String officeLocation, String minSalary, String maxSalary, String infoTitle, String info) throws InterruptedException {
         Thread.sleep(2000);
         waitForElementVisibility(jobTitleTxt, 5, "Job page not open");
         SendKeys(jobTitleTxt, jobTitle);
+        //clickOnElement(uploadImageLogo);
+        //uploadFile(JOB_LOGO);
         SendKeys(basicsTeamTxt, team);
         SendKeys(basicsPreferencesOfficeLocationTxt, officeLocation);
 
@@ -194,6 +184,8 @@ public class jobPage extends DriverManager {
         SendKeys(maxSalaryTxt, maxSalary);
         SendKeys(infoTitleTxt, infoTitle);
         SendKeys(infoTxt, info);
+        //clickOnElement(uploadTeamImage);
+        //uploadFile(JOB_TEAM_IMAGE);
 
     }
 

@@ -14,7 +14,7 @@ public class CompanyPageSteps {
     List<Map<String, String>> data;
 
     @And("^I enter following details for company page$")
-    public void iEnterFollowingDetailsForCompanyPage(DataTable dataTable) throws AWTException {
+    public void iEnterFollowingDetailsForCompanyPage(DataTable dataTable) throws AWTException, InterruptedException {
         data =  dataTable.asMaps(String.class, String.class);
         companyPage.enterProfileDetail(data.get(0).get("Slogan"), data.get(0).get("Year") ,
                 data.get(0).get("Sector"), data.get(0).get("NoOfEmployee"), data.get(0).get("BrandColor"),
