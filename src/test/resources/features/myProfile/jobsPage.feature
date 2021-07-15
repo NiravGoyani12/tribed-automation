@@ -1,4 +1,4 @@
-@sanity
+@sanity5
 Feature: Job page
 
   Scenario: Add Technical Skills
