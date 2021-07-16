@@ -126,6 +126,13 @@ public class jobPage extends DriverManager {
         clickOnElement(notSelectedSkills);
         clickOnElement(saveAndExitBtn);
     }
+
+    public void selectAnySkillAndSave()
+    {
+        skill=getElementText(notSelectedSkills);
+        clickOnElement(notSelectedSkills);
+        clickOnElement(saveAndExitBtn);
+    }
     public void clickonSaveAndExitBtn()
     {
         clickOnElement(saveAndExitBtn);
@@ -176,14 +183,14 @@ public class jobPage extends DriverManager {
         clickOnElement(fullTimeContract);
         clickOnElement(contractTypeDP);
 
-        scrollWindow();
-        clickOnElement(roleLevelDP);
-        clickOnElement(entryLevelRole);
-        clickOnElement(roleLevelDP);
-        SendKeys(minSalaryTxt, minSalary);
-        SendKeys(maxSalaryTxt, maxSalary);
-        SendKeys(infoTitleTxt, infoTitle);
-        SendKeys(infoTxt, info);
+        //scrollWindow();
+        //clickOnElement(roleLevelDP);
+        //clickOnElement(entryLevelRole);
+        //clickOnElement(roleLevelDP);
+        //SendKeys(minSalaryTxt, minSalary);
+        //SendKeys(maxSalaryTxt, maxSalary);
+        //SendKeys(infoTitleTxt, infoTitle);
+        //SendKeys(infoTxt, info);
         //clickOnElement(uploadTeamImage);
         //uploadFile(JOB_TEAM_IMAGE);
 

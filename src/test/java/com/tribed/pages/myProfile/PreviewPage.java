@@ -16,6 +16,10 @@ public class PreviewPage extends DriverManager {
     @FindBy(xpath = "//button[text()='Preview']")
     public WebElement previewBtn;
 
+    @FindBy(xpath = " //button[text()='Publish']")
+    public WebElement publishBtn;
+
+
     public String getTextOnPreviewPage() {
         scrollIntoViewSelenium(textOnPreviewPage);
         return getElementText(textOnPreviewPage);
@@ -61,5 +65,11 @@ public class PreviewPage extends DriverManager {
         WebElement element = driver.findElement(By.xpath("//li[contains(text(),'"+team+"')]"));
         waitForElementVisibility(element, 5, "Preview page not open");
         return element.isDisplayed();
+    }
+
+    public boolean isPublishButtonDisplayed()
+    {
+        waitForElementVisibility(publishBtn, 5, "Publish button not displayed");
+        return publishBtn.isDisplayed();
     }
 }

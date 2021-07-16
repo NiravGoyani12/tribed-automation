@@ -1,4 +1,4 @@
-@sanity5
+@sanity
 Feature: Job page
 
   Scenario: Add Technical Skills
@@ -20,7 +20,7 @@ Feature: Job page
     And I click on job page tab
     And I click on Add Job button
     And I click on add leadership button
-    When I select any technical skill and save
+    When I select any leadership skill and save
     Then added leadership skill should saved and displayed
 
   Scenario: Add Sectors
@@ -31,7 +31,7 @@ Feature: Job page
     And I click on job page tab
     And I click on Add Job button
     And I click on add sector button
-    When I select any technical skill and save
+    When I select any sector and save
     Then added sectors skill should saved and displayed
 
   Scenario: Add Qualifications Skills
@@ -42,7 +42,7 @@ Feature: Job page
     And I click on job page tab
     And I click on Add Job button
     And I click on add qualification button
-    When I select any technical skill and save
+    When I select any qualification and save
     Then added qualifications skill should saved and displayed
 
   Scenario: Preview Company On Job page

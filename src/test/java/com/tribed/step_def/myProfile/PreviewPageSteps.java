@@ -52,4 +52,10 @@ public class PreviewPageSteps {
         assertThat(previewPage.isJobTitleOnPreviewDisplayed(data.get(0).get("JobTitle")), is(true));
         assertThat(previewPage.isTeamOnPreviewDisplayed(data.get(0).get("Team")), is(true));
     }
+
+    @Then("^I should see publish button$")
+    public void iShouldSeePublishButton() {
+        assertThat(previewPage.isPublishButtonDisplayed(), is(true));
+
+    }
 }

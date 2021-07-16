@@ -28,7 +28,7 @@ public class JobPageSteps {
 
     @And("^I select any technical skill and save$")
     public void iSelectAnyTechnicalSkillAndSave() {
-        jobPage.selectAndSaveSkillAndExperienced();
+        jobPage.selectAnySkillAndSave();
     }
 
     @Then("^added technical skill should saved and displayed$")
@@ -80,5 +80,20 @@ public class JobPageSteps {
     @Then("^added qualifications skill should saved and displayed$")
     public void addedQualificationsSkillShouldSavedAndDisplayed() {
         assertThat(jobPage.isAddedSkillSavedAndDisplayed(), is(true));
+    }
+
+    @When("^I select any leadership skill and save$")
+    public void iSelectAnyLeadershipSkillAndSave() {
+        jobPage.selectAnySkillAndSave();
+    }
+
+    @When("^I select any sector and save$")
+    public void iSelectAnySectorAndSave() {
+        jobPage.selectAnySkillAndSave();
+    }
+
+    @When("^I select any qualification and save$")
+    public void iSelectAnyQualificationAndSave() {
+        jobPage.selectAnySkillAndSave();
     }
 }
