@@ -1,4 +1,4 @@
-@sanity
+@sanity4
 Feature: Culture page
 
   Scenario: Build Culture page
@@ -17,6 +17,8 @@ Feature: Culture page
     And I enter email and password for "Valid User"
     And I click on log in button
     And I click on culture page tab
+    And I click on Add to Culture button
+    And I select any culture and save
     When I click on Preview button
     Then the "Return to edit" text is displayed on preview page
     And I click on culture tab after preview
@@ -28,6 +30,8 @@ Feature: Culture page
     When I enter email and password for "Valid User"
     And I click on log in button
     And I click on culture page tab
+    And I click on Add to Culture button
+    And I select any culture and save
     When I click on publish button
     Then I should able to see "Congratulations!" message
 
