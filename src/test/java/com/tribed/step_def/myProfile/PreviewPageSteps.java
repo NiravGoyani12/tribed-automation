@@ -50,7 +50,7 @@ public class PreviewPageSteps {
     public void iShouldSeeFollowingDetailsOnPreviewPageOfJob(DataTable dataTable) {
         data =  dataTable.asMaps(String.class, String.class);
         assertThat(previewPage.isJobTitleOnPreviewDisplayed(data.get(0).get("JobTitle")), is(true));
-        assertThat(previewPage.isTeamOnPreviewDisplayed(data.get(0).get("Team")), is(true));
+        //assertThat(previewPage.isTeamOnPreviewDisplayed(data.get(0).get("Team")), is(true));
     }
 
     @Then("^I should see publish button$")

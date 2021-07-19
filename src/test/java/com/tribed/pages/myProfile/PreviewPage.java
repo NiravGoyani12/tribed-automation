@@ -62,7 +62,7 @@ public class PreviewPage extends DriverManager {
     }
 
     public boolean isTeamOnPreviewDisplayed(String team) {
-        WebElement element = driver.findElement(By.xpath("//li[contains(text(),'"+team+"')]"));
+        WebElement element = driver.findElement(By.xpath("//*[contains(text(),'"+team+"')]"));
         waitForElementVisibility(element, 5, "Preview page not open");
         return element.isDisplayed();
     }

@@ -111,7 +111,12 @@ public class jobPage extends DriverManager {
     public void clickAddJobBtn()
     {
         waitForElementVisibility(addJobBtn, 8, "Add new Job listing not displayed");
-        scrollIntoViewSelenium(addJobBtn);
+        //scrollIntoViewSelenium(addJobBtn);
+        scrollWindow();
+        scrollWindow();
+        scrollWindow();
+        scrollWindow();
+        scrollWindow();
         clickOnElement(addJobBtn);
     }
     public void clickAddTechnicalSkill()

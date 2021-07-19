@@ -45,6 +45,7 @@ Feature: Job page
     When I select any qualification and save
     Then added qualifications skill should saved and displayed
 
+
   Scenario: Preview Company On Job page
     Given I am on the home page
     And I click on sign in button
