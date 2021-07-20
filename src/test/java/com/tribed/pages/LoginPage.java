@@ -29,6 +29,17 @@ public class LoginPage extends DriverManager {
     @FindBy(xpath = "(//div[text()='Sign in'])[2]")
     public WebElement signInBtn;
 
+    @FindBy(xpath = "//div[text()='Messages']")
+    public WebElement messageMenu;
+
+    @FindBy(xpath = "//div[text()='My profile']")
+    public WebElement myProfileMenu;
+
+    @FindBy(xpath = "//div[text()='Dashboard']")
+    public WebElement dashboardMenu;
+
+    @FindBy(xpath = "//div[text()='Search']")
+    public WebElement searchMenu;
 
     public void enterEmailAndPassword(String userType) {
         clearAndSendKeys(emmailField,getUserName(userType));
@@ -83,6 +94,41 @@ public class LoginPage extends DriverManager {
     public boolean isSignInButtonDisplayed() throws InterruptedException {
         waitForElementVisibility(signInBtn,5, "SingIn button not displayed");
         return signInBtn.isDisplayed();
+    }
+
+    public void clickonMessagemenu()
+    {
+        clickOnElement(messageMenu);
+    }
+    public void clickonDashboardMenu()
+    {
+        clickOnElement(dashboardMenu);
+    }
+    public void clickonMyProfileMenu()
+    {
+        clickOnElement(myProfileMenu);
+    }
+    public void clickonSearchMenu()
+    {
+        clickOnElement(searchMenu);
+
+    }
+
+
+    public boolean isMessageMenuOpen()
+    {
+        //waitForElementVisibility(signInBtn,5, "SingIn button not displayed");
+        return true;
+    }
+    public boolean isDashboardOpen()
+    {
+        //waitForElementVisibility(signInBtn,5, "SingIn button not displayed");
+        return true;
+    }
+    public boolean isMyProfileOpen()
+    {
+        //waitForElementVisibility(signInBtn,5, "SingIn button not displayed");
+        return true;
     }
 
 }

@@ -96,4 +96,14 @@ public class JobPageSteps {
     public void iSelectAnyQualificationAndSave() {
         jobPage.selectAnySkillAndSave();
     }
+
+    @When("^I click on about this job button$")
+    public void iClickOnAboutThisJobButton() {
+        jobPage.clickOnAboutThisJobBtn();
+    }
+
+    @Then("^I should be able to see selected job details$")
+    public void iShouldBeAbleToSeeSelectedJobDetails() {
+        assertThat(jobPage.isAboutThisJobPageOpen(), is(true));
+    }
 }

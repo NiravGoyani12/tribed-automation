@@ -75,3 +75,11 @@ Feature: Job page
     Then I should able to see "Congratulations!" message
 
 
+  Scenario: Verify About this job button
+    Given I am on the home page
+    And I click on sign in button
+    And I enter email and password for "Valid User"
+    And I click on log in button
+    And I click on job page tab
+    When I click on about this job button
+    Then I should be able to see selected job details

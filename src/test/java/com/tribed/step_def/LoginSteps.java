@@ -64,4 +64,39 @@ public class LoginSteps {
     public void iShouldBeAbleToSingInButton() throws InterruptedException {
         assertThat(loginPage.isSignInButtonDisplayed(), is(true));
     }
+
+    @When("^I click on messages menu$")
+    public void iClickOnMessagesMenu() {
+        loginPage.clickonMessagemenu();
+    }
+
+    @Then("^I should be able to open message screen$")
+    public void iShouldBeAbleToOpenMessageScreen() {
+        assertThat(loginPage.isMessageMenuOpen(), is(true));
+    }
+
+    @When("^I click on dashboard menu$")
+    public void iClickOnDashboardMenu() {
+        loginPage.clickonDashboardMenu();
+    }
+
+    @Then("^I should be able to open dashboard screen$")
+    public void iShouldBeAbleToOpenDashboardScreen() {
+        assertThat(loginPage.isDashboardOpen(), is(true));
+    }
+
+    @When("^I click on my profile menu$")
+    public void iClickOnMyProfileMenu() {
+        loginPage.clickonMyProfileMenu();
+    }
+
+    @Then("^I should be able to open my profile screen$")
+    public void iShouldBeAbleToOpenMyProfileScreen() {
+        assertThat(loginPage.isMyProfileOpen(), is(true));
+    }
+
+    @When("^I click on search menu after login$")
+    public void iClickOnSearchMenuAfterLogin() {
+        loginPage.clickonSearchMenu();
+    }
 }

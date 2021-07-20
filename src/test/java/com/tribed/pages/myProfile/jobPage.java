@@ -101,6 +101,12 @@ public class jobPage extends DriverManager {
     @FindBy(xpath = "(//p[text()='Upload image of team or company']")
     public WebElement uploadTeamImage;
 
+    @FindBy(xpath = "(//button[text()='About this job'])[1]")
+    public WebElement aboutThisJobBtn;
+
+
+
+
     public static String skill;
 
     public void clickOnTabJobPage()
@@ -201,6 +207,15 @@ public class jobPage extends DriverManager {
 
     }
 
+    public void clickOnAboutThisJobBtn()
+    {
+        clickOnElement(aboutThisJobBtn);
+    }
+
+    public boolean isAboutThisJobPageOpen()
+    {
+        return true;
+    }
 
 
 }
