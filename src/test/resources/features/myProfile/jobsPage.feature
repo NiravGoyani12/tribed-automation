@@ -1,5 +1,6 @@
-@sanity
+@sanity4
 Feature: Job page
+
 
   Scenario: Add Technical Skills
     Given I am on the home page
@@ -83,3 +84,38 @@ Feature: Job page
     And I click on job page tab
     When I click on about this job button
     Then I should be able to see selected job details
+
+
+  Scenario: Verify do not make salary visible to candidate check box when it is selected
+    Given I am on the home page
+    And I click on sign in button
+    And I enter email and password for "Valid User"
+    And I click on log in button
+    And I click on job page tab
+    And I click on Add Job button
+    And I enter following details for job page
+      | JobTitle       | Team              | Office Location     | MinSalary | MaxSalary | InfoTitle                      | Info                |
+      | Automation Eng | Quality Assurance | London              | 3000000   | 500000    | Looking for Automation Eng     | Selenium Cucumber   |
+    And I click on salary not visible checkbox
+    When I click on Preview button of Job Page
+    Then I should not able to see salary on preview
+      | MinSalary       | MaxSalary              |
+      | 3000000         | 5000000                |
+
+  Scenario: Verify next section button while adding skills
+    Given I am on the home page
+    And I click on sign in button
+    And I enter email and password for "Valid User"
+    And I click on log in button
+    And I click on job page tab
+    And I click on Add Job button
+    And I click on Add Technical button
+    And I select any technical skill
+    And I click on next section
+    And I select any leadership skill
+    And I click on next section
+    And I select any sector
+    And I click on next section
+    And I select any qualification
+    When I click on save and exit
+    Then I should be able to see all selected skills sector and qualification

@@ -106,4 +106,57 @@ public class JobPageSteps {
     public void iShouldBeAbleToSeeSelectedJobDetails() {
         assertThat(jobPage.isAboutThisJobPageOpen(), is(true));
     }
+
+    @Then("^I should not able to see salary on preview$")
+    public void iShouldNotAbleToSeeSalaryOnPreview(DataTable dataTable) {
+        data =  dataTable.asMaps(String.class, String.class);
+        assertThat(jobPage.isSalaryVisible(data.get(0).get("MinSalary")), is(false));
+        //assertThat(previewPage.isTeamOnPreviewDisplayed(data.get(0).get("Team")), is(true));
+    }
+
+    @And("^I click on salary not visible checkbox$")
+    public void iClickOnSalaryNotVisibleCheckbox() {
+
+        jobPage.clickOnIsSalaryHiddeenchk();
+    }
+
+    @And("^I select any technical skill$")
+    public void iSelectAnyTechnicalSkill() {
+        jobPage.selectTechnicalSkill();
+    }
+
+    @And("^I click on next section$")
+    public void iClickOnNextSection() {
+        jobPage.clickOnNextSection();
+    }
+
+    @And("^I select any leadership skill$")
+    public void iSelectAnyLeadershipSkill() {
+        jobPage.selectLeadership();
+    }
+
+    @And("^I select any sector$")
+    public void iSelectAnySector() {
+        jobPage.selectSector();
+    }
+
+    @And("^I select any qualification$")
+    public void iSelectAnyQualification() {
+        jobPage.selectQualification();
+    }
+
+    @When("^I click on save and exit$")
+    public void iClickOnSaveAndExit() {
+        jobPage.clickonSaveAndExitBtn();
+    }
+
+
+
+    @Then("^I should be able to see all selected skills sector and qualification$")
+    public void iShouldBeAbleToSeeAllSelectedSkillsSectorAndQualification() {
+        assertThat(jobPage.isAddedSkillSavedAndDisplayed(), is(true));
+        assertThat(jobPage.isAddedLeadershipDisplayed(), is(true));
+        assertThat(jobPage.isAddedSectorDisplayed(), is(true));
+        assertThat(jobPage.isAddedQualificationDisplayed(), is(true));
+    }
 }

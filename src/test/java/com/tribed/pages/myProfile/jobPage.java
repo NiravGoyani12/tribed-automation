@@ -2,6 +2,7 @@ package com.tribed.pages.myProfile;
 
 import com.tribed.driver.DriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -104,10 +105,16 @@ public class jobPage extends DriverManager {
     @FindBy(xpath = "(//button[text()='About this job'])[1]")
     public WebElement aboutThisJobBtn;
 
+    @FindBy(xpath = "//input[@name='basics.isSalaryHidden']")
+    public WebElement isSalaryHiddenChk;
 
-
+    @FindBy(xpath = "//button[text()='next section']")
+    public WebElement nextSectionBtn;
 
     public static String skill;
+    public static String leadership;
+    public static String sector;
+    public static String qualification;
 
     public void clickOnTabJobPage()
     {
@@ -194,12 +201,12 @@ public class jobPage extends DriverManager {
         clickOnElement(fullTimeContract);
         clickOnElement(contractTypeDP);
 
-        //scrollWindow();
-        //clickOnElement(roleLevelDP);
-        //clickOnElement(entryLevelRole);
-        //clickOnElement(roleLevelDP);
-        //SendKeys(minSalaryTxt, minSalary);
-        //SendKeys(maxSalaryTxt, maxSalary);
+        scrollWindow();
+        clickOnElement(roleLevelDP);
+        clickOnElement(entryLevelRole);
+        clickOnElement(roleLevelDP);
+        SendKeys(minSalaryTxt, minSalary);
+        SendKeys(maxSalaryTxt, maxSalary);
         //SendKeys(infoTitleTxt, infoTitle);
         //SendKeys(infoTxt, info);
         //clickOnElement(uploadTeamImage);
@@ -215,6 +222,70 @@ public class jobPage extends DriverManager {
     public boolean isAboutThisJobPageOpen()
     {
         return true;
+    }
+
+    public void clickOnIsSalaryHiddeenchk()
+    {
+        scrollWindow();
+        clickOnElement(isSalaryHiddenChk);
+    }
+
+    public boolean isSalaryVisible(String MinSalary)
+    {
+        try {
+            WebElement element = driver.findElement(By.xpath("//p[contains(text(),'"+MinSalary+"')]"));
+            return element.isDisplayed();
+        }
+        catch (NoSuchElementException e)
+        {
+            return false;
+        }
+
+    }
+
+    public void selectTechnicalSkill()
+    {
+        waitForElementVisibility(notSelectedSkills, 5, "Technical skill not selected");
+        skill=getElementText(notSelectedSkills);
+        clickOnElement(notSelectedSkills);
+    }
+    public void selectLeadership()
+    {
+        waitForElementVisibility(notSelectedSkills, 5, "Leadership not selected");
+        leadership=getElementText(notSelectedSkills);
+        clickOnElement(notSelectedSkills);
+    }
+    public void selectSector()
+    {
+        waitForElementVisibility(notSelectedSkills, 5, "Sector not selected");
+        sector=getElementText(notSelectedSkills);
+        clickOnElement(notSelectedSkills);
+    }
+    public void selectQualification()
+    {
+        waitForElementVisibility(notSelectedSkills, 5, "Qualification not selected");
+        qualification=getElementText(notSelectedSkills);
+        clickOnElement(notSelectedSkills);
+    }
+    public void clickOnNextSection()
+    {
+        clickOnElement(nextSectionBtn);
+    }
+
+    public boolean isAddedLeadershipDisplayed() {
+        WebElement element= driver.findElement(By.xpath("//div[contains(@class,'SkillItemStrip')]//div[text()='"+leadership+"']"));
+        waitForElementVisibility(element, 5, "selected leadership displayed");
+        return element.isDisplayed();
+    }
+    public boolean isAddedSectorDisplayed() {
+        WebElement element= driver.findElement(By.xpath("//div[contains(@class,'SkillItemStrip')]//div[text()='"+sector+"']"));
+        waitForElementVisibility(element, 5, "selected sector displayed");
+        return element.isDisplayed();
+    }
+    public boolean isAddedQualificationDisplayed() {
+        WebElement element= driver.findElement(By.xpath("//div[contains(@class,'SkillItemStrip')]//div[text()='"+qualification+"']"));
+        waitForElementVisibility(element, 5, "selected qualification displayed");
+        return element.isDisplayed();
     }
 
 
