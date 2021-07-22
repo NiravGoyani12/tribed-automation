@@ -46,7 +46,8 @@ public class LoginPage extends DriverManager {
         clearAndSendKeys(passwordField,getPassword(userType));
     }
 
-    public void clickOnLogInBtn() {
+    public void clickOnLogInBtn() throws InterruptedException {
+        waitForElementClickable(loginBtn,10, "Search button not displayed");
         clickOnElement(loginBtn);
     }
 
@@ -108,8 +109,8 @@ public class LoginPage extends DriverManager {
     {
         clickOnElement(myProfileMenu);
     }
-    public void clickonSearchMenu()
-    {
+    public void clickonSearchMenu() throws InterruptedException {
+        waitForElementClickable(searchMenu,10, "Search button not displayed");
         clickOnElement(searchMenu);
 
     }

@@ -1,12 +1,20 @@
-@sanity4
+@sanity
 Feature: Job page
 
-
-  Scenario: Add Technical Skills
+  Background: Login into the application
     Given I am on the home page
     And I click on sign in button
     And I enter email and password for "Valid User"
     And I click on log in button
+
+  Scenario: Verify About this job button
+    Given I login with valid user
+    And I click on job page tab
+    When I click on about this job button
+    Then I should be able to see selected job details
+
+  Scenario: Add Technical Skills
+    Given I login with valid user
     And I click on job page tab
     And I click on Add Job button
     And I click on Add Technical button
@@ -14,10 +22,7 @@ Feature: Job page
     Then added technical skill should saved and displayed
 
   Scenario: Add Leadership Skills
-    Given I am on the home page
-    And I click on sign in button
-    And I enter email and password for "Valid User"
-    And I click on log in button
+    Given I login with valid user
     And I click on job page tab
     And I click on Add Job button
     And I click on add leadership button
@@ -25,10 +30,7 @@ Feature: Job page
     Then added leadership skill should saved and displayed
 
   Scenario: Add Sectors
-    Given I am on the home page
-    And I click on sign in button
-    And I enter email and password for "Valid User"
-    And I click on log in button
+    Given I login with valid user
     And I click on job page tab
     And I click on Add Job button
     And I click on add sector button
@@ -36,10 +38,7 @@ Feature: Job page
     Then added sectors skill should saved and displayed
 
   Scenario: Add Qualifications Skills
-    Given I am on the home page
-    And I click on sign in button
-    And I enter email and password for "Valid User"
-    And I click on log in button
+    Given I login with valid user
     And I click on job page tab
     And I click on Add Job button
     And I click on add qualification button
@@ -48,65 +47,43 @@ Feature: Job page
 
 
   Scenario: Preview Company On Job page
-    Given I am on the home page
-    And I click on sign in button
-    And I enter email and password for "Valid User"
-    And I click on log in button
+    Given I login with valid user
     And I click on job page tab
     And I click on Add Job button
     And I enter following details for job page
       | JobTitle       | Team              | Office Location     | MinSalary | MaxSalary | InfoTitle                      | Info                |
-      | Automation Eng | Quality Assurance | London              | 3000000   | 500000    | Looking for Automation Eng     | Selenium Cucumber   |
+      | Automation Eng | Quality Assurance | London              | 3000000   | 3500000    | Looking for Automation Eng     | Selenium Cucumber   |
     When I click on Preview button of Job Page
     Then I should see following details on preview page of job
       | JobTitle       | Team              |
       | Automation Eng | Quality Assurance |
 
   Scenario: Publish Company On Job page
-    Given I am on the home page
-    And I click on sign in button
-    When I enter email and password for "Valid User"
-    And I click on log in button
+    Given I login with valid user
     And I click on job page tab
     And I click on Add Job button
     And I enter following details for job page
       | JobTitle       | Team              | Office Location     | MinSalary | MaxSalary | InfoTitle                      | Info                |
-      | Automation Eng | Quality Assurance | London              | 3000000   | 500000    | Looking for Automation Eng     | Selenium Cucumber   |
+      | Automation Eng | Quality Assurance | London              | 3000000   | 3500000    | Looking for Automation Eng     | Selenium Cucumber   |
     When I click on publish button
     Then I should able to see "Congratulations!" message
 
 
-  Scenario: Verify About this job button
-    Given I am on the home page
-    And I click on sign in button
-    And I enter email and password for "Valid User"
-    And I click on log in button
-    And I click on job page tab
-    When I click on about this job button
-    Then I should be able to see selected job details
-
-
   Scenario: Verify do not make salary visible to candidate check box when it is selected
-    Given I am on the home page
-    And I click on sign in button
-    And I enter email and password for "Valid User"
-    And I click on log in button
+    Given I login with valid user
     And I click on job page tab
     And I click on Add Job button
     And I enter following details for job page
       | JobTitle       | Team              | Office Location     | MinSalary | MaxSalary | InfoTitle                      | Info                |
-      | Automation Eng | Quality Assurance | London              | 3000000   | 500000    | Looking for Automation Eng     | Selenium Cucumber   |
+      | Automation Eng | Quality Assurance | London              | 3000000   | 3500000    | Looking for Automation Eng     | Selenium Cucumber   |
     And I click on salary not visible checkbox
     When I click on Preview button of Job Page
     Then I should not able to see salary on preview
       | MinSalary       | MaxSalary              |
-      | 3000000         | 5000000                |
+      | 3000000         | 3500000                |
 
   Scenario: Verify next section button while adding skills
-    Given I am on the home page
-    And I click on sign in button
-    And I enter email and password for "Valid User"
-    And I click on log in button
+    Given I login with valid user
     And I click on job page tab
     And I click on Add Job button
     And I click on Add Technical button

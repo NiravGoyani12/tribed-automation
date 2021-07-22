@@ -3,6 +3,7 @@ package com.tribed.step_def.myProfile;
 import com.tribed.pages.myProfile.CompanyPage;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 
 import java.awt.*;
 import java.util.List;
@@ -40,5 +41,9 @@ public class CompanyPageSteps {
     @And("^I click on publish button$")
     public void iClickOnPublishButton() {
         companyPage.clickOnPublishButton();
+    }
+
+    @Given("^I login with valid user$")
+    public void iLoginWithValidUser() {
     }
 }

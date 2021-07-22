@@ -20,7 +20,9 @@ public class LoginSteps {
 
 
     @And("^I click on log in button$")
-    public void iClickOnLogInButton() {
+    public void iClickOnLogInButton() throws InterruptedException {
+
+        driverManager.sleep(2000);
         loginPage.clickOnLogInBtn();
         driverManager.sleep(2000);
     }
@@ -96,7 +98,7 @@ public class LoginSteps {
     }
 
     @When("^I click on search menu after login$")
-    public void iClickOnSearchMenuAfterLogin() {
+    public void iClickOnSearchMenuAfterLogin() throws InterruptedException {
         loginPage.clickonSearchMenu();
     }
 }

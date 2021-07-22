@@ -216,6 +216,12 @@ public class jobPage extends DriverManager {
 
     public void clickOnAboutThisJobBtn()
     {
+        scrollWindow();
+        scrollWindow();
+        scrollWindow();
+        scrollWindow();
+        scrollWindow();
+        scrollWindow();
         clickOnElement(aboutThisJobBtn);
     }
 
