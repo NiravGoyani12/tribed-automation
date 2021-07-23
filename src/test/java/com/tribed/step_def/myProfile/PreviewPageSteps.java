@@ -45,7 +45,6 @@ public class PreviewPageSteps {
         previewPage.clickOnPreviewButton();
     }
 
-
     @Then("^I should see following details on preview page of job$")
     public void iShouldSeeFollowingDetailsOnPreviewPageOfJob(DataTable dataTable) {
         data =  dataTable.asMaps(String.class, String.class);
@@ -56,6 +55,5 @@ public class PreviewPageSteps {
     @Then("^I should see publish button$")
     public void iShouldSeePublishButton() {
         assertThat(previewPage.isPublishButtonDisplayed(), is(true));
-
     }
 }

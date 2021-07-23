@@ -9,7 +9,6 @@ public class TestBase {
 	public static Logger log = Logger.getLogger(TestBase.class);
 	public WebDriverWait wait;
 
-
 	public static void sleep(int ms) {
 		try {
 			Thread.sleep(ms);
@@ -17,6 +16,4 @@ public class TestBase {
 			e.printStackTrace();
 		}
 	}
-
-
 }

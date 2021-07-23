@@ -31,5 +31,3 @@ Feature: Culture page
     And I select any culture and save
     When I click on publish button
     Then I should able to see "Congratulations!" message
-
-

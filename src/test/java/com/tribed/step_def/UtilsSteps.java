@@ -12,5 +12,4 @@ public class UtilsSteps extends DriverManager {
     public void the_url_should_contain(String url) {
         assertThat(getCurrentUrl(), containsString(url));
     }
-
 }

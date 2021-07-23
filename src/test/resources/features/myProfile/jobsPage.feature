@@ -45,7 +45,6 @@ Feature: Job page
     When I select any qualification and save
     Then added qualifications skill should saved and displayed
 
-
   Scenario: Preview Company On Job page
     Given I login with valid user
     And I click on job page tab
@@ -67,7 +66,6 @@ Feature: Job page
       | Automation Eng | Quality Assurance | London              | 3000000   | 3500000    | Looking for Automation Eng     | Selenium Cucumber   |
     When I click on publish button
     Then I should able to see "Congratulations!" message
-
 
   Scenario: Verify do not make salary visible to candidate check box when it is selected
     Given I login with valid user

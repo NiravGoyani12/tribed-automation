@@ -103,7 +103,6 @@ public class DriverManager {
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         wait.withMessage(failureMessage);
         wait.until(ExpectedConditions.visibilityOf(element));
-
     }
 
     public void waitForElementClickable(WebElement element, int timeout, String failureMessage) throws InterruptedException {

@@ -1,12 +1,10 @@
 package com.tribed.pages;
 
 import com.tribed.driver.DriverManager;
-import org.apache.commons.io.filefilter.FalseFileFilter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends DriverManager {
-
 
     @FindBy(xpath = "(//div[text()='Sign in'])[2]")
     public WebElement signInBtn;
@@ -125,6 +123,4 @@ public class HomePage extends DriverManager {
     {
         return registerMsg.isDisplayed();
     }
-
-
 }

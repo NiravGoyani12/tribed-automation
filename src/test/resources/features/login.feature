@@ -1,17 +1,6 @@
 @sanity4
 Feature: login
 
-
-
-  Scenario: verify dashboard menu
-    Given I am on the home page
-    And I click on sign in button
-    And I enter email and password for "Valid User"
-    And I click on log in button
-    When I click on search menu after login
-    When I click on dashboard menu
-    Then I should be able to open dashboard screen
-
   Scenario Outline: login with valid email and password
     Given I am on the home page
     And I click on sign in button
@@ -51,8 +40,6 @@ Feature: login
     When I click on messages menu
     Then I should be able to open message screen
 
-
-
   Scenario: verify search menu
     Given I am on the home page
     And I click on sign in button
@@ -68,3 +55,12 @@ Feature: login
     And I click on log in button
     When I click on my profile menu
     Then I should be able to open my profile screen
+
+  Scenario: verify dashboard menu
+    Given I am on the home page
+    And I click on sign in button
+    And I enter email and password for "Valid User"
+    And I click on log in button
+    When I click on search menu after login
+    When I click on dashboard menu
+    Then I should be able to open dashboard screen

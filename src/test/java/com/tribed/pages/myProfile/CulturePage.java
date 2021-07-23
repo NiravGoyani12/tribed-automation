@@ -11,7 +11,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class CulturePage extends DriverManager {
 
-
     @FindBy(xpath = "//h3[text()='Culture page']")
     public WebElement culturePageTab;
 
@@ -50,7 +49,6 @@ public class CulturePage extends DriverManager {
 
     public static String cultureName;
 
-
     public String getTextOnCulturePage() {
         scrollIntoViewSelenium(textOnCulturePage);
         return getElementText(textOnCulturePage);
@@ -68,6 +66,7 @@ public class CulturePage extends DriverManager {
         scrollIntoViewSelenium(addToCultureImg);
         clickOnElement(textOnCulturePage);
     }
+
     public void selectCultureAndSave()
     {
         cultureName=getElementText(notSelectedCulture);
@@ -80,9 +79,4 @@ public class CulturePage extends DriverManager {
         waitForElementVisibility(casualDressTile, 5, "Added Culture not displayed");
         return element.isDisplayed();
     }
-
-
-
-
-
 }

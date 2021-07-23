@@ -16,7 +16,6 @@ Feature: Company page
     Then the "Add to Culture" text is visible
     And the url should contain with "/culture"
 
-
   Scenario: Preview on company page
     Given I login with valid user
     When I enter following details for company page

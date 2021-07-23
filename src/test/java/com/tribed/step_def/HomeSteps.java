@@ -32,12 +32,10 @@ public class HomeSteps  {
         homePage.clickOnSignUp();
     }
 
-
     @And("^I click on search page$")
     public void iClickOnSearchPage() {
         homePage.clickOnSearch();
     }
-
 
     @Then("^I should able to see search screen$")
     public void iShouldAbleToSeeSearchScreen() {

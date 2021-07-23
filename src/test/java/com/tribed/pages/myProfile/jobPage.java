@@ -8,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class jobPage extends DriverManager {
 
-
     @FindBy(xpath = "//h3[text()='Jobs page']")
     public WebElement jobPageTab;
 
@@ -116,13 +115,12 @@ public class jobPage extends DriverManager {
     public static String sector;
     public static String qualification;
 
-    public void clickOnTabJobPage()
-    {
+    public void clickOnTabJobPage() {
         waitForElementVisibility(jobPageTab, 8, "Job page tab not displayed");
         clickOnElement(jobPageTab);
     }
-    public void clickAddJobBtn()
-    {
+
+    public void clickAddJobBtn() {
         waitForElementVisibility(addJobBtn, 8, "Add new Job listing not displayed");
         //scrollIntoViewSelenium(addJobBtn);
         scrollWindow();
@@ -132,53 +130,49 @@ public class jobPage extends DriverManager {
         scrollWindow();
         clickOnElement(addJobBtn);
     }
-    public void clickAddTechnicalSkill()
-    {
+
+    public void clickAddTechnicalSkill() {
         waitForElementVisibility(addTechnicalTile, 8, "Add Technical Skill Tile not displayed");
         scrollIntoViewSelenium(infoTxt);
         clickOnElement(addTechnicalTile);
     }
-    public void selectAndSaveSkillAndExperienced()
-    {
-        skill=getElementText(notSelectedSkills);
+
+    public void selectAndSaveSkillAndExperienced() {
+        skill = getElementText(notSelectedSkills);
         clickOnElement(notSelectedSkills);
         clickOnElement(saveAndExitBtn);
     }
 
-    public void selectAnySkillAndSave()
-    {
-        skill=getElementText(notSelectedSkills);
+    public void selectAnySkillAndSave() {
+        skill = getElementText(notSelectedSkills);
         clickOnElement(notSelectedSkills);
         clickOnElement(saveAndExitBtn);
     }
-    public void clickonSaveAndExitBtn()
-    {
+
+    public void clickonSaveAndExitBtn() {
         clickOnElement(saveAndExitBtn);
     }
 
     public boolean isAddedSkillSavedAndDisplayed() {
-        WebElement element= driver.findElement(By.xpath("//div[contains(@class,'SkillItemStrip')]//div[text()='"+skill+"']"));
+        WebElement element = driver.findElement(By.xpath("//div[contains(@class,'SkillItemStrip')]//div[text()='" + skill + "']"));
         waitForElementVisibility(element, 5, "Added  Skill not displayed");
         return element.isDisplayed();
     }
 
-    public void clickAddLeaderShipSkill()
-    {
+    public void clickAddLeaderShipSkill() {
         waitForElementVisibility(addLeadershipTile, 8, "Add Leadership Skill Tile not displayed");
         scrollIntoViewSelenium(addTechnicalTile);
         clickOnElement(addLeadershipTile);
     }
 
 
-    public void clickAddSector()
-    {
+    public void clickAddSector() {
         waitForElementVisibility(sectorTile, 8, "Add Sectors Tile not displayed");
         scrollIntoViewSelenium(addTechnicalTile);
         clickOnElement(sectorTile);
     }
 
-    public void clickAddQualification()
-    {
+    public void clickAddQualification() {
         waitForElementVisibility(qualificationTile, 8, "Add Qualification Tile not displayed");
         scrollIntoViewSelenium(addTechnicalTile);
         clickOnElement(qualificationTile);
@@ -214,8 +208,7 @@ public class jobPage extends DriverManager {
 
     }
 
-    public void clickOnAboutThisJobBtn()
-    {
+    public void clickOnAboutThisJobBtn() {
         scrollWindow();
         scrollWindow();
         scrollWindow();
@@ -225,74 +218,67 @@ public class jobPage extends DriverManager {
         clickOnElement(aboutThisJobBtn);
     }
 
-    public boolean isAboutThisJobPageOpen()
-    {
+    public boolean isAboutThisJobPageOpen() {
         return true;
     }
 
-    public void clickOnIsSalaryHiddeenchk()
-    {
+    public void clickOnIsSalaryHiddeenchk() {
         scrollWindow();
         clickOnElement(isSalaryHiddenChk);
     }
 
-    public boolean isSalaryVisible(String MinSalary)
-    {
+    public boolean isSalaryVisible(String MinSalary) {
         try {
-            WebElement element = driver.findElement(By.xpath("//p[contains(text(),'"+MinSalary+"')]"));
+            WebElement element = driver.findElement(By.xpath("//p[contains(text(),'" + MinSalary + "')]"));
             return element.isDisplayed();
-        }
-        catch (NoSuchElementException e)
-        {
+        } catch (NoSuchElementException e) {
             return false;
         }
-
     }
 
-    public void selectTechnicalSkill()
-    {
+    public void selectTechnicalSkill() {
         waitForElementVisibility(notSelectedSkills, 5, "Technical skill not selected");
-        skill=getElementText(notSelectedSkills);
+        skill = getElementText(notSelectedSkills);
         clickOnElement(notSelectedSkills);
     }
-    public void selectLeadership()
-    {
+
+    public void selectLeadership() {
         waitForElementVisibility(notSelectedSkills, 5, "Leadership not selected");
-        leadership=getElementText(notSelectedSkills);
+        leadership = getElementText(notSelectedSkills);
         clickOnElement(notSelectedSkills);
     }
-    public void selectSector()
-    {
+
+    public void selectSector() {
         waitForElementVisibility(notSelectedSkills, 5, "Sector not selected");
-        sector=getElementText(notSelectedSkills);
+        sector = getElementText(notSelectedSkills);
         clickOnElement(notSelectedSkills);
     }
-    public void selectQualification()
-    {
+
+    public void selectQualification() {
         waitForElementVisibility(notSelectedSkills, 5, "Qualification not selected");
-        qualification=getElementText(notSelectedSkills);
+        qualification = getElementText(notSelectedSkills);
         clickOnElement(notSelectedSkills);
     }
-    public void clickOnNextSection()
-    {
+
+    public void clickOnNextSection() {
         clickOnElement(nextSectionBtn);
     }
 
     public boolean isAddedLeadershipDisplayed() {
-        WebElement element= driver.findElement(By.xpath("//div[contains(@class,'SkillItemStrip')]//div[text()='"+leadership+"']"));
+        WebElement element = driver.findElement(By.xpath("//div[contains(@class,'SkillItemStrip')]//div[text()='" + leadership + "']"));
         waitForElementVisibility(element, 5, "selected leadership displayed");
         return element.isDisplayed();
     }
+
     public boolean isAddedSectorDisplayed() {
-        WebElement element= driver.findElement(By.xpath("//div[contains(@class,'SkillItemStrip')]//div[text()='"+sector+"']"));
+        WebElement element = driver.findElement(By.xpath("//div[contains(@class,'SkillItemStrip')]//div[text()='" + sector + "']"));
         waitForElementVisibility(element, 5, "selected sector displayed");
         return element.isDisplayed();
     }
+
     public boolean isAddedQualificationDisplayed() {
-        WebElement element= driver.findElement(By.xpath("//div[contains(@class,'SkillItemStrip')]//div[text()='"+qualification+"']"));
+        WebElement element = driver.findElement(By.xpath("//div[contains(@class,'SkillItemStrip')]//div[text()='" + qualification + "']"));
         waitForElementVisibility(element, 5, "selected qualification displayed");
         return element.isDisplayed();
     }
-
-
 }

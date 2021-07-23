@@ -19,7 +19,6 @@ public class PublishPage extends DriverManager {
     @FindBy(xpath="//button[text()='view company page']")
     public WebElement viewCompanyBtn;
 
-
     public String getPublishSuccessMsg() {
         return getElementText(publishSuccessMsg);
     }
@@ -29,11 +28,13 @@ public class PublishPage extends DriverManager {
         waitForElementVisibility(returnHomebtn, 5, "Return to Home button not displayed");
         return returnHomebtn.isDisplayed();
     }
+
     public boolean isEditCompanyBtnDisplayed() {
         //WebElement element = driver.findElement(By.xpath("(//h1[text()='" + jobTitle + "'])[1]"));
         waitForElementVisibility(editCompanyBtn, 5, "Edit Company button not displayed");
         return editCompanyBtn.isDisplayed();
     }
+
     public boolean isViewCompanyBtnDisplayed() {
         //WebElement element = driver.findElement(By.xpath("(//h1[text()='" + jobTitle + "'])[1]"));
         waitForElementVisibility(viewCompanyBtn, 5, "View Company  button page not displayed");

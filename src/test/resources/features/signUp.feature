@@ -1,7 +1,6 @@
 @sanity
 Feature: Sign up
 
-
   Scenario: Sign up for new company
     Given I am on the home page
     And I click on sign up button

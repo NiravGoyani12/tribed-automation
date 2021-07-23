@@ -18,7 +18,6 @@ public class LoginSteps {
     DriverManager driverManager = new DriverManager();
     LoginPage loginPage=new LoginPage();
 
-
     @And("^I click on log in button$")
     public void iClickOnLogInButton() throws InterruptedException {
 
@@ -37,7 +36,6 @@ public class LoginSteps {
 
         String actLogInText ="";
 
-
         switch(userType) {
             case "Valid User":
                 actLogInText = loginPage.getLoggedText();
@@ -48,7 +46,6 @@ public class LoginSteps {
             default:
                 throw new IllegalStateException("Unexpected user type: " + userType);
         }
-
         assertThat(actLogInText, containsString(expText));
     }
 

@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import static com.tribed.utilities.CommonUtils.*;
 public class LoginPage extends DriverManager {
 
-
     @FindBy(name = "email")
     public   WebElement emmailField;
 
@@ -131,5 +130,4 @@ public class LoginPage extends DriverManager {
         //waitForElementVisibility(signInBtn,5, "SingIn button not displayed");
         return true;
     }
-
 }

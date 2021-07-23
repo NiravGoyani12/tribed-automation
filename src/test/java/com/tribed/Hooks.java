@@ -10,9 +10,7 @@ import java.net.MalformedURLException;
 
 public class Hooks {
 
-
     private DriverManager driverManager = new DriverManager();
-
     public static String testDataPropertyFile = "testData.properties";
 
     @Before

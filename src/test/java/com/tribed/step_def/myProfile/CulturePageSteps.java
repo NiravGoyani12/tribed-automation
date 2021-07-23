@@ -16,9 +16,6 @@ public class CulturePageSteps {
 
     CulturePage culturePage =new CulturePage();
 
-
-
-
     @Then("^the \"([^\"]*)\" text is visible$")
     public void theTextIsVisible(String expText) throws Throwable {
         assertThat(culturePage.getTextOnCulturePage(), containsString(expText));
@@ -43,6 +40,4 @@ public class CulturePageSteps {
     public void addedCultureShouldSavedAndDisplayed() {
         assertThat(culturePage.isAddCultureSavedAndDisplayed(), is(true));
     }
-
-
 }

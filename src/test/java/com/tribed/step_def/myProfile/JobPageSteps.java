@@ -13,6 +13,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 public class JobPageSteps {
+
     jobPage jobPage =new jobPage();
     List<Map<String, String>> data;
 
@@ -39,8 +40,8 @@ public class JobPageSteps {
     @And("^I click on Add Job button$")
     public void iClickOnAddJobButton() {
         jobPage.clickAddJobBtn();
-
     }
+
     @And("^I click on add sector button$")
     public void iClickOnAddSectorButton() {
         jobPage.clickAddSector();
@@ -56,15 +57,12 @@ public class JobPageSteps {
         jobPage.clickAddQualification();
     }
 
-
     @When("^I enter following details for job page$")
     public void iEnterFollowingDetailsForJobPage(DataTable dataTable) throws InterruptedException {
         data =  dataTable.asMaps(String.class, String.class);
         jobPage.enterJobDetail(data.get(0).get("JobTitle"), data.get(0).get("Team") ,
                 data.get(0).get("Office Location"), data.get(0).get("MinSalary"), data.get(0).get("MaxSalary"),
                 data.get(0).get("InfoTitle"),data.get(0).get("Info"));
-
-
     }
 
     @Then("^added leadership skill should saved and displayed$")
@@ -149,8 +147,6 @@ public class JobPageSteps {
     public void iClickOnSaveAndExit() {
         jobPage.clickonSaveAndExitBtn();
     }
-
-
 
     @Then("^I should be able to see all selected skills sector and qualification$")
     public void iShouldBeAbleToSeeAllSelectedSkillsSectorAndQualification() {

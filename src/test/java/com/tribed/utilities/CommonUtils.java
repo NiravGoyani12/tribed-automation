@@ -13,7 +13,6 @@ public class CommonUtils {
 
 	public static String VALID_USER;
 	public static String INVALID_USER;
-
 	public static String VALID_USER_PSW;
 	public static String INVALID_USER_PSW;
 	public static String NEW_USERNAME;
@@ -24,7 +23,6 @@ public class CommonUtils {
 	public static String COMPANY_IMP_IMAGE;
 	public static String JOB_LOGO;
 	public static String JOB_TEAM_IMAGE;
-
 
 	public static void loadTestDataProp(String testDataPropertyFile) {
 		try {
@@ -40,7 +38,6 @@ public class CommonUtils {
 
 		VALID_USER = prop.getProperty("valid.user");
 		INVALID_USER = prop.getProperty("invalid.user");
-
 		VALID_USER_PSW = prop.getProperty("valid.user.psw");
 		INVALID_USER_PSW = prop.getProperty("invalid.user.psw");
 		NEW_USERNAME=prop.getProperty("valid.new.user");
@@ -68,9 +65,6 @@ public class CommonUtils {
 
 	public static int getRandomInt(int No) {
 		Random rand = new Random();
-
-		int rand_int1 = rand.nextInt(No);
-
-		return rand_int1;
+		return rand.nextInt(No);
 	}
 }

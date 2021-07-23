@@ -19,7 +19,6 @@ public class PreviewPage extends DriverManager {
     @FindBy(xpath = " //button[text()='Publish']")
     public WebElement publishBtn;
 
-
     public String getTextOnPreviewPage() {
         scrollIntoViewSelenium(textOnPreviewPage);
         return getElementText(textOnPreviewPage);
