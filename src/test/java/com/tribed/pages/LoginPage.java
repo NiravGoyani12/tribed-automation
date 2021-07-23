@@ -1,10 +1,9 @@
 package com.tribed.pages;
-
 import com.tribed.driver.DriverManager;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import static com.tribed.utilities.CommonUtils.*;
+
 public class LoginPage extends DriverManager {
 
     @FindBy(name = "email")
@@ -50,8 +49,8 @@ public class LoginPage extends DriverManager {
         clickOnElement(loginBtn);
     }
 
-    public String getUserName(String userType) {
-
+    public String getUserName(String userType)
+    {
         switch(userType) {
             case "Valid User":
                 return VALID_USER;
@@ -62,8 +61,8 @@ public class LoginPage extends DriverManager {
         }
     }
 
-    public String getPassword(String userType) {
-
+    public String getPassword(String userType)
+    {
         switch(userType) {
             case "Valid User":
                 return VALID_USER_PSW;
@@ -111,9 +110,7 @@ public class LoginPage extends DriverManager {
     public void clickonSearchMenu() throws InterruptedException {
         waitForElementClickable(searchMenu,10, "Search button not displayed");
         clickOnElement(searchMenu);
-
     }
-
 
     public boolean isMessageMenuOpen()
     {

@@ -1,5 +1,4 @@
 package com.tribed.pages.myProfile;
-
 import com.tribed.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

@@ -1,8 +1,6 @@
 package com.tribed.step_def;
-
 import com.tribed.driver.DriverManager;
 import cucumber.api.java.en.Then;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.StringContains.containsString;
 

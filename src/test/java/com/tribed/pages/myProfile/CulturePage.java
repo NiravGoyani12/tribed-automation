@@ -1,7 +1,6 @@
 package com.tribed.pages.myProfile;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
-
 import com.tribed.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -49,7 +48,8 @@ public class CulturePage extends DriverManager {
 
     public static String cultureName;
 
-    public String getTextOnCulturePage() {
+    public String getTextOnCulturePage()
+    {
         scrollIntoViewSelenium(textOnCulturePage);
         return getElementText(textOnCulturePage);
     }
@@ -57,7 +57,6 @@ public class CulturePage extends DriverManager {
     public void clickOnTabCulturePage()
     {
         waitForElementVisibility(culturePageTab, 8, "Culture page tab not displayed");
-
         clickOnElement(culturePageTab);
     }
     public void clickAddCultureTile()

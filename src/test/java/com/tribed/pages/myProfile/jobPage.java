@@ -1,5 +1,4 @@
 package com.tribed.pages.myProfile;
-
 import com.tribed.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -115,7 +114,8 @@ public class jobPage extends DriverManager {
     public static String sector;
     public static String qualification;
 
-    public void clickOnTabJobPage() {
+    public void clickOnTabJobPage()
+    {
         waitForElementVisibility(jobPageTab, 8, "Job page tab not displayed");
         clickOnElement(jobPageTab);
     }
@@ -153,18 +153,19 @@ public class jobPage extends DriverManager {
         clickOnElement(saveAndExitBtn);
     }
 
-    public boolean isAddedSkillSavedAndDisplayed() {
+    public boolean isAddedSkillSavedAndDisplayed()
+    {
         WebElement element = driver.findElement(By.xpath("//div[contains(@class,'SkillItemStrip')]//div[text()='" + skill + "']"));
         waitForElementVisibility(element, 5, "Added  Skill not displayed");
         return element.isDisplayed();
     }
 
-    public void clickAddLeaderShipSkill() {
+    public void clickAddLeaderShipSkill()
+    {
         waitForElementVisibility(addLeadershipTile, 8, "Add Leadership Skill Tile not displayed");
         scrollIntoViewSelenium(addTechnicalTile);
         clickOnElement(addLeadershipTile);
     }
-
 
     public void clickAddSector() {
         waitForElementVisibility(sectorTile, 8, "Add Sectors Tile not displayed");
@@ -186,7 +187,6 @@ public class jobPage extends DriverManager {
         //uploadFile(JOB_LOGO);
         SendKeys(basicsTeamTxt, team);
         SendKeys(basicsPreferencesOfficeLocationTxt, officeLocation);
-
         scrollWindow();
         clickOnElement(jobFlexDP);
         clickOnElement(jobFlexRemote);
@@ -194,7 +194,6 @@ public class jobPage extends DriverManager {
         clickOnElement(contractTypeDP);
         clickOnElement(fullTimeContract);
         clickOnElement(contractTypeDP);
-
         scrollWindow();
         clickOnElement(roleLevelDP);
         clickOnElement(entryLevelRole);
@@ -205,10 +204,10 @@ public class jobPage extends DriverManager {
         //SendKeys(infoTxt, info);
         //clickOnElement(uploadTeamImage);
         //uploadFile(JOB_TEAM_IMAGE);
-
     }
 
-    public void clickOnAboutThisJobBtn() {
+    public void clickOnAboutThisJobBtn()
+    {
         scrollWindow();
         scrollWindow();
         scrollWindow();

@@ -1,12 +1,9 @@
 package com.tribed.pages.myProfile;
-
 import com.tribed.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.awt.*;
-
 import static com.tribed.utilities.CommonUtils.*;
 
 public class CompanyPage extends DriverManager {
@@ -92,7 +89,7 @@ public class CompanyPage extends DriverManager {
         clearAndSendKeys(foundationYearTxt, year);
         clearAndSendKeys(sectorTxt, sector);
         clearAndSendKeys(noOfEmployeeTxt, noOfEmp);
-        clearAndSendKeys(brandColorTxt, brandcolor);
+        //clearAndSendKeys(brandColorTxt, brandcolor);
         clearAndSendKeys(aboutUsTitleTxt, aboutUsTitle);
         clearAndSendKeys(aboutUsTxt, aboutUs);
         //waitForElementClickable(uploadSupportImage,10,"Upload support email not displayed");
@@ -115,10 +112,6 @@ public class CompanyPage extends DriverManager {
         //clickOnElement(uploadEmpImage);
         //uploadFile(JOB_TEAM_IMAGE);
     }
-
-    //private String getCompanyLogo() {
-      //  return COMPANY_LOGO;
-    //}
 
     public void clickonSaveAndGoToCulturalPageButton() {
         scrollIntoViewSelenium(saveBtn);

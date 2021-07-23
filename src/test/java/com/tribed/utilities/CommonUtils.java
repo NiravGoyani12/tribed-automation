@@ -1,5 +1,4 @@
 package com.tribed.utilities;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -7,10 +6,8 @@ import java.util.Properties;
 import java.util.Random;
 
 public class CommonUtils {
-
 	private static Properties prop = new Properties();
 	private static FileInputStream fis;
-
 	public static String VALID_USER;
 	public static String INVALID_USER;
 	public static String VALID_USER_PSW;
@@ -49,7 +46,6 @@ public class CommonUtils {
 		JOB_LOGO=prop.getProperty("job.mainlogo");
 		JOB_TEAM_IMAGE=prop.getProperty("job.teamimage");
 	}
-
 
 	public static String getRandomString(int length) {
 		final String characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJLMNOPQRSTUVWXYZ";

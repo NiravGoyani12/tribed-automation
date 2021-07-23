@@ -1,4 +1,4 @@
-@sanity
+@sanity4
 Feature: Company page
 
   Background: Login into the application

@@ -1,9 +1,7 @@
 package com.tribed.pages;
-
 import com.tribed.driver.DriverManager;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import static com.tribed.utilities.CommonUtils.*;
 
 public class SignUpPage extends DriverManager {
