@@ -8,13 +8,11 @@ Feature: Job page
     And I click on log in button
 
   Scenario: Verify About this job button
-    Given I login with valid user
     And I click on job page tab
     When I click on about this job button
     Then I should be able to see selected job details
 
   Scenario: Add Technical Skills
-    Given I login with valid user
     And I click on job page tab
     And I click on Add Job button
     And I click on Add Technical button
@@ -22,7 +20,6 @@ Feature: Job page
     Then added technical skill should saved and displayed
 
   Scenario: Add Leadership Skills
-    Given I login with valid user
     And I click on job page tab
     And I click on Add Job button
     And I click on add leadership button
@@ -30,7 +27,6 @@ Feature: Job page
     Then added leadership skill should saved and displayed
 
   Scenario: Add Sectors
-    Given I login with valid user
     And I click on job page tab
     And I click on Add Job button
     And I click on add sector button
@@ -38,7 +34,6 @@ Feature: Job page
     Then added sectors skill should saved and displayed
 
   Scenario: Add Qualifications Skills
-    Given I login with valid user
     And I click on job page tab
     And I click on Add Job button
     And I click on add qualification button
@@ -46,7 +41,6 @@ Feature: Job page
     Then added qualifications skill should saved and displayed
 
   Scenario: Preview Company On Job page
-    Given I login with valid user
     And I click on job page tab
     And I click on Add Job button
     And I enter following details for job page
@@ -58,7 +52,6 @@ Feature: Job page
       | Automation Eng | Quality Assurance |
 
   Scenario: Publish Company On Job page
-    Given I login with valid user
     And I click on job page tab
     And I click on Add Job button
     And I enter following details for job page
@@ -68,7 +61,6 @@ Feature: Job page
     Then I should able to see "Congratulations!" message
 
   Scenario: Verify do not make salary visible to candidate check box when it is selected
-    Given I login with valid user
     And I click on job page tab
     And I click on Add Job button
     And I enter following details for job page
@@ -81,7 +73,6 @@ Feature: Job page
       | 3000000         | 3500000                |
 
   Scenario: Verify next section button while adding skills
-    Given I login with valid user
     And I click on job page tab
     And I click on Add Job button
     And I click on Add Technical button

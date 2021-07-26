@@ -8,14 +8,12 @@ Feature: Culture page
     And I click on log in button
 
   Scenario: Build Culture page
-    Given I login with valid user
     And I click on culture page tab
     And I click on Add to Culture button
     When I select any culture and save
     Then added culture should be saved and displayed
 
   Scenario: Preview on Culture page
-    Given I login with valid user
     And I click on culture page tab
     And I click on Add to Culture button
     And I select any culture and save
@@ -25,7 +23,6 @@ Feature: Culture page
     Then added culture should be saved and displayed
 
   Scenario: Publish on Culture page
-    Given I login with valid user
     And I click on culture page tab
     And I click on Add to Culture button
     And I select any culture and save

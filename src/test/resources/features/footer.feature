@@ -1,5 +1,5 @@
 @sanity
-Feature: login
+Feature: footer
 
   Scenario Outline: login with valid email and password
     Given I am on the home page
@@ -71,8 +71,9 @@ Feature: login
     When I click on close button
     Then SignIn popup should be closed
 
-  Scenario: verify forget password link
+  Scenario: verify tribed icon
     Given I am on the home page
-    And I click on sign in button
-    When I click on forget password link
-    Then I should be able to see reset password page
+    And I click on search page
+    When I click on tribed icon from footer
+    Then I should be able to see Home screen
+

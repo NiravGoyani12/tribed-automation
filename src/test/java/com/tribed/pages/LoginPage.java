@@ -39,6 +39,16 @@ public class LoginPage extends DriverManager {
     @FindBy(xpath = "//div[text()='Search']")
     public WebElement searchMenu;
 
+    @FindBy(xpath = "//img[contains(@src,'signUpHero')]/following-sibling::*")
+    public WebElement signUpClose;
+
+    @FindBy(xpath = "//button[text()='Forgot your password?']")
+    public WebElement forgetPasswordBtn;
+
+    @FindBy(xpath = "//div[text()='Reset password']")
+    public WebElement resetPassword;
+
+
     public void enterEmailAndPassword(String userType) {
         clearAndSendKeys(emmailField,getUserName(userType));
         clearAndSendKeys(passwordField,getPassword(userType));
@@ -126,5 +136,36 @@ public class LoginPage extends DriverManager {
     {
         //waitForElementVisibility(signInBtn,5, "SingIn button not displayed");
         return true;
+    }
+    public void clickonSignUpClose()
+    {
+        waitForElementVisibility(signUpClose,10, "SingIn button not displayed");
+        clickOnElement(signUpClose);
+    }
+    public boolean isSignUpClosed() throws InterruptedException {
+        Thread.sleep(4000);
+        try {
+            return signUpClose.isDisplayed();
+        }
+        catch (Exception e)
+        {
+            return  signUpClose.isDisplayed();
+        }
+    }
+
+    public void clickonForgetPasswordLink()
+    {
+        waitForElementVisibility(forgetPasswordBtn,10, "Forget password link  not displayed");
+        clickOnElement(forgetPasswordBtn);
+    }
+    public boolean isResetPasswordPageDisplayed() throws InterruptedException {
+        Thread.sleep(4000);
+        try {
+            return resetPassword.isDisplayed();
+        }
+        catch (Exception e)
+        {
+            return  resetPassword.isDisplayed();
+        }
     }
 }

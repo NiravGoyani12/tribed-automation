@@ -62,4 +62,9 @@ public class SignUpSteps {
     public void shouldBeAbleToSeeShortPasswordErrorMessage(String shortPasswordErrorMsg) throws Throwable {
         assertThat(signUpPage.getShortPasswordMessage(), containsString(shortPasswordErrorMsg));
     }
+
+    @Then("^Signup popup should be closed$")
+    public void signupPopupShouldBeClosed() throws InterruptedException {
+        assertThat(signUpPage.isSignUpClosed(), is(false));
+    }
 }

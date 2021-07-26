@@ -38,3 +38,9 @@ Feature: Sign up
       |  Joe Bloggs  |  joeBloggs@gmail.com   |  Tribed         |    Test          |
     When I click on 'Create account' button
     Then I should be able to see password error "Password too weak: Please make sure your password is at least 8 characters long." message
+
+  Scenario: verify close button on singUp page
+    Given I am on the home page
+    And I click on sign up button
+    When I click on close button
+    Then Signup popup should be closed

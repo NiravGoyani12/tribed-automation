@@ -52,6 +52,9 @@ public class SignUpPage extends DriverManager {
     @FindBy(xpath="//input[@name='aboutUsTitle']")
     public  WebElement aboutUsTxt;
 
+    @FindBy(xpath = "//img[contains(@src,'signUpHero')]/following-sibling::*")
+    public WebElement signUpClose;
+
     public void enterSignUpDetails(String name, String email, String companyName, String createPassword) {
         clearAndSendKeys(fullNameTxt, name);
         clearAndSendKeys(companyEmailTxt, getRandomString(2) + email);
@@ -96,6 +99,17 @@ public class SignUpPage extends DriverManager {
 
     public String getShortPasswordMessage() {
         return getElementText(shortPasswordMsg);
+    }
+
+    public boolean isSignUpClosed() throws InterruptedException {
+        Thread.sleep(4000);
+        try {
+            return signUpClose.isDisplayed();
+        }
+        catch (Exception e)
+        {
+            return  signUpClose.isDisplayed();
+        }
     }
 
 }

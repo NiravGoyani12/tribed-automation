@@ -94,4 +94,25 @@ public class LoginSteps {
     public void iClickOnSearchMenuAfterLogin() throws InterruptedException {
         loginPage.clickonSearchMenu();
     }
+
+    @When("^I click on close button$")
+    public void iClickOnCloseButton() {
+
+        loginPage.clickonSignUpClose();
+    }
+
+    @Then("^SignIn popup should be closed$")
+    public void signinPopupShouldBeClosed() throws InterruptedException {
+        assertThat(loginPage.isSignUpClosed(), is(false));
+    }
+
+    @When("^I click on forget password link$")
+    public void iClickOnForgetPasswordLink() {
+        loginPage.clickonForgetPasswordLink();
+    }
+
+    @Then("^I should be able to see reset password page$")
+    public void iShouldBeAbleToSeeResetPasswordPage() throws InterruptedException {
+        assertThat(loginPage.isResetPasswordPageDisplayed(), is(true));
+    }
 }

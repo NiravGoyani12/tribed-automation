@@ -8,20 +8,17 @@ Feature: Preview page
     And I click on log in button
 
   Scenario: Preview on company page
-    Given I login with valid user
     When I click on Preview button
     Then the "Return to edit" text is displayed on preview page
     And I should see publish button
 
   Scenario: Preview Culture page
-    Given I login with valid user
     And I click on culture page tab
     When I click on Preview button
     Then the "Return to edit" text is displayed on preview page
     And I should see publish button
 
   Scenario: Preview Job page
-    Given I login with valid user
     And I click on job page tab
     When I click on Preview button
     Then the "Return to edit" text is displayed on preview page
