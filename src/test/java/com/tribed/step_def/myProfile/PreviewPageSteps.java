@@ -53,4 +53,16 @@ public class PreviewPageSteps {
     public void iShouldSeePublishButton() {
         assertThat(previewPage.isPublishButtonDisplayed(), is(true));
     }
+
+    @And("^I should see company edit page$")
+    public void iShouldSeeCompanyEditPage() {
+        assertThat(previewPage.isCompanyEditPageDisplayed(), is(true));
+    }
+
+    @And("^I click on dashboard menu after login$")
+    public void iClickOnDashboardMenuAfterLogin() {
+        previewPage.clickOnDashboardAfterLogin();
+    }
+
+
 }

@@ -7,19 +7,48 @@ Feature: Preview page
     And I enter email and password for "Valid User"
     And I click on log in button
 
-  Scenario: Preview on company page
-    When I click on Preview button
-    Then the "Return to edit" text is displayed on preview page
-    And I should see publish button
+  Scenario: Verify Return to Edit on company preview
+    And I click on dashboard menu after login
+    And I click on Preview button
+    When I click on 'Return to edit' button
+    Then I should see company edit page
 
-  Scenario: Preview Culture page
+  Scenario: Verify Publish button on company preview
+    And I click on dashboard menu after login
+    And I click on Preview button
+    When I click on publish button
+    Then I should able to see return ome button
+    And I should able to see edit company button
+    And I should able to see view company button
+
+  Scenario: Verify Return to Edit on culture preview
+    And I click on dashboard menu after login
     And I click on culture page tab
-    When I click on Preview button
-    Then the "Return to edit" text is displayed on preview page
-    And I should see publish button
+    And I click on Preview button
+    When I click on 'Return to edit' button
+    And I should see company edit page
 
-  Scenario: Preview Job page
+  Scenario: Verify Publish button on culture preview
+    And I click on dashboard menu after login
+    And I click on culture page tab
+    When I click on publish button
+    Then I should able to see return ome button
+    And I should able to see edit company button
+    And I should able to see view company button
+
+  Scenario: Verify Return to Edit on job preview
+    And I click on dashboard menu after login
     And I click on job page tab
-    When I click on Preview button
-    Then the "Return to edit" text is displayed on preview page
-    And I should see publish button
+    And I click on Preview button
+    When I click on 'Return to edit' button
+    And I should see company edit page
+
+  Scenario: Verify Publish button on job preview
+    And I click on dashboard menu after login
+    And I click on job page tab
+    When I click on publish button
+    Then I should able to see return ome button
+    And I should able to see edit company button
+    And I should able to see view company button
+
+

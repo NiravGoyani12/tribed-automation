@@ -12,7 +12,7 @@ public class LoginPage extends DriverManager {
     @FindBy(name = "password")
     public   WebElement passwordField;
 
-    @FindBy(xpath="//button[text()='Log in']")
+    @FindBy(xpath="//button[text()='Sign in']")
     public   WebElement loginBtn;
 
     @FindBy(xpath="//div[text()='My profile']")

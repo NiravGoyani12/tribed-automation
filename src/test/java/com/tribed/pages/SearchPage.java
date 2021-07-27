@@ -23,7 +23,27 @@ public class SearchPage extends DriverManager {
     @FindBy(xpath = "(//div[contains(@class,'CandidateCard__CardTitle')])[1]")
     public   WebElement companyTitle;
 
+    @FindBy(xpath = "//span[text()='Filter options']")
+    public   WebElement filterOption;
 
+
+    public void enterSearchText(String SearchText)
+    {
+        clearAndSendKeys(searchBox,SearchText);
+    }
+    public void clickonSearchIcon()
+    {
+        clickOnElement(searchIcon);
+    }
+
+    public boolean isFilterOptionsDisplayed()
+    {
+        return filterOption.isDisplayed();
+    }
+    public boolean isSeeFullProfileDisplayed()
+    {
+        return seeFullProfilebtn.isDisplayed();
+    }
 
 
 }

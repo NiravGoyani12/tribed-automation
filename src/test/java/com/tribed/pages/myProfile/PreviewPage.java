@@ -18,6 +18,13 @@ public class PreviewPage extends DriverManager {
     @FindBy(xpath = " //button[text()='Publish']")
     public WebElement publishBtn;
 
+    @FindBy(xpath = " //input[@name='name']")
+    public WebElement editCompanyName;
+
+    @FindBy(xpath = " (//div[text()='Dashboard'])[2]")
+    public WebElement dashboardMenu;
+
+
     public String getTextOnPreviewPage() {
         scrollIntoViewSelenium(textOnPreviewPage);
         return getElementText(textOnPreviewPage);
@@ -69,5 +76,16 @@ public class PreviewPage extends DriverManager {
     {
         waitForElementVisibility(publishBtn, 5, "Publish button not displayed");
         return publishBtn.isDisplayed();
+    }
+
+    public boolean isCompanyEditPageDisplayed()
+    {
+        waitForElementVisibility(editCompanyName, 5, "Edit company page not displayed");
+        return editCompanyName.isDisplayed();
+    }
+
+    public void clickOnDashboardAfterLogin()
+    {
+        clickOnElement(dashboardMenu);
     }
 }

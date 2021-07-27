@@ -21,4 +21,6 @@ public class FooterSteps {
     public void iClickOnTribedIconFromFooter() {
         footerpage.clickOntribedIcon();
     }
+
+
 }
