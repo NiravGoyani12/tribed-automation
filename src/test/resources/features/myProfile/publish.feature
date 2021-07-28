@@ -1,4 +1,4 @@
-@sanity4
+@sanity
 Feature: publish page
 
   Background: Login into the application

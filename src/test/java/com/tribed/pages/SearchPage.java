@@ -1,6 +1,7 @@
 package com.tribed.pages;
 
 import com.tribed.driver.DriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -21,11 +22,12 @@ public class SearchPage extends DriverManager {
     public   WebElement seeFullProfilebtn;
 
     @FindBy(xpath = "(//div[contains(@class,'CandidateCard__CardTitle')])[1]")
-    public   WebElement companyTitle;
+    public   WebElement CandidateName;
 
     @FindBy(xpath = "//span[text()='Filter options']")
     public   WebElement filterOption;
 
+    public static String cname;
 
     public void enterSearchText(String SearchText)
     {
@@ -43,6 +45,24 @@ public class SearchPage extends DriverManager {
     public boolean isSeeFullProfileDisplayed()
     {
         return seeFullProfilebtn.isDisplayed();
+    }
+
+    public void clickOnSeeFullProfile()
+    {
+        cname=getElementText(CandidateName);
+        clickOnElement(seeFullProfilebtn);
+    }
+    public boolean isSelectedUserFullProfileDisplayed()
+    {
+        try{
+            WebElement element= driver.findElement(By.xpath("//h1[text()='"+cname+"']"));
+            return element.isDisplayed();
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+
     }
 
 

@@ -31,11 +31,20 @@ public class SearchSteps {
         searchPage.clickonSearchIcon();
     }
 
-
-
     @Then("^I should be able see see view profile and filteroptions$")
     public void iShouldBeAbleSeeSeeViewProfileAndFilteroptions() {
         assertThat(searchPage.isSeeFullProfileDisplayed(), is(true));
         assertThat(searchPage.isFilterOptionsDisplayed(), is(true));
     }
+
+    @When("^I click on see full profile$")
+    public void iClickOnSeeFullProfile() {
+        searchPage.clickOnSeeFullProfile();
+    }
+
+    @Then("^I should able to see full user profile$")
+    public void iShouldAbleToSeeFullUserProfile() {
+        assertThat(searchPage.isSelectedUserFullProfileDisplayed(), is(true));
+    }
+
 }
