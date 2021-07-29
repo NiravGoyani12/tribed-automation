@@ -5,7 +5,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class jobPage extends DriverManager {
+public class JobPage extends DriverManager {
 
     @FindBy(xpath = "//h3[text()='Jobs page']")
     public WebElement jobPageTab;

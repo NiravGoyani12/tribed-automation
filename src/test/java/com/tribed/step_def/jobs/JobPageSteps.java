@@ -1,5 +1,5 @@
 package com.tribed.step_def.jobs;
-import com.tribed.pages.jobs.jobPage;
+import com.tribed.pages.jobs.JobPage;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
@@ -11,7 +11,7 @@ import static org.hamcrest.Matchers.is;
 
 public class JobPageSteps {
 
-    jobPage jobPage =new jobPage();
+    JobPage jobPage =new JobPage();
     List<Map<String, String>> data;
 
     @And("^I click on job page tab$")
