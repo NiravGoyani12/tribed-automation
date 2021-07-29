@@ -1,10 +1,12 @@
 package com.tribed.pages.myProfile;
+
 import com.tribed.driver.DriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 import java.awt.*;
-import static com.tribed.utilities.CommonUtils.*;
+
+import static com.tribed.utilities.CommonUtils.COMPANY_LOGO;
 
 public class CompanyPage extends DriverManager {
 

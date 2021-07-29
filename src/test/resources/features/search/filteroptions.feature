@@ -23,6 +23,3 @@ Feature: filter options
     And I select any other culture from filter option
     When I click on show candidate button
     Then I should be able to see updated candidate count on search result page
-
-
-

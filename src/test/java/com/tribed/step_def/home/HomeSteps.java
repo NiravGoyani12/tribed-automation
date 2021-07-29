@@ -23,6 +23,7 @@ public class HomeSteps  {
         assertThat(actual, is(endsWith("tribed.io/")));
     }
 
+    // Note: Click actions in single switch case for home page
     @And("^I click on sign in button$")
     public void iClickOnSignInButton() {
         homePage.clickOnSignIn();

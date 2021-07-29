@@ -109,10 +109,12 @@ public class LoginPage extends DriverManager {
     {
         clickOnElement(messageMenu);
     }
+
     public void clickonDashboardMenu()
     {
         clickOnElement(dashboardMenu);
     }
+
     public void clickonMyProfileMenu()
     {
         clickOnElement(myProfileMenu);

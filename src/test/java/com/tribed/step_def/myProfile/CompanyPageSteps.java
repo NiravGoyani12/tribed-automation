@@ -41,7 +41,4 @@ public class CompanyPageSteps {
         companyPage.clickOnPublishButton();
     }
 
-    @Given("^I login with valid user$")
-    public void iLoginWithValidUser() {
-    }
 }

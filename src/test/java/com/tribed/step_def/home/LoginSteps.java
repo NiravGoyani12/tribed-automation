@@ -77,11 +77,6 @@ public class LoginSteps {
         assertThat(loginPage.isDashboardOpen(), is(true));
     }
 
-    @When("^I click on my profile menu$")
-    public void iClickOnMyProfileMenu() {
-        loginPage.clickonMyProfileMenu();
-    }
-
     @Then("^I should be able to open my profile screen$")
     public void iShouldBeAbleToOpenMyProfileScreen() {
         assertThat(loginPage.isMyProfileOpen(), is(true));
@@ -112,4 +107,10 @@ public class LoginSteps {
     public void iShouldBeAbleToSeeResetPasswordPage() throws InterruptedException {
         assertThat(loginPage.isResetPasswordPageDisplayed(), is(true));
     }
+
+    @And("^I click on 'My profile' menu$")
+    public void iClickOnMyProfileMenu() {
+        loginPage.clickonMyProfileMenu();
+    }
+
 }
