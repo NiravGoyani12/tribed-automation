@@ -1,13 +1,10 @@
-package com.tribed.step_def;
+package com.tribed.step_def.home;
 import com.tribed.driver.DriverManager;
-import com.tribed.pages.LoginPage;
-import cucumber.api.PendingException;
+import com.tribed.pages.home.LoginPage;
 import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import static com.tribed.utilities.CommonUtils.INVALID_USER;
-import static com.tribed.utilities.CommonUtils.VALID_USER;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 

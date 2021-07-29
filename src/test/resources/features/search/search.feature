@@ -19,7 +19,3 @@ Feature: search
     And I click on search icon
     When  I click on see full profile
     Then I should able to see full user profile
-
-
-
-

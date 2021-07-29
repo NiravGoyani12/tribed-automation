@@ -1,6 +1,6 @@
-package com.tribed.step_def;
+package com.tribed.step_def.home;
 import com.tribed.driver.DriverManager;
-import com.tribed.pages.HomePage;
+import com.tribed.pages.home.HomePage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;

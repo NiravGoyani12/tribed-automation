@@ -1,6 +1,5 @@
-package com.tribed.step_def.myProfile;
-import com.tribed.pages.myProfile.PublishPage;
-import cucumber.api.PendingException;
+package com.tribed.step_def.jobs;
+import com.tribed.pages.jobs.PublishPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

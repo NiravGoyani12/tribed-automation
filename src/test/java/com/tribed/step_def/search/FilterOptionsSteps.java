@@ -1,10 +1,7 @@
-package com.tribed.step_def;
+package com.tribed.step_def.search;
 
 import com.tribed.driver.DriverManager;
-import com.tribed.pages.FilterOptionsPage;
-import com.tribed.pages.SearchPage;
-import cucumber.api.DataTable;
-import cucumber.api.java.en.And;
+import com.tribed.pages.search.FilterOptionsPage;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 

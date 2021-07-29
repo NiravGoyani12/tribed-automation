@@ -51,4 +51,3 @@ Feature: Preview page
     And I should able to see edit company button
     And I should able to see view company button
 
-

@@ -1,5 +1,5 @@
 @sanity
-Feature: filteroptions
+Feature: filter options
 
   Background: Login into the application
     Given I am on the home page
@@ -23,8 +23,6 @@ Feature: filteroptions
     And I select any other culture from filter option
     When I click on show candidate button
     Then I should be able to see updated candidate count on search result page
-
-
 
 
 

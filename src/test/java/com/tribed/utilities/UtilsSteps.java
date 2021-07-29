@@ -1,4 +1,4 @@
-package com.tribed.step_def;
+package com.tribed.utilities;
 import com.tribed.driver.DriverManager;
 import cucumber.api.java.en.Then;
 import static org.hamcrest.MatcherAssert.assertThat;

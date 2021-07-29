@@ -1,4 +1,4 @@
-package com.tribed.pages;
+package com.tribed.pages.search;
 
 import com.tribed.driver.DriverManager;
 import org.openqa.selenium.By;

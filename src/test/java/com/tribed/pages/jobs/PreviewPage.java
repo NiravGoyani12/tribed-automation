@@ -1,4 +1,4 @@
-package com.tribed.pages.myProfile;
+package com.tribed.pages.jobs;
 import com.tribed.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

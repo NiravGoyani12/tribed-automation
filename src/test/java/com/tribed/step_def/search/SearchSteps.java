@@ -1,8 +1,7 @@
-package com.tribed.step_def;
+package com.tribed.step_def.search;
 
 import com.tribed.driver.DriverManager;
-import com.tribed.pages.LoginPage;
-import com.tribed.pages.SearchPage;
+import com.tribed.pages.search.SearchPage;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
@@ -12,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
 
 public class SearchSteps {

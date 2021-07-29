@@ -1,5 +1,5 @@
-package com.tribed.step_def;
-import com.tribed.pages.SignUpPage;
+package com.tribed.step_def.home;
+import com.tribed.pages.home.SignUpPage;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
