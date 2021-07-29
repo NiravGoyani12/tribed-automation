@@ -12,7 +12,6 @@ public class FooterSteps {
     DriverManager driverManager = new DriverManager();
     FooterPage footerpage = new FooterPage();
 
-
     @When("^I click on tribed icon from footer$")
     public void iClickOnTribedIconFromFooter() {
         footerpage.clickOntribedIcon();
