@@ -1,6 +1,7 @@
 package com.tribed.step_def.home;
 import com.tribed.driver.DriverManager;
 import com.tribed.pages.home.LoginPage;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -20,6 +21,7 @@ public class LoginSteps {
         loginPage.clickOnLogInBtn();
         driverManager.sleep(2000);
     }
+
 
     @When("^I enter email and password for \"([^\"]*)\"$")
     public void iEnterEmailAndPasswordFor(String userType) throws Throwable {
@@ -112,5 +114,4 @@ public class LoginSteps {
     public void iClickOnMyProfileMenu() {
         loginPage.clickonMyProfileMenu();
     }
-
 }

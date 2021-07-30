@@ -3,11 +3,11 @@ Feature: login
 
   Background: Login into the application
     Given I am on the home page
-    And I click on sign in button
+    And I click on "SignIn" menu
 
   Scenario Outline: login with valid email and password
     When I enter email and password for "<userType>"
-    And I click on log in button
+    And I click on "Login" button
     Then I should be able to see "<loggedMessage>" for "<userType>"
 
     Examples:
@@ -24,39 +24,39 @@ Feature: login
 
   Scenario: Logout functionality
     And I enter email and password for "Valid User"
-    And I click on log in button
-    And I click on logout button
-    Then I should be able to SingIn button
+    And I click on "Login" button
+    And I click on "Logout" button
+    Then I should able to see "SignIn" screen
 
-  Scenario: verify messages menu
+  Scenario: Verify messages menu
     And I enter email and password for "Valid User"
-    And I click on log in button
-    When I click on messages menu
-    Then I should be able to open message screen
+    And I click on "Login" button
+    When I click on "Messages" menu
+    Then I should able to see "Messages" screen
 
-  Scenario: verify search menu
+  Scenario: Verify search menu
     And I enter email and password for "Valid User"
-    And I click on log in button
+    And I click on "Login" button
     When I click on search menu after login
     Then I should able to see "Search" screen
 
-  Scenario: verify my profile menu
+  Scenario: Verify my profile menu
     And I enter email and password for "Valid User"
-    And I click on log in button
-    When I click on 'My profile' menu
-    Then I should be able to open my profile screen
+    And I click on "Login" button
+    When I click on "My Profile" menu
+    Then I should able to see "My Profile" screen
 
   Scenario: verify dashboard menu
     And I enter email and password for "Valid User"
-    And I click on log in button
+    And I click on "Login" button
     When I click on search menu after login
-    When I click on dashboard menu
-    Then I should be able to open dashboard screen
+    When I click on "Dashboard" menu
+    Then I should able to see "Dashboard" screen
 
   Scenario: verify close button on 'Sign in' page
-    When I click on close button
+    When I click on "Close" button
     Then SignIn popup should be closed
 
   Scenario: verify forget password link
-    When I click on forget password link
-    Then I should be able to see reset password page
+    When I click on "Forget Password" button
+    Then I should able to see "Reset Password" screen

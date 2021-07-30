@@ -18,25 +18,25 @@ public class LoginPage extends DriverManager {
     @FindBy(xpath="//div[text()='My profile']")
     public  WebElement validLogInText;
 
-    @FindBy(xpath="//label[text()='Invalid credentials']")
+    @FindBy(xpath="//label[text()='Password can only contain Latin letters.']")
     public  WebElement invalidLogInText;
 
-    @FindBy(xpath="//div[text()='Log out']")
+    @FindBy(xpath="(//div[text()='Log out'])[2]")
     public  WebElement logoutBtn;
 
-    @FindBy(xpath = "(//div[text()='Sign in'])[2]")
+    @FindBy(xpath = "(//div[text()='Sign in'])[1]")
     public WebElement signInBtn;
 
-    @FindBy(xpath = "//div[text()='Messages']")
+    @FindBy(xpath = "(//div[text()='Messages'])[2]")
     public WebElement messageMenu;
 
-    @FindBy(xpath = "//div[text()='My profile']")
+    @FindBy(xpath = "(//div[text()='My profile'])[2]")
     public WebElement myProfileMenu;
 
     @FindBy(xpath = "//div[text()='Dashboard']")
     public WebElement dashboardMenu;
 
-    @FindBy(xpath = "//div[text()='Search']")
+    @FindBy(xpath = "(//div[text()='Search'])[2]")
     public WebElement searchMenu;
 
     @FindBy(xpath = "//img[contains(@src,'signUpHero')]/following-sibling::*")
@@ -55,7 +55,7 @@ public class LoginPage extends DriverManager {
     }
 
     public void clickOnLogInBtn() throws InterruptedException {
-        waitForElementClickable(loginBtn,10, "Search button not displayed");
+        waitForElementClickable(loginBtn,10, "Login button not displayed");
         clickOnElement(loginBtn);
     }
 
@@ -126,17 +126,17 @@ public class LoginPage extends DriverManager {
 
     public boolean isMessageMenuOpen()
     {
-        //waitForElementVisibility(signInBtn,5, "SingIn button not displayed");
+        //waitForElementVisibility(signInBtn,5, "Message screen not displayed");
         return true;
     }
     public boolean isDashboardOpen()
     {
-        //waitForElementVisibility(signInBtn,5, "SingIn button not displayed");
+        //waitForElementVisibility(signInBtn,5, "Dashboard button not displayed");
         return true;
     }
     public boolean isMyProfileOpen()
     {
-        //waitForElementVisibility(signInBtn,5, "SingIn button not displayed");
+        //waitForElementVisibility(signInBtn,5, "My Profile button not displayed");
         return true;
     }
     public void clickonSignUpClose()

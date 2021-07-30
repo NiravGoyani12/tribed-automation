@@ -11,7 +11,7 @@ public class HomePage extends DriverManager {
     @FindBy(xpath="(//div[text()='Sign up'])[2]")
     public  WebElement signUpBtn;
 
-    @FindBy(xpath="//h1[text()='Search Candidates Placeholder']")
+    @FindBy(xpath="//input[@placeholder='Search for a key skill']")
     public  WebElement searchPlaceholder;
 
     @FindBy(xpath="(//div[text()='Search'])[2]")
@@ -20,7 +20,7 @@ public class HomePage extends DriverManager {
     @FindBy(name = "email")
     public   WebElement emmailField;
 
-    @FindBy(xpath = "//h2[text()='Register your company']")
+    @FindBy(xpath = "//div[text()='Register your company']")
     public   WebElement registerMsg;
 
     @FindBy(xpath = "(//div[contains(text(),'m Hiring')])[2]")

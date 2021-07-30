@@ -3,7 +3,7 @@ Feature: Job page
 
   Background: Login into the application
     Given I am on the home page
-    And I click on sign in button
+    And I click on "SignIn" page
     And I enter email and password for "Valid User"
     And I click on log in button
     And I click on 'My profile' menu

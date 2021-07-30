@@ -23,32 +23,6 @@ public class HomeSteps  {
         assertThat(actual, is(endsWith("tribed.io/")));
     }
 
-    // Note: Click actions in single switch case for home page
-    @And("^I click on sign in button$")
-    public void iClickOnSignInButton() {
-        homePage.clickOnSignIn();
-    }
-
-    @And("^I click on sign up button$")
-    public void iClickOnSignUpButton() {
-        homePage.clickOnSignUp();
-    }
-
-    @And("^I click on search page$")
-    public void iClickOnSearchPage() {
-        homePage.clickOnSearch();
-    }
-
-    @When("^I click on I am hiring page$")
-    public void iClickOnIAmHiringPage() {
-        homePage.clickOnIAmHiring();
-    }
-
-    @When("^I click on home page$")
-    public void iClickOnHomePage() {
-        homePage.clickOnHome();
-    }
-
     @When("^I click on tribed icon$")
     public void iClickOnTribedIcon() {
         homePage.clickOntribedIcon();
@@ -69,30 +43,6 @@ public class HomeSteps  {
         assertThat(homePage.isSectorDisplayed(), is(true));
         assertThat(homePage.isNoOfEmployeeDisplayed(), is(true));
     }
-
-    @Then("^I should able to see \"([^\"]*)\" screen$")
-    public void iShouldAbleToSeeScreen(String expScreenName) throws Throwable {
-        Boolean isValidScreen = false;
-
-        switch (expScreenName) {
-            case "Home":
-                isValidScreen = homePage.isHomePageOpen();
-                break;
-            case "Search":
-                isValidScreen = homePage.isSearchPageOpen();
-                break;
-            case "Login":
-                isValidScreen = homePage.isSignPageOpen();
-                break;
-            case "Signup":
-                isValidScreen = homePage.isSignUpPageOpen();
-                break;
-            case "Hiring":
-                isValidScreen = homePage.isIamHiringPageOpen(expScreenName.toLowerCase());
-                break;
-            default:
-                throw new IllegalStateException("Unexpected service name: " + expScreenName);
-        }
-        assertThat(isValidScreen, is(true));
-    }
 }
+
+
