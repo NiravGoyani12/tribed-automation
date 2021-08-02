@@ -198,10 +198,16 @@ public class JobPage extends DriverManager {
         clickOnElement(roleLevelDP);
         clickOnElement(entryLevelRole);
         clickOnElement(roleLevelDP);
+        clickOnElement(currencyDP);
+        clickOnElement(gBPCurrency);
+        clickOnElement(currencyDP);
+        clickOnElement(frequencyDP);
+        clickOnElement(perYerFrequency);
+        clickOnElement(frequencyDP);
         SendKeys(minSalaryTxt, minSalary);
         SendKeys(maxSalaryTxt, maxSalary);
-        //SendKeys(infoTitleTxt, infoTitle);
-        //SendKeys(infoTxt, info);
+        SendKeys(infoTitleTxt, infoTitle);
+        SendKeys(infoTxt, info);
         //clickOnElement(uploadTeamImage);
         //uploadFile(JOB_TEAM_IMAGE);
     }

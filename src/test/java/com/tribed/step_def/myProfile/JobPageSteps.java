@@ -14,16 +14,6 @@ public class JobPageSteps {
     JobPage jobPage =new JobPage();
     List<Map<String, String>> data;
 
-    @And("^I click on job page tab$")
-    public void iClickOnJobPageTab() {
-        jobPage.clickOnTabJobPage();
-    }
-
-    @And("^I click on Add Technical button$")
-    public void iClickOnAddTechnicalButton() {
-        jobPage.clickAddTechnicalSkill();
-    }
-
     @And("^I select any technical skill and save$")
     public void iSelectAnyTechnicalSkillAndSave() {
         jobPage.selectAnySkillAndSave();
@@ -32,26 +22,6 @@ public class JobPageSteps {
     @Then("^added technical skill should saved and displayed$")
     public void addedTechnicalSkillShouldSavedAndDisplayed() {
         assertThat(jobPage.isAddedSkillSavedAndDisplayed(), is(true));
-    }
-
-    @And("^I click on Add Job button$")
-    public void iClickOnAddJobButton() {
-        jobPage.clickAddJobBtn();
-    }
-
-    @And("^I click on add sector button$")
-    public void iClickOnAddSectorButton() {
-        jobPage.clickAddSector();
-    }
-
-    @And("^I click on add leadership button$")
-    public void iClickOnAddLeadershipButton() {
-        jobPage.clickAddLeaderShipSkill();
-    }
-
-    @And("^I click on add qualification button$")
-    public void iClickOnAddQualificationButton() {
-        jobPage.clickAddQualification();
     }
 
     @When("^I enter following details for job page$")
@@ -92,11 +62,6 @@ public class JobPageSteps {
         jobPage.selectAnySkillAndSave();
     }
 
-    @When("^I click on about this job button$")
-    public void iClickOnAboutThisJobButton() {
-        jobPage.clickOnAboutThisJobBtn();
-    }
-
     @Then("^I should be able to see selected job details$")
     public void iShouldBeAbleToSeeSelectedJobDetails() {
         assertThat(jobPage.isAboutThisJobPageOpen(), is(true));
@@ -119,11 +84,6 @@ public class JobPageSteps {
         jobPage.selectTechnicalSkill();
     }
 
-    @And("^I click on next section$")
-    public void iClickOnNextSection() {
-        jobPage.clickOnNextSection();
-    }
-
     @And("^I select any leadership skill$")
     public void iSelectAnyLeadershipSkill() {
         jobPage.selectLeadership();
@@ -137,11 +97,6 @@ public class JobPageSteps {
     @And("^I select any qualification$")
     public void iSelectAnyQualification() {
         jobPage.selectQualification();
-    }
-
-    @When("^I click on save and exit$")
-    public void iClickOnSaveAndExit() {
-        jobPage.clickonSaveAndExitBtn();
     }
 
     @Then("^I should be able to see all selected skills sector and qualification$")

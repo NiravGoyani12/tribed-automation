@@ -26,15 +26,6 @@ public class CompanyPageSteps {
                 data.get(0).get("TestimonialRole"));
     }
 
-    @And("^I click on 'Save and go to cultural page'$")
-    public void iClickOnSaveAndGoToCulturalPage() {
-        companyPage.clickonSaveAndGoToCulturalPageButton();
-    }
-
-    @And("^I click on Preview button$")
-    public void iClickOnPreviewButton() {
-        companyPage.clickOnPreviewButton();
-    }
 
     @And("^I click on publish button$")
     public void iClickOnPublishButton() {

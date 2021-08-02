@@ -25,6 +25,10 @@ public class CulturePage extends DriverManager {
     @FindBy(xpath = "//button[text()='Save and exit']")
     public WebElement saveAndExitBtn;
 
+    @FindBy(xpath = "//button[text()='Accept']")
+    public WebElement acceptBtn;
+
+
     public static String cultureName;
 
     public String getTextOnCulturePage()
@@ -56,6 +60,10 @@ public class CulturePage extends DriverManager {
         WebElement element= driver.findElement(By.xpath("//img[contains(@src,'cultureIcon')]/following-sibling::span[text()='"+cultureName+"']"));
         waitForElementVisibility(casualDressTile, 5, "Added Culture not displayed");
         return element.isDisplayed();
+    }
+    public void clickOnAcceptBtn()
+    {
+        clickOnElement(acceptBtn);
     }
 
 }

@@ -3,7 +3,7 @@ Feature: filter options
 
   Background: Login into the application
     Given I am on the home page
-    And I click on search page
+    And I click on "Search" menu
     And I enter company for searching
       | SearchText   |
       | Html |

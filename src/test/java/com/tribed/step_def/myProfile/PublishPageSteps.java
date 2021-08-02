@@ -25,7 +25,7 @@ public class PublishPageSteps {
     }
 
     @And("^I should able to see edit company button$")
-    public void iShouldAbleToSeeEditCompanyButton() {
+    public void    iShouldAbleToSeeEditCompanyButton() {
         assertThat(publishPage.isEditCompanyBtnDisplayed(), is(true));
     }
 

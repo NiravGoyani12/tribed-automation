@@ -15,10 +15,6 @@ public class SignUpSteps {
     SignUpPage signUpPage =new SignUpPage();
     List<Map<String, String>> data;
 
-    @And("^I click on 'Create account' button$")
-    public void iClickOnCreateAccountButton() {
-        signUpPage.clickOnCreateAccountBtn();
-    }
 
     @When("^I enter following details to sign up for new company$")
     public void iEnterFollowingDetailsToSignUpForNewCompany(DataTable dataTable) {
@@ -41,16 +37,6 @@ public class SignUpSteps {
     @Then("^I should be able to see \"([^\"]*)\" message$")
     public void iShouldBeAbleToSeeMessage(String expMsg) throws Throwable {
         assertThat(signUpPage.getSignUpSuccessMsg(), containsString(expMsg));
-    }
-
-    @And("^I click on 'Build company profile' button$")
-    public void iClickOnBuildCompanyProfile() {
-        signUpPage.clickOnBuildCompanyProfileButton();
-    }
-
-    @Then("^I should be able see 'Company page' tab$")
-    public void isCompanyPageTabDisplayed() throws InterruptedException {
-        assertThat(signUpPage.isCompanyPageTabDisplayed(), is(true));
     }
 
     @Then("^I should be able to see email error \"([^\"]*)\" message$")

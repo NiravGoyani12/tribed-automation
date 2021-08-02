@@ -3,7 +3,7 @@ Feature: search
 
   Scenario: Verify searching working
     Given I am on the home page
-    And I click on search page
+    And I click on "Search" menu
     And I enter company for searching
       | SearchText   |
       | Html |
@@ -12,7 +12,7 @@ Feature: search
 
   Scenario: Verify see full profile working
     Given I am on the home page
-    And I click on search page
+    And I click on "Search" menu
     And I enter company for searching
       | SearchText   |
       | Html |
