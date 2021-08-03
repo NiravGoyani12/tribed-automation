@@ -17,11 +17,6 @@ public class FilterOptionsSteps {
     FilterOptionsPage filterOptionsPage=new FilterOptionsPage();
     List<Map<String, String>> data;
 
-    @When("^I click on filter option$")
-    public void iClickOnFilterOption() {
-        filterOptionsPage.clickOnFilterOption();
-    }
-
     @Then("^I should able to different filter options$")
     public void iShouldAbleToDifferentFilterOptions() {
         filterOptionsPage.isFilterOptionTextDisplayed();
@@ -37,14 +32,32 @@ public class FilterOptionsSteps {
         assertThat(filterOptionsPage.isSelectedCandidateCountUpdated(), is(true));
     }
 
-    @When("^I click on show candidate button$")
-    public void iClickOnShowCandidateButton() {
-        filterOptionsPage.clickOnShowCandidate();
-    }
-
-
     @Then("^I should be able to see updated candidate count on search result page$")
     public void iShouldBeAbleToSeeUpdatedCandidateCountOnSearchResultPage() {
         assertThat(filterOptionsPage.isShowCandidateCountDisplayedOnSearchResultPage(), is(true));
+    }
+
+    @Then("^I should be able to see all selected filters get clear$")
+    public void iShouldBeAbleToAllSelectedFiltersGetClear() {
+    }
+
+    @Then("^I should be able to see selected culture get clear$")
+    public void iShouldBeAbleToSeeSelectedCultureGetClear() {
+        
+    }
+
+    @Then("^I should be able to see selected development get clear$")
+    public void iShouldBeAbleToSeeSelectedDevelopmentGetClear() {
+
+
+    }
+
+    @Then("^I should be able to see selected well-being get clear$")
+    public void iShouldBeAbleToSeeSelectedWellBeingGetClear() {
+        
+    }
+
+    @Then("^I should be able to see selected benefits get clear$")
+    public void iShouldBeAbleToSeeSelectedBenefitsGetClear() {
     }
 }

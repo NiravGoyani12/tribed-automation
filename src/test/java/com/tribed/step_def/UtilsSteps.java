@@ -202,7 +202,39 @@ public class UtilsSteps extends DriverManager {
             case "View company":
                 publishPage.clickOnViewCompanyPage();
                 break;
-
+            case "Filter Option":
+                filterOptionsPage.clickOnFilterOption();
+                break;
+            case "Show Candidate":
+                filterOptionsPage.clickOnShowCandidate();
+                break;
+            case "Search icon":
+                searchPage.clickonSearchIcon();
+                break;
+            case "First Culture":
+                filterOptionsPage.selectOtherCulture();
+                break;
+            case "First Development":
+                filterOptionsPage.selectOtherDevelopment();
+                break;
+            case "First Well-being":
+                filterOptionsPage.selectOtherWellBeing();
+                break;
+            case "First Benefits":
+                filterOptionsPage.selectOtherBenefits();
+                break;
+            case "Clear culture filter":
+                filterOptionsPage.clickOnClearCulture();
+                break;
+            case "Clear development filter":
+                filterOptionsPage.clickOnClearDevelopment();
+                break;
+            case "Clear well-being filter":
+                filterOptionsPage.clickOnClearWellBeing();
+                break;
+            case "Clear benefits filter":
+                filterOptionsPage.clickOnClearBenefits();
+                break;
             default:
                 throw new IllegalStateException("Unexpected service name: " + expButton);
         }
