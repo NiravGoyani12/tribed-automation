@@ -59,4 +59,8 @@ public class PublishPageSteps {
         assertThat(publishPage.isCompanyPageOpen(), is(true));
     }
 
+    @Then("^Confirmation popup should be close$")
+    public void confirmationPopupShouldBeClose() {
+        assertThat(publishPage.isConfirmationPopupDisplayed(), is(false));
+    }
 }

@@ -28,6 +28,7 @@ public class UtilsSteps extends DriverManager {
     PublishPage publishPage=new PublishPage();
     SearchPage searchPage=new SearchPage();
     FilterOptionsPage filterOptionsPage=new FilterOptionsPage();
+    MyProfilePage myProfilePage=new MyProfilePage();
 
     @Then("^the url should contain with \"([^\"]*)\"$")
     public void the_url_should_contain(String url) {
@@ -75,6 +76,15 @@ public class UtilsSteps extends DriverManager {
                 break;
             case "Company edit":
                 isValidScreen = previewPage.isCompanyEditPageDisplayed();
+                break;
+            case "Confirmation popup":
+                isValidScreen = publishPage.isConfirmationPopupDisplayed();
+                break;
+            case "Edit profile":
+                isValidScreen = myProfilePage.isEditProfileScreenOpen();
+                break;
+            case "View profile":
+                isValidScreen = myProfilePage.isViewProfileScreenOpen();
                 break;
 
             default:
@@ -235,6 +245,19 @@ public class UtilsSteps extends DriverManager {
             case "Clear benefits filter":
                 filterOptionsPage.clickOnClearBenefits();
                 break;
+            case "Cancel":
+                publishPage.clickOnCancelbtn();
+                break;
+            case "Register Now":
+                loginPage.clickOnRegisterNowBtn();
+                break;
+            case "Edit my profile":
+                myProfilePage.clickOnEditMyProfile();
+                break;
+            case "View my profile":
+                myProfilePage.clickOnViewMyProfile();
+                break;
+
             default:
                 throw new IllegalStateException("Unexpected service name: " + expButton);
         }

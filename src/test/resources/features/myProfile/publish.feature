@@ -6,8 +6,7 @@ Feature: publish page
     And I click on "SignIn" menu
     And I enter email and password for "Valid User"
     And I click on "Login" button
-    And I click on "My Profile" menu
-
+    And I click on "Dashboard" menu
 
   Scenario: Verify return to home button from company page publish
     And I click on "Publish" button
@@ -70,3 +69,14 @@ Feature: publish page
     And I click on "Accept" button
     When I click on "View company" button
     Then I should see company page
+
+  Scenario: Verify confirmation asks while user try to publish
+    And I click on "Job Page" button
+    When I click on "Publish" button
+    Then I should able to see "Confirmation popup" screen
+
+  Scenario: Verify cancel button on confirmation poupup
+    And I click on "Job Page" button
+    And I click on "Publish" button
+    When I click on "Cancel" button
+    Then Confirmation popup should be close

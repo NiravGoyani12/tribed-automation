@@ -21,6 +21,11 @@ public class PublishPage extends DriverManager {
     @FindBy(xpath="//h1[text()='Discover companies']")
     public  WebElement titleDiscoverCompanies;
 
+    @FindBy(xpath = "//button[text()='Accept']")
+    public WebElement acceptBtn;
+
+    @FindBy(xpath = "//button[text()='cancel']")
+    public WebElement cancelBtn;
     public String getPublishSuccessMsg() {
         return getElementText(publishSuccessMsg);
     }
@@ -63,5 +68,21 @@ public class PublishPage extends DriverManager {
     public boolean isCompanyPageOpen()
     {
         return false;
+    }
+
+    public boolean isConfirmationPopupDisplayed()
+    {
+        try {
+            return acceptBtn.isDisplayed();
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+
+    }
+    public void clickOnCancelbtn()
+    {
+        clickOnElement(cancelBtn);
     }
 }

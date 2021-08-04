@@ -111,7 +111,7 @@ public class LoginSteps {
     }
 
     @And("^I click on 'My profile' menu$")
-    public void iClickOnMyProfileMenu() {
+    public void iClickOnMyProfileMenu() throws InterruptedException {
         loginPage.clickonMyProfileMenu();
     }
 }

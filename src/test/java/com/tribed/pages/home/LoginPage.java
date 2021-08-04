@@ -33,7 +33,7 @@ public class LoginPage extends DriverManager {
     @FindBy(xpath = "(//div[text()='My profile'])[2]")
     public WebElement myProfileMenu;
 
-    @FindBy(xpath = "//div[text()='Dashboard']")
+    @FindBy(xpath = "(//div[text()='Dashboard'])[2]")
     public WebElement dashboardMenu;
 
     @FindBy(xpath = "(//div[text()='Search'])[2]")
@@ -48,6 +48,8 @@ public class LoginPage extends DriverManager {
     @FindBy(xpath = "//div[text()='Reset password']")
     public WebElement resetPassword;
 
+    @FindBy(xpath = "//span[text()='Register now']")
+    public WebElement registerNowBtn;
 
     public void enterEmailAndPassword(String userType) {
         clearAndSendKeys(emmailField,getUserName(userType));
@@ -57,6 +59,11 @@ public class LoginPage extends DriverManager {
     public void clickOnLogInBtn() throws InterruptedException {
         waitForElementClickable(loginBtn,10, "Login button not displayed");
         clickOnElement(loginBtn);
+    }
+
+    public void clickOnRegisterNowBtn() throws InterruptedException {
+        waitForElementClickable(registerNowBtn,10, "Register now button not displayed");
+        clickOnElement(registerNowBtn);
     }
 
     public String getUserName(String userType)
@@ -115,9 +122,9 @@ public class LoginPage extends DriverManager {
         clickOnElement(dashboardMenu);
     }
 
-    public void clickonMyProfileMenu()
-    {
+    public void clickonMyProfileMenu() throws InterruptedException {
         clickOnElement(myProfileMenu);
+        Thread.sleep(1000);
     }
     public void clickonSearchMenu() throws InterruptedException {
         waitForElementClickable(searchMenu,10, "Search button not displayed");

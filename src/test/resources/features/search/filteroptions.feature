@@ -1,4 +1,4 @@
-@sanity4
+@sanity
 Feature: filter options
 
   Background: Login into the application
