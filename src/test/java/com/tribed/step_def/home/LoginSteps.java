@@ -74,16 +74,6 @@ public class LoginSteps {
         loginPage.clickonDashboardMenu();
     }
 
-    @Then("^I should be able to open dashboard screen$")
-    public void iShouldBeAbleToOpenDashboardScreen() {
-        assertThat(loginPage.isDashboardOpen(), is(true));
-    }
-
-    @Then("^I should be able to open my profile screen$")
-    public void iShouldBeAbleToOpenMyProfileScreen() {
-        assertThat(loginPage.isMyProfileOpen(), is(true));
-    }
-
     @When("^I click on search menu after login$")
     public void iClickOnSearchMenuAfterLogin() throws InterruptedException {
         loginPage.clickonSearchMenu();

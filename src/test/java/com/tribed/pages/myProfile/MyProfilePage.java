@@ -39,4 +39,9 @@ public class MyProfilePage extends DriverManager {
         return noOfEmployees.isDisplayed();
     }
 
+    public boolean isMyProfileButtonWorking() throws InterruptedException {
+        Thread.sleep(2000);
+        return editMyProfile.isDisplayed();
+    }
+
 }

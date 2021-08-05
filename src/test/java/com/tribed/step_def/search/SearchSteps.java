@@ -44,5 +44,4 @@ public class SearchSteps {
     public void iShouldAbleToSeeFullUserProfile() {
         assertThat(searchPage.isSelectedUserFullProfileDisplayed(), is(true));
     }
-
 }

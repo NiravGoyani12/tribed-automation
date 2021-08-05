@@ -6,7 +6,8 @@ Feature: Company page
     And I click on "SignIn" menu
     And I enter email and password for "Valid User"
     And I click on "Login" button
-    And I click on "Dashboard" menu
+    And I click on "My Profile" menu
+    And I click on "Edit my profile" button
 
   Scenario: Build company page
     When I enter following details for company page

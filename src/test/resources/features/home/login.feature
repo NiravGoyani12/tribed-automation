@@ -46,13 +46,6 @@ Feature: login
     When I click on "My Profile" menu
     Then I should able to see "My Profile" screen
 
-  Scenario: Verify dashboard menu
-    And I enter email and password for "Valid User"
-    And I click on "Login" button
-    When I click on search menu after login
-    When I click on "Dashboard" menu
-    Then I should able to see "Dashboard" screen
-
   Scenario: Verify close button on 'Sign in' page
     When I click on "Close" button
     Then SignIn popup should be closed

@@ -136,17 +136,7 @@ public class LoginPage extends DriverManager {
         //waitForElementVisibility(signInBtn,5, "Message screen not displayed");
         return true;
     }
-    public boolean isDashboardOpen()
-    {
-        //waitForElementVisibility(signInBtn,5, "Dashboard button not displayed");
-        return true;
-    }
-    public boolean isMyProfileOpen()
-    {
-        //waitForElementVisibility(signInBtn,5, "My Profile button not displayed");
-        return true;
-    }
-    public void clickonSignUpClose()
+        public void clickonSignUpClose()
     {
         waitForElementVisibility(signUpClose,10, "SingIn button not displayed");
         clickOnElement(signUpClose);

@@ -29,6 +29,7 @@ public class UtilsSteps extends DriverManager {
     SearchPage searchPage=new SearchPage();
     FilterOptionsPage filterOptionsPage=new FilterOptionsPage();
     MyProfilePage myProfilePage=new MyProfilePage();
+    DashboardPage dashboardPage=new DashboardPage();
 
     @Then("^the url should contain with \"([^\"]*)\"$")
     public void the_url_should_contain(String url) {
@@ -60,13 +61,13 @@ public class UtilsSteps extends DriverManager {
                 isValidScreen = loginPage.isMessageMenuOpen();
                 break;
             case "My Profile":
-                isValidScreen = loginPage.isMyProfileOpen();
+                isValidScreen = myProfilePage.isMyProfileButtonWorking();
                 break;
             case "Hiring":
                 isValidScreen = homePage.isIamHiringPageOpen(expScreenName.toLowerCase());
                 break;
             case "Dashboard":
-                isValidScreen = loginPage.isDashboardOpen();
+                isValidScreen = dashboardPage.isDashboardScreenOpen();
                 break;
             case "Reset Password":
                 isValidScreen = loginPage.isResetPasswordPageDisplayed();
@@ -85,6 +86,12 @@ public class UtilsSteps extends DriverManager {
                 break;
             case "View profile":
                 isValidScreen = myProfilePage.isViewProfileScreenOpen();
+                break;
+            case "Edit job":
+                isValidScreen = dashboardPage.isEditJobScreenOpen();
+                break;
+            case "Add a new job listing":
+                isValidScreen = dashboardPage.isAddJobListingScreenOpen();
                 break;
 
             default:
@@ -257,7 +264,18 @@ public class UtilsSteps extends DriverManager {
             case "View my profile":
                 myProfilePage.clickOnViewMyProfile();
                 break;
-
+            case "Edit job":
+                dashboardPage.clickOnEditJob();
+                break;
+            case "Add a new job listing":
+                dashboardPage.clickOnAddANewJobListingBtn();
+                break;
+            case "Next icon":
+                dashboardPage.clickNextBtn();
+                break;
+            case "Previous icon":
+                dashboardPage.clickPreviousBtn();
+                break;
             default:
                 throw new IllegalStateException("Unexpected service name: " + expButton);
         }
