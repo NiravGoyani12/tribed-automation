@@ -1,4 +1,4 @@
-@sanity4
+@sanity
 Feature: Culture page
 
   Background: Login into the application
