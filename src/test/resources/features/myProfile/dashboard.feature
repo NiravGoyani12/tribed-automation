@@ -1,5 +1,5 @@
 @sanity
-Feature: Culture page
+Feature: dashboard page
 
   Background: Login into the application
     Given I am on the home page
@@ -20,7 +20,7 @@ Feature: Culture page
     And I click on "Dashboard" menu
     And I click on "Edit job" button
     And I edit team name from edit job screen
-    And I click on "Dashboard" menu
+    And I click on "Dashboard after edit Job" menu
     When I click on "Edit job" button
     Then I should able to see updated team name
 

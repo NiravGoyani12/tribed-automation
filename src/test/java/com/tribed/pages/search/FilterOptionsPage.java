@@ -62,6 +62,10 @@ public class FilterOptionsPage extends DriverManager {
     {
         clickOnElement(filterOption);
     }
+    public void clickOnClearAllFilterOption()
+    {
+        clickOnElement(clearAllFilterBtn);
+    }
     public boolean isFilterOptionTextDisplayed()
     {
         selectedcandidate=getElementText(showCandidate);
@@ -102,38 +106,42 @@ public class FilterOptionsPage extends DriverManager {
 
     public void selectOtherDevelopment() throws InterruptedException {
         //moveOnElement(firstDevelopment);
-        waitForElementClickable(firstDevelopment,10,"Development not visible");
+        waitForElementVisibility(firstDevelopment,10,"Development not visible");
+        scrollWindow();
+        scrollWindow();
         clickOnElement(firstDevelopment);
     }
     public void selectOtherWellBeing() throws InterruptedException {
         //moveOnElement(firstWellBeing);
-        waitForElementClickable(firstWellBeing,10,"Well Being not visible");
+        waitForElementVisibility(firstWellBeing,10,"Well Being not visible");
+        scrollIntoViewSelenium(firstWellBeing);
         clickOnElement(firstWellBeing);
     }
     public void selectOtherBenefits() throws InterruptedException {
         //moveOnElement(firstBenefit);
-        waitForElementClickable(firstBenefit,10,"Benefits not visible");
+        waitForElementVisibility(firstBenefit,10,"Benefits not visible");
+        scrollIntoViewSelenium(firstBenefit);
         clickOnElement(firstBenefit);
     }
 
     public void clickOnClearCulture() throws InterruptedException {
         //moveOnElement(clearCulture);
-        waitForElementClickable(clearCulture,10,"Clear Culture not visible");
+        waitForElementVisibility(clearCulture,10,"Clear Culture not visible");
         clickOnElement(clearCulture);
     }
     public void clickOnClearDevelopment() throws InterruptedException {
         //moveOnElement(clearDevelopment);
-        waitForElementClickable(clearDevelopment,10,"Clear Development not visible");
+        waitForElementVisibility(clearDevelopment,10,"Clear Development not visible");
         clickOnElement(clearDevelopment);
     }
     public void clickOnClearWellBeing() throws InterruptedException {
         //moveOnElement(clearWellBeing);
-        waitForElementClickable(clearWellBeing,10,"Clear well being not visible");
+        waitForElementVisibility(clearWellBeing,10,"Clear well being not visible");
         clickOnElement(clearWellBeing);
     }
     public void clickOnClearBenefits() throws InterruptedException {
         //moveOnElement(clearBenefits);
-        waitForElementClickable(clearBenefits,10,"Clear Benefits not visible");
+        waitForElementVisibility(clearBenefits,10,"Clear Benefits not visible");
         clickOnElement(clearBenefits);
     }
 

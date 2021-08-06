@@ -1,5 +1,5 @@
 @sanity
-Feature: Culture page
+Feature: My profile page
 
   Background: Login into the application
     Given I am on the home page

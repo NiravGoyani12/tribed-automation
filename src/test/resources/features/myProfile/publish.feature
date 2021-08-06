@@ -15,7 +15,7 @@ Feature: publish page
 #    Note: All click actions can be done by switch case
     When I click on "Return to home" button
     #    Note: All Validations can be done by switch case
-    Then I should able to see "Dashboard" screen
+    Then I should able to see "Home" screen
 
   Scenario: Verify edit company tile button from company page publish
     And I click on "Publish" button
@@ -34,7 +34,7 @@ Feature: publish page
     And I click on "Publish" button
     And I click on "Accept" button
     When I click on "Return to home" button
-    Then I should able to see "Dashboard" screen
+    Then I should able to see "Home" screen
 
   Scenario: Verify edit company tile button from culture page publish
     And I click on "Culture Page" button
@@ -55,7 +55,7 @@ Feature: publish page
     And I click on "Publish" button
     And I click on "Accept" button
     When I click on "Return to home" button
-    Then I should able to see "Dashboard" screen
+    Then I should able to see "Home" screen
 
   Scenario: Verify edit company tile button from job page publish
     And I click on "Job Page" button
@@ -72,12 +72,12 @@ Feature: publish page
     Then I should see company page
 
   Scenario: Verify confirmation asks while user try to publish
-    And I click on "Job Page" button
+    And I click on "Culture Page" button
     When I click on "Publish" button
     Then I should able to see "Confirmation popup" screen
 
   Scenario: Verify cancel button on confirmation poupup
-    And I click on "Job Page" button
+    And I click on "Culture Page" button
     And I click on "Publish" button
     When I click on "Cancel" button
     Then Confirmation popup should be close

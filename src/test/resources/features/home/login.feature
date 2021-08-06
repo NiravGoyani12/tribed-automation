@@ -13,7 +13,14 @@ Feature: login
     Examples:
       | userType     | loggedMessage       |
       | Valid User   | My profile          |
-      | Invalid User | Invalid credentials |
+
+  Scenario Outline: login with invalid email and password
+    When I enter email and password for "<userType>"
+    Then I should be able to see "<loggedMessage>" for "<userType>"
+
+    Examples:
+      | userType     | loggedMessage       |
+      | Invalid User | Password can only contain Latin letters. |
 
   Scenario: Default Login button should be Disabled
     Then Log in button should be "disabled"

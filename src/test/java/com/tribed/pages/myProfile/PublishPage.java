@@ -15,8 +15,11 @@ public class PublishPage extends DriverManager {
     @FindBy(xpath="//p[text()='Edit company tile now']/parent::button")
     public WebElement editCompanyBtn;
 
-    @FindBy(xpath="//button[text()='view company page']")
+    @FindBy(xpath="//button[text()='View Company Page']")
     public WebElement viewCompanyBtn;
+
+    @FindBy(xpath="//button[text()='view company page']")
+    public WebElement viewCompanyPageBtn;
 
     @FindBy(xpath="//h1[text()='Discover companies']")
     public  WebElement titleDiscoverCompanies;
@@ -44,8 +47,8 @@ public class PublishPage extends DriverManager {
 
     public boolean isViewCompanyBtnDisplayed() {
         //WebElement element = driver.findElement(By.xpath("(//h1[text()='" + jobTitle + "'])[1]"));
-        waitForElementVisibility(viewCompanyBtn, 5, "View Company  button page not displayed");
-        return viewCompanyBtn.isDisplayed();
+        waitForElementVisibility(viewCompanyPageBtn, 5, "View Company  button page not displayed");
+        return viewCompanyPageBtn.isDisplayed();
     }
 
     public void clickOnReturnToHome()
@@ -63,7 +66,7 @@ public class PublishPage extends DriverManager {
     }
     public void clickOnViewCompanyPage()
     {
-        clickOnElement(viewCompanyBtn);
+        clickOnElement(viewCompanyPageBtn);
     }
     public boolean isCompanyPageOpen()
     {

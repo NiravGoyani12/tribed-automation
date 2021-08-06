@@ -85,8 +85,8 @@ public class CompanyPage extends DriverManager {
     public void enterProfileDetail(String slogan, String year, String sector, String noOfEmp, String brandcolor, String aboutUsTitle, String aboutUs, String moreInfoTitle, String moreInfo, String coreValue1, String coreValue1Description, String coreValue2, String coreValue2Description, String coreValue3, String coreValue3Description, String testimonialQuote, String testimonialName, String testimonialRole) throws AWTException, InterruptedException {
 
         waitForElementVisibility(sloganTxt, 5, "Profile page not open");
-        clickOnElement(uploadImageLogo);
-        uploadFile(COMPANY_LOGO);
+        //clickOnElement(uploadImageLogo);
+        //uploadFile(COMPANY_LOGO);
         clearAndSendKeys(sloganTxt, slogan);
         clearAndSendKeys(foundationYearTxt, year);
         clearAndSendKeys(sectorTxt, sector);

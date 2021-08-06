@@ -52,12 +52,15 @@ public class SignUpPage extends DriverManager {
     @FindBy(xpath="//input[@name='aboutUsTitle']")
     public  WebElement aboutUsTxt;
 
+    @FindBy(xpath = "//div[text()='Register your company']")
+    public   WebElement registerMsg;
+
     @FindBy(xpath = "//img[contains(@src,'signUpHero')]/following-sibling::*")
     public WebElement signUpClose;
 
     public void enterSignUpDetails(String name, String email, String companyName, String createPassword) {
         clearAndSendKeys(fullNameTxt, name);
-        clearAndSendKeys(companyEmailTxt, getRandomString(2) + email);
+        clearAndSendKeys(companyEmailTxt, getRandomString(3) + email);
         clearAndSendKeys(companyNameTxt, companyName + getRandomString(1));
         clearAndSendKeys(passwordTxt, createPassword);
     }
@@ -104,11 +107,11 @@ public class SignUpPage extends DriverManager {
     public boolean isSignUpClosed() throws InterruptedException {
         Thread.sleep(4000);
         try {
-            return signUpClose.isDisplayed();
+            return registerMsg.isDisplayed();
         }
         catch (Exception e)
         {
-            return  signUpClose.isDisplayed();
+            return  registerMsg.isDisplayed();
         }
     }
 

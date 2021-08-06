@@ -128,6 +128,10 @@ public class UtilsSteps extends DriverManager {
             case "Dashboard":
                 loginPage.clickonDashboardMenu();
                 break;
+            case "Dashboard after edit Job":
+                loginPage.clickonDashboardMenuAfterEditJob();
+                break;
+
             default:
                 throw new IllegalStateException("Unexpected service name: " + expButton);
         }
@@ -234,7 +238,7 @@ public class UtilsSteps extends DriverManager {
             case "First Development":
                 filterOptionsPage.selectOtherDevelopment();
                 break;
-            case "First Well-being":
+            case "First Well-Being":
                 filterOptionsPage.selectOtherWellBeing();
                 break;
             case "First Benefits":
@@ -251,6 +255,9 @@ public class UtilsSteps extends DriverManager {
                 break;
             case "Clear benefits filter":
                 filterOptionsPage.clickOnClearBenefits();
+                break;
+            case "Clear all filters":
+                filterOptionsPage.clickOnClearAllFilterOption();
                 break;
             case "Cancel":
                 publishPage.clickOnCancelbtn();

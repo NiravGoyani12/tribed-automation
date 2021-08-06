@@ -33,8 +33,11 @@ public class LoginPage extends DriverManager {
     @FindBy(xpath = "(//div[text()='My profile'])[2]")
     public WebElement myProfileMenu;
 
-    @FindBy(xpath = "(//div[text()='Dashboard'])[2]")
+    @FindBy(xpath = "(//div[text()='Dashboard']))[2]")
     public WebElement dashboardMenu;
+
+    @FindBy(xpath = "//div[text()='Dashboard'])")
+    public WebElement dashboardMenuAfterEditjob;
 
     @FindBy(xpath = "(//div[text()='Search'])[2]")
     public WebElement searchMenu;
@@ -42,7 +45,7 @@ public class LoginPage extends DriverManager {
     @FindBy(xpath = "//img[contains(@src,'signUpHero')]/following-sibling::*")
     public WebElement signUpClose;
 
-    @FindBy(xpath = "//button[text()='Forgot your password?']")
+    @FindBy(xpath = "//span[text()='Forgot your password?']")
     public WebElement forgetPasswordBtn;
 
     @FindBy(xpath = "//div[text()='Reset password']")
@@ -59,6 +62,7 @@ public class LoginPage extends DriverManager {
     public void clickOnLogInBtn() throws InterruptedException {
         waitForElementClickable(loginBtn,10, "Login button not displayed");
         clickOnElement(loginBtn);
+        Thread.sleep(2000);
     }
 
     public void clickOnRegisterNowBtn() throws InterruptedException {
@@ -120,6 +124,11 @@ public class LoginPage extends DriverManager {
     public void clickonDashboardMenu()
     {
         clickOnElement(dashboardMenu);
+    }
+
+    public void clickonDashboardMenuAfterEditJob()
+    {
+        clickOnElement(dashboardMenuAfterEditjob);
     }
 
     public void clickonMyProfileMenu() throws InterruptedException {

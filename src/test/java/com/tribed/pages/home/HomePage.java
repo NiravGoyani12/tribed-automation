@@ -47,9 +47,9 @@ public class HomePage extends DriverManager {
     @FindBy(xpath="(//strong[text()='Number of employees:'])[1]")
     public  WebElement numberOfEmployee;
 
-    public void clickOnViewCompanyPage()
-    {
-        waitForElementVisibility(viewCompanyPage,3,"View Company page button is not visible");
+    public void clickOnViewCompanyPage() throws InterruptedException {
+        Thread.sleep(2000);
+        waitForElementVisibility(viewCompanyPage,10,"View Company page button is not visible");
         clickOnElement(viewCompanyPage);
     }
 

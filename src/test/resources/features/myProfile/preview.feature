@@ -17,7 +17,7 @@ Feature: Preview page
   Scenario: Verify Publish button on company preview
     And I click on "Preview" button
     When I click on "Publish" button
-    Then the url should contain with "/company-detail"
+    Then the url should contain with "/company-edit"
 
   Scenario: Verify Return to Edit on culture preview
     And I click on culture page tab
@@ -28,7 +28,7 @@ Feature: Preview page
   Scenario: Verify Publish button on culture preview
     And I click on culture page tab
     When I click on "Publish" button
-    Then the url should contain with "/company-detail"
+    Then the url should contain with "/company-edit"
 
   Scenario: Verify Return to Edit on job preview
     And I click on "Job Page" button
@@ -39,4 +39,4 @@ Feature: Preview page
   Scenario: Verify Publish button on job preview
     And I click on "Job Page" button
     When I click on "Publish" button
-    Then the url should contain with "/company-detail"
+    Then the url should contain with "/job-edit"

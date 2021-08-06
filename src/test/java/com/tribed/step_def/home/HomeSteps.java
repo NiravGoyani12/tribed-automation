@@ -33,11 +33,6 @@ public class HomeSteps  {
         homePage.clickOnHomeAfterSearch();
     }
 
-    @When("^I click view company page$")
-    public void iClickViewCompanyPage() {
-        homePage.clickOnViewCompanyPage();
-    }
-
     @When("^I should be able to see founded and number of employee text$")
     public void iShouldBeAbleToSeeFoundedAndNumberOfEmployeeText() {
         assertThat(homePage.isSectorDisplayed(), is(true));
