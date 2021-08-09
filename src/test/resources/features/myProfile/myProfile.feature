@@ -16,4 +16,3 @@ Feature: My profile page
     And I click on "My Profile" menu
     When I click on "View my profile" button
     Then I should able to see "View profile" screen
-

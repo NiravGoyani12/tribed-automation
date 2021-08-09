@@ -1,15 +1,16 @@
 package com.tribed.step_def;
+
 import com.tribed.driver.DriverManager;
+import com.tribed.pages.dashBoard.DashboardPage;
+import com.tribed.pages.dashBoard.JobPage;
 import com.tribed.pages.home.HomePage;
 import com.tribed.pages.home.LoginPage;
 import com.tribed.pages.home.SignUpPage;
 import com.tribed.pages.myProfile.*;
 import com.tribed.pages.search.FilterOptionsPage;
 import com.tribed.pages.search.SearchPage;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;

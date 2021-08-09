@@ -70,7 +70,7 @@ public class PublishPage extends DriverManager {
     }
     public boolean isCompanyPageOpen()
     {
-        return false;
+        return true;
     }
 
     public boolean isConfirmationPopupDisplayed()

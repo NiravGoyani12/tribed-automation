@@ -1,10 +1,8 @@
-package com.tribed.step_def.myProfile;
+package com.tribed.step_def.dashBoard;
 
-import com.tribed.pages.myProfile.DashboardPage;
-import com.tribed.pages.myProfile.MyProfilePage;
+import com.tribed.pages.dashBoard.DashboardPage;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.w3c.dom.CDATASection;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -14,12 +12,12 @@ public class DashboardSteps {
     DashboardPage dashboardPage =new DashboardPage();
 
     @Then("^I should able to accurate live jobs count$")
-    public void iShouldAbleToAccurateLiveJobsCount() {
+    public void iShouldAbleToAccurateLiveJobsCount() throws InterruptedException {
         assertThat(dashboardPage.isCorrectLiveJobCountDisplayed(), is(true));
     }
 
     @When("^I edit team name from edit job screen$")
-    public void iEditTeamNameFromEditJobScreen() {
+    public void iEditTeamNameFromEditJobScreen() throws InterruptedException {
         dashboardPage.updateJobTeam();
     }
 

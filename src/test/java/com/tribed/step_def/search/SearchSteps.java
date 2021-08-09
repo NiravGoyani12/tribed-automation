@@ -29,7 +29,7 @@ public class SearchSteps {
         searchPage.clickonSearchIcon();
     }
 
-    @Then("^I should be able see see view profile and filteroptions$")
+    @Then("^I should be able see see view profile and filter options$")
     public void iShouldBeAbleSeeSeeViewProfileAndFilteroptions() {
         assertThat(searchPage.isSeeFullProfileDisplayed(), is(true));
         assertThat(searchPage.isFilterOptionsDisplayed(), is(true));

@@ -39,7 +39,7 @@ Feature: dashboard page
     And I click on "Accept" button
     Then I should able to see "Congratulations!" message
 
-  Scenario: Verify live jobs count is proper
+  Scenario: Verify live jobs count is updated accordingly
     When I click on "Dashboard" menu
     Then I should able to accurate live jobs count
 
@@ -52,3 +52,4 @@ Feature: dashboard page
     And I click on "Dashboard" menu
     When I click on "Previous icon" button
     Then I should able to see previous icon in gray color
+

@@ -126,7 +126,7 @@ public class CompanyPage extends DriverManager {
     }
 
     public void clickOnPublishButton() {
-        waitForElementVisibility(previewBtn, 5, "Publish button not displayed");
+        waitForElementVisibility(publishBtn, 5, "Publish button not displayed");
         clickOnElement(publishBtn);
     }
 }

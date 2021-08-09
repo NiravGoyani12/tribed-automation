@@ -12,16 +12,16 @@ public class LoginPage extends DriverManager {
     @FindBy(name = "password")
     public   WebElement passwordField;
 
-    @FindBy(xpath="//button[text()='Sign in']")
+    @FindBy(xpath="//button[contains(text(),'Sign in')]")
     public   WebElement loginBtn;
 
-    @FindBy(xpath="//div[text()='My profile']")
+    @FindBy(xpath="//div[contains(text(),'My profile')]")
     public  WebElement validLogInText;
 
     @FindBy(xpath="//label[text()='Password can only contain Latin letters.']")
     public  WebElement invalidLogInText;
 
-    @FindBy(xpath="(//div[text()='Log out'])[2]")
+    @FindBy(xpath="(//div[contains(text(),'Log out')])[2]")
     public  WebElement logoutBtn;
 
     @FindBy(xpath = "(//div[text()='Sign in'])[1]")
@@ -33,13 +33,13 @@ public class LoginPage extends DriverManager {
     @FindBy(xpath = "(//div[text()='My profile'])[2]")
     public WebElement myProfileMenu;
 
-    @FindBy(xpath = "(//div[text()='Dashboard']))[2]")
+    @FindBy(xpath = "(//div[contains(text(),'Dashboard')])[2]")
     public WebElement dashboardMenu;
 
-    @FindBy(xpath = "//div[text()='Dashboard'])")
+    @FindBy(xpath = "//div[contains(text(),'Dashboard')]")
     public WebElement dashboardMenuAfterEditjob;
 
-    @FindBy(xpath = "(//div[text()='Search'])[2]")
+    @FindBy(xpath = "//div[contains(text(),'Search')]")
     public WebElement searchMenu;
 
     @FindBy(xpath = "//img[contains(@src,'signUpHero')]/following-sibling::*")
@@ -62,7 +62,7 @@ public class LoginPage extends DriverManager {
     public void clickOnLogInBtn() throws InterruptedException {
         waitForElementClickable(loginBtn,10, "Login button not displayed");
         clickOnElement(loginBtn);
-        Thread.sleep(2000);
+        Thread.sleep(3000);
     }
 
     public void clickOnRegisterNowBtn() throws InterruptedException {

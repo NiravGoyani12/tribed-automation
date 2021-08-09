@@ -1,5 +1,5 @@
-package com.tribed.step_def.myProfile;
-import com.tribed.pages.myProfile.JobPage;
+package com.tribed.step_def.dashBoard;
+import com.tribed.pages.dashBoard.JobPage;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;

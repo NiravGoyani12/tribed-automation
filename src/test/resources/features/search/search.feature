@@ -1,14 +1,14 @@
 @sanity
 Feature: search
 
-  Scenario: Verify searching working
+  Scenario: Verify search functionality
     Given I am on the home page
     And I click on "Search" menu
     And I enter company for searching
       | SearchText   |
       | Html |
     When I click on search icon
-    Then I should be able see see view profile and filteroptions
+    Then I should be able see see view profile and filter options
 
   Scenario: Verify see full profile working
     Given I am on the home page

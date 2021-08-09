@@ -1,4 +1,4 @@
-package com.tribed.pages.myProfile;
+package com.tribed.pages.dashBoard;
 import com.tribed.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -164,6 +164,7 @@ public class JobPage extends DriverManager {
     {
         waitForElementVisibility(addLeadershipTile, 8, "Add Leadership Skill Tile not displayed");
         scrollIntoViewSelenium(addTechnicalTile);
+        scrollWindow();
         clickOnElement(addLeadershipTile);
     }
 
@@ -228,7 +229,7 @@ public class JobPage extends DriverManager {
     }
 
     public void clickOnIsSalaryHiddeenchk() {
-        scrollWindow();
+        //scrollWindow();
         clickOnElement(isSalaryHiddenChk);
     }
 

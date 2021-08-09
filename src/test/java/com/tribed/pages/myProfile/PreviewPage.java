@@ -18,6 +18,9 @@ public class PreviewPage extends DriverManager {
     @FindBy(xpath = " //button[text()='Publish']")
     public WebElement publishBtn;
 
+    @FindBy(xpath = " //input[@name='jobTitle']")
+    public WebElement editJobTitle;
+
     @FindBy(xpath = " //input[@name='name']")
     public WebElement editCompanyName;
 
@@ -72,6 +75,12 @@ public class PreviewPage extends DriverManager {
     {
         waitForElementVisibility(editCompanyName, 5, "Edit company page not displayed");
         return editCompanyName.isDisplayed();
+    }
+
+    public boolean isJobEditPageDisplayed()
+    {
+        waitForElementVisibility(editJobTitle, 5, "Edit company page not displayed");
+        return editJobTitle.isDisplayed();
     }
 
 }

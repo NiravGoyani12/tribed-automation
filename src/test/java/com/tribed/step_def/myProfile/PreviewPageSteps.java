@@ -55,7 +55,7 @@ public class PreviewPageSteps {
 
     @And("^I should see company edit page$")
     public void iShouldSeeCompanyEditPage() {
-        assertThat(previewPage.isCompanyEditPageDisplayed(), is(true));
+        assertThat(previewPage.isJobEditPageDisplayed(), is(true));
     }
 
 }

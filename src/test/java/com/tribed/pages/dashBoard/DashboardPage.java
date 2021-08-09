@@ -1,4 +1,4 @@
-package com.tribed.pages.myProfile;
+package com.tribed.pages.dashBoard;
 
 import com.tribed.driver.DriverManager;
 import org.openqa.selenium.By;
@@ -76,8 +76,8 @@ public class DashboardPage extends DriverManager {
         clickOnElement(addANewJobListingBtn);
     }
 
-    public boolean isCorrectLiveJobCountDisplayed()
-    {
+    public boolean isCorrectLiveJobCountDisplayed() throws InterruptedException {
+        Thread.sleep(2000);
         String liveJobCount=liveJobsCount.getText();
         int count=driver.findElements(By.xpath("//h1[contains(@class,'JobTile___StyledSubHeading')]")).size();
         if(liveJobCount.equals(String.valueOf(count)))
@@ -85,10 +85,10 @@ public class DashboardPage extends DriverManager {
         else
             return false;
     }
-    public void updateJobTeam()
-    {
+    public void updateJobTeam() throws InterruptedException {
+        Thread.sleep(2000);
         teamName="Scrum "+getRandomString(4)+"_Team";
-        clearAndSendKeys(basicsTeamTxt,getRandomString(4)+"_Team");
+        clearAndSendKeys(basicsTeamTxt,teamName);
     }
     public boolean isEditJobWorking()
     {
