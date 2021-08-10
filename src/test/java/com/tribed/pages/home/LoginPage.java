@@ -42,6 +42,9 @@ public class LoginPage extends DriverManager {
     @FindBy(xpath = "//div[contains(text(),'Search')]")
     public WebElement searchMenu;
 
+    @FindBy(xpath = "(//div[contains(text(),'Search')])[2]")
+    public WebElement searchMenuAfterLogin;
+
     @FindBy(xpath = "//img[contains(@src,'signUpHero')]/following-sibling::*")
     public WebElement signUpClose;
 
@@ -138,6 +141,10 @@ public class LoginPage extends DriverManager {
     public void clickonSearchMenu() throws InterruptedException {
         waitForElementClickable(searchMenu,10, "Search button not displayed");
         clickOnElement(searchMenu);
+    }
+    public void clickOnSearchAfterLogin() throws InterruptedException {
+        waitForElementClickable(searchMenuAfterLogin,10, "Search button not displayed");
+        clickOnElement(searchMenuAfterLogin);
     }
 
     public boolean isMessageMenuOpen()

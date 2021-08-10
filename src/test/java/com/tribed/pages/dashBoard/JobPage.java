@@ -164,7 +164,7 @@ public class JobPage extends DriverManager {
     {
         waitForElementVisibility(addLeadershipTile, 8, "Add Leadership Skill Tile not displayed");
         scrollIntoViewSelenium(addTechnicalTile);
-        scrollWindow();
+        scrollWindowUp();
         clickOnElement(addLeadershipTile);
     }
 

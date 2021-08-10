@@ -111,7 +111,7 @@ public class SignUpPage extends DriverManager {
         }
         catch (Exception e)
         {
-            return  registerMsg.isDisplayed();
+            return  false;
         }
     }
 

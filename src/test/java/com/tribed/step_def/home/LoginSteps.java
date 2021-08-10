@@ -76,7 +76,7 @@ public class LoginSteps {
 
     @When("^I click on search menu after login$")
     public void iClickOnSearchMenuAfterLogin() throws InterruptedException {
-        loginPage.clickonSearchMenu();
+        loginPage.clickOnSearchAfterLogin();
     }
 
     @When("^I click on close button$")

@@ -35,4 +35,9 @@ public class DashboardSteps {
     public void iShouldAbleToSeePreviousIconInGrayColor() {
         assertThat(dashboardPage.isPreviousBtnWorking(), is(true));
     }
+
+    @Then("^I should able to see Dashboard screen$")
+    public void iShouldAbleToSeeDashboardScreen() {
+        assertThat(dashboardPage.isDashboardScreenOpen(), is(true));
+    }
 }

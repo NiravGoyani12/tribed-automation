@@ -58,4 +58,8 @@ public class PreviewPageSteps {
         assertThat(previewPage.isJobEditPageDisplayed(), is(true));
     }
 
+    @Then("^I should able see company edit screen$")
+    public void iShouldAbleSeeCompanyEditScreen() {
+        assertThat(previewPage.isCompanyEditPageDisplayed(), is(true));
+    }
 }

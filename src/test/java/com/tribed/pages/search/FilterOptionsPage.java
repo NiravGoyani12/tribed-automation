@@ -56,6 +56,9 @@ public class FilterOptionsPage extends DriverManager {
     @FindBy(xpath = "//div[text()='Clear benefits filters']")
     public WebElement clearBenefits;
 
+    @FindBy(xpath = "(//p[contains(@class,'SearchPage___StyledText')])[1]")
+    public WebElement resultCount;
+
     public static String selectedcandidate;
 
     public void clickOnFilterOption()
@@ -94,7 +97,8 @@ public class FilterOptionsPage extends DriverManager {
 
     public boolean isShowCandidateCountDisplayedOnSearchResultPage()
     {
-        if(showCandidate.getAttribute("value").equals(selectedcandidate))
+        String[] ct=getElementText(resultCount).split(" ");
+        if(selectedcandidate.contains(ct[0]))
         {
             return false;
         }
@@ -112,15 +116,16 @@ public class FilterOptionsPage extends DriverManager {
         clickOnElement(firstDevelopment);
     }
     public void selectOtherWellBeing() throws InterruptedException {
-        //moveOnElement(firstWellBeing);
+        Thread.sleep(2000);
         waitForElementVisibility(firstWellBeing,10,"Well Being not visible");
-        scrollIntoViewSelenium(firstWellBeing);
+        scrollIntoViewSelenium(firstBenefit);
         clickOnElement(firstWellBeing);
     }
     public void selectOtherBenefits() throws InterruptedException {
-        //moveOnElement(firstBenefit);
+        Thread.sleep(2000);
         waitForElementVisibility(firstBenefit,10,"Benefits not visible");
         scrollIntoViewSelenium(firstBenefit);
+        scrollWindow();
         clickOnElement(firstBenefit);
     }
 

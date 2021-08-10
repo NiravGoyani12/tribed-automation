@@ -12,7 +12,7 @@ Feature: Preview page
     And I click on "Edit my profile" button
     And I click on "Preview" button
     When I click on "Return to edit" button
-    Then I should see company edit page
+    Then I should able see company edit screen
 
   Scenario: Verify Publish button on company preview
     And I click on "My Profile" menu
@@ -27,7 +27,7 @@ Feature: Preview page
     And I click on culture page tab
     And I click on "Preview" button
     When I click on "Return to edit" button
-    And I should see company edit page
+    Then I should able see company edit screen
 
   Scenario: Verify Publish button on culture preview
     And I click on "My Profile" menu

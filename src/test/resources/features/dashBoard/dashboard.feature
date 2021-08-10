@@ -9,7 +9,7 @@ Feature: dashboard page
 
   Scenario: Verify dashboard working
     When I click on "Dashboard" menu
-    Then I should able to see "Dashboard" screen
+    Then I should able to see Dashboard screen
 
   Scenario: Verify edit job screen display
     And I click on "Dashboard" menu

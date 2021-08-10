@@ -68,7 +68,7 @@ public class DashboardPage extends DriverManager {
 
     public boolean isDashboardScreenOpen()
     {
-            return follower.isDisplayed();
+            return addANewJobListingBtn.isDisplayed();
     }
 
     public void clickOnAddANewJobListingBtn()
@@ -89,6 +89,7 @@ public class DashboardPage extends DriverManager {
         Thread.sleep(2000);
         teamName="Scrum "+getRandomString(4)+"_Team";
         clearAndSendKeys(basicsTeamTxt,teamName);
+        Thread.sleep(2000);
     }
     public boolean isEditJobWorking()
     {

@@ -121,6 +121,10 @@ public class DriverManager {
         ((JavascriptExecutor) driver).executeScript("window.scrollBy(150,100)", "");
         sleep(500);
     }
+    public void scrollWindowUp() {
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(-100,-100)", "");
+        sleep(500);
+    }
 
     public void takeSceenShot(Scenario scenario) {
         byte[] screenShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
