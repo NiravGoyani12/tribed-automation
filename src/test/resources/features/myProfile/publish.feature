@@ -12,9 +12,7 @@ Feature: publish page
     And I click on "Edit my profile" button
     And I click on "Publish" button
     And I click on "Accept" button
-#    Note: All click actions can be done by switch case
     When I click on "Return to home" button
-    #    Note: All Validations can be done by switch case
     Then I should able to see "Home" screen
 
   Scenario: Verify edit company tile button from company page publish

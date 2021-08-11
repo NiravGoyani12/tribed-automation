@@ -1,6 +1,6 @@
 package com.tribed.step_def.myProfile;
+
 import com.tribed.pages.myProfile.PublishPage;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -18,7 +18,6 @@ public class PublishPageSteps {
         assertThat(publishPage.getPublishSuccessMsg(), containsString(expMsg));
     }
 
-    // Note : These 3 steps can be combined using Switch Case
     @Then("^I should able to see return home button$")
     public void iShouldAbleToSeeReturnHomeButton() {
         assertThat(publishPage.isReturnHomeBtnDisplayed(), is(true));

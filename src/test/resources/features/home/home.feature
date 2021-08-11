@@ -4,21 +4,16 @@ Feature: home
   Background: Login into the application
     Given I am on the home page
 
-  Scenario: Verify search menu
-    When I click on "Search" menu
-    Then I should able to see "Search" screen
+  Scenario Outline: Verify search menu
+    When I click on "<userType>" menu
+    Then I should able to see "<loggedMessage>" screen
 
-  Scenario: Verify sign in menu
-    When I click on "SignIn" menu
-    Then I should able to see "Login" screen
-
-  Scenario: Verify sign up menu
-    When I click on "SignUp" menu
-    Then I should able to see "Signup" screen
-
-  Scenario: Verify I am hiring menu
-    When I click on "I m Hiring" menu
-    Then I should able to see "Hiring" screen
+    Examples:
+      | userType | loggedMessage |
+      | Search   | Search        |
+      | SignIn   | SignIn        |
+      | SignUp   | SignUp        |
+      | I m Hiring   | I m Hiring        |
 
   Scenario: Verify home page
     And I click on "Search" menu
