@@ -7,12 +7,13 @@ Feature: My profile page
     And I enter email and password for "Valid User"
     And I click on "Login" button
 
-  Scenario: Verify edit my profile page
+  Scenario Outline: Verify edit and view my profile page
     And I click on "My Profile" menu
-    When I click on "Edit my profile" button
-    Then I should able to see "Edit profile" screen
+    When I click on "<menu>" button
+    Then I should able to see "<screen>" screen
 
-  Scenario: Verify view my profile page
-    And I click on "My Profile" menu
-    When I click on "View my profile" button
-    Then I should able to see "View profile" screen
+    Examples:
+      | menu              | screen        |
+      | Edit my profile   | Edit profile  |
+      | View my profile   | View profile  |
+

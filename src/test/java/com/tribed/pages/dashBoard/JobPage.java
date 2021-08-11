@@ -5,6 +5,10 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.awt.*;
+
+import static com.tribed.utilities.CommonUtils.*;
+
 public class JobPage extends DriverManager {
 
     @FindBy(xpath = "//h3[text()='Jobs page']")
@@ -21,6 +25,9 @@ public class JobPage extends DriverManager {
 
     @FindBy(xpath = "//input[@name='basics.preferences.officeLocation']")
     public WebElement basicsPreferencesOfficeLocationTxt;
+
+    @FindBy(xpath = "//button[text()='Save']")
+    public WebElement saveImgBtn;
 
     @FindBy(xpath = "//input[@placeholder='Select option']/following-sibling::img")
     public WebElement jobFlexDP;
@@ -94,7 +101,7 @@ public class JobPage extends DriverManager {
     @FindBy(xpath = "//div[text()='Amazon Web Services']")
     public WebElement amazonWebService;
 
-    @FindBy(xpath = "(//p[text()='Upload image']")
+    @FindBy(xpath = "//p[text()='Upload image']")
     public WebElement uploadImageLogo;
 
     @FindBy(xpath = "(//p[text()='Upload image of team or company']")
@@ -180,12 +187,13 @@ public class JobPage extends DriverManager {
         clickOnElement(qualificationTile);
     }
 
-    public void enterJobDetail(String jobTitle, String team, String officeLocation, String minSalary, String maxSalary, String infoTitle, String info) throws InterruptedException {
+    public void enterJobDetail(String jobTitle, String team, String officeLocation, String minSalary, String maxSalary, String infoTitle, String info) throws InterruptedException, AWTException {
         Thread.sleep(2000);
         waitForElementVisibility(jobTitleTxt, 5, "Job page not open");
         SendKeys(jobTitleTxt, jobTitle);
-        //clickOnElement(uploadImageLogo);
-        //uploadFile(JOB_LOGO);
+        clickOnElement(uploadImageLogo);
+        uploadFile(JOB_LOGO);
+        //clickOnElement(saveImgBtn);
         SendKeys(basicsTeamTxt, team);
         SendKeys(basicsPreferencesOfficeLocationTxt, officeLocation);
         scrollWindow();
@@ -209,8 +217,9 @@ public class JobPage extends DriverManager {
         SendKeys(maxSalaryTxt, maxSalary);
         SendKeys(infoTitleTxt, infoTitle);
         SendKeys(infoTxt, info);
-        //clickOnElement(uploadTeamImage);
-        //uploadFile(JOB_TEAM_IMAGE);
+        clickOnElement(uploadTeamImage);
+        uploadFile(JOB_TEAM_IMAGE);
+        //clickOnElement(saveImgBtn);
     }
 
     public void clickOnAboutThisJobBtn()

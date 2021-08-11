@@ -2,6 +2,7 @@ package com.tribed.step_def.home;
 
 import com.tribed.driver.DriverManager;
 import com.tribed.pages.home.FooterPage;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -17,5 +18,9 @@ public class FooterSteps {
         footerpage.clickOntribedIcon();
     }
 
+    @Then("^I should able to see copyright statement$")
+    public void iShouldAbleToSeeCopyrightStatement() {
+        assertThat(footerpage.isCopyrightSentenceDisplayed(), is(true));
 
+    }
 }

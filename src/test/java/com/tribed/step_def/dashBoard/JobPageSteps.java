@@ -4,6 +4,8 @@ import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
+import java.awt.*;
 import java.util.List;
 import java.util.Map;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -19,30 +21,30 @@ public class JobPageSteps {
         jobPage.selectAnySkillAndSave();
     }
 
-    @Then("^added technical skill should saved and displayed$")
-    public void addedTechnicalSkillShouldSavedAndDisplayed() {
+    @Then("^Added technical skill should saved and displayed$")
+    public void ddedTechnicalSkillShouldSavedAndDisplayed() {
         assertThat(jobPage.isAddedSkillSavedAndDisplayed(), is(true));
     }
 
     @When("^I enter following details for job page$")
-    public void iEnterFollowingDetailsForJobPage(DataTable dataTable) throws InterruptedException {
+    public void iEnterFollowingDetailsForJobPage(DataTable dataTable) throws InterruptedException, AWTException {
         data =  dataTable.asMaps(String.class, String.class);
         jobPage.enterJobDetail(data.get(0).get("JobTitle"), data.get(0).get("Team") ,
                 data.get(0).get("Office Location"), data.get(0).get("MinSalary"), data.get(0).get("MaxSalary"),
                 data.get(0).get("InfoTitle"),data.get(0).get("Info"));
     }
 
-    @Then("^added leadership skill should saved and displayed$")
+    @Then("^Added leadership skill should saved and displayed$")
     public void addedLeadershipSkillShouldSavedAndDisplayed() {
         assertThat(jobPage.isAddedSkillSavedAndDisplayed(), is(true));
     }
 
-    @Then("^added sectors skill should saved and displayed$")
+    @Then("^Added sectors skill should saved and displayed$")
     public void addedSectorsSkillShouldSavedAndDisplayed() {
         assertThat(jobPage.isAddedSkillSavedAndDisplayed(), is(true));
     }
 
-    @Then("^added qualifications skill should saved and displayed$")
+    @Then("^Added qualifications skill should saved and displayed$")
     public void addedQualificationsSkillShouldSavedAndDisplayed() {
         assertThat(jobPage.isAddedSkillSavedAndDisplayed(), is(true));
     }

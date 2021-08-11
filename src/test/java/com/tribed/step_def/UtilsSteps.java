@@ -7,10 +7,12 @@ import com.tribed.pages.home.HomePage;
 import com.tribed.pages.home.LoginPage;
 import com.tribed.pages.home.SignUpPage;
 import com.tribed.pages.myProfile.*;
+import com.tribed.pages.search.DiscoverPage;
 import com.tribed.pages.search.FilterOptionsPage;
 import com.tribed.pages.search.SearchPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
+import org.junit.rules.DisableOnDebug;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -31,6 +33,7 @@ public class UtilsSteps extends DriverManager {
     FilterOptionsPage filterOptionsPage=new FilterOptionsPage();
     MyProfilePage myProfilePage=new MyProfilePage();
     DashboardPage dashboardPage=new DashboardPage();
+    DiscoverPage discoverPage=new DiscoverPage();
 
     @Then("^the url should contain with \"([^\"]*)\"$")
     public void the_url_should_contain(String url) {
@@ -94,7 +97,9 @@ public class UtilsSteps extends DriverManager {
             case "Add a new job listing":
                 isValidScreen = dashboardPage.isAddJobListingScreenOpen();
                 break;
-
+            case "Discover":
+                isValidScreen = discoverPage.isDiscoverScreenDisplayed();
+                break;
             default:
                 throw new IllegalStateException("Unexpected service name: " + expScreenName);
         }
@@ -125,6 +130,9 @@ public class UtilsSteps extends DriverManager {
                 break;
             case "My Profile":
                 loginPage.clickonMyProfileMenu();
+                break;
+            case "Logout":
+                loginPage.clickOnLogoutBtn();
                 break;
             case "Dashboard":
                 loginPage.clickonDashboardMenu();
@@ -283,6 +291,9 @@ public class UtilsSteps extends DriverManager {
                 break;
             case "Previous icon":
                 dashboardPage.clickPreviousBtn();
+                break;
+            case "Discover":
+                discoverPage.clickOnDisCoverTab();
                 break;
             default:
                 throw new IllegalStateException("Unexpected service name: " + expButton);

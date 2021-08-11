@@ -4,16 +4,16 @@ Feature: home
   Background: Login into the application
     Given I am on the home page
 
-  Scenario Outline: Verify search menu
-    When I click on "<userType>" menu
-    Then I should able to see "<loggedMessage>" screen
+  Scenario Outline: Verify different menu
+    When I click on "<menu>" menu
+    Then I should able to see "<screen>" screen
 
     Examples:
-      | userType | loggedMessage |
-      | Search   | Search        |
-      | SignIn   | SignIn        |
-      | SignUp   | SignUp        |
-      | I m Hiring   | I m Hiring        |
+      | menu         | screen |
+      | Search       | Search |
+      | SignIn       | SignIn |
+      | SignUp       | Signup |
+      | I m Hiring   | Hiring |
 
   Scenario: Verify home page
     And I click on "Search" menu
@@ -31,3 +31,4 @@ Feature: home
     And I click on "Login" button
     When I click on "View Company" button
     Then I should be able to see founded and number of employee text
+

@@ -29,29 +29,23 @@ Feature: login
     When I enter email and password for "Valid User"
     Then Log in button should be "enabled"
 
-  Scenario: Logout functionality
+  Scenario Outline: Verify logout, messages and my profile screen
     And I enter email and password for "Valid User"
     And I click on "Login" button
-    And I click on "Logout" button
-    Then I should able to see "SignIn" screen
+    When I click on "<menu>" menu
+    Then I should able to see "<screen>" screen
 
-  Scenario: Verify messages menu
-    And I enter email and password for "Valid User"
-    And I click on "Login" button
-    When I click on "Messages" menu
-    Then I should able to see "Messages" screen
+    Examples:
+      | menu         | screen     |
+      | Logout       | SignIn     |
+      | Messages     | Messages   |
+      | My Profile   | My Profile |
 
   Scenario: Verify search menu
     And I enter email and password for "Valid User"
     And I click on "Login" button
     When I click on search menu after login
     Then I should able to see "Search" screen
-
-  Scenario: Verify my profile menu
-    And I enter email and password for "Valid User"
-    And I click on "Login" button
-    When I click on "My Profile" menu
-    Then I should able to see "My Profile" screen
 
   Scenario: Verify close button on 'Sign in' page
     When I click on "Close" button

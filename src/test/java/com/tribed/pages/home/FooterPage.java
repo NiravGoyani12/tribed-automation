@@ -12,6 +12,10 @@ public class FooterPage extends DriverManager {
     @FindBy(xpath="//h1[text()='Discover companies']")
     public  WebElement titleDiscoverCompanies;
 
+    @FindBy(xpath="//p[text()='Copyright © 2021 Tribed, Inc.']")
+    public  WebElement copyRight;
+
+
     public void clickOntribedIcon() {
         waitForElementVisibility(tribedIcon,3,"Icon is not visible");
         clickOnElement(tribedIcon);
@@ -20,6 +24,10 @@ public class FooterPage extends DriverManager {
     public boolean isHomePageOpen()
     {
         return titleDiscoverCompanies.isDisplayed();
+    }
+    public boolean isCopyrightSentenceDisplayed()
+    {
+        return copyRight.isDisplayed();
     }
 
 }

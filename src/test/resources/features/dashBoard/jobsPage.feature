@@ -59,25 +59,25 @@ Feature: Job page
     And I click on "Add a new job listing" button
     And I click on "Add Technical" button
     When I select any technical skill and save
-    Then added technical skill should saved and displayed
+    Then Added technical skill should saved and displayed
 
   Scenario: Add Leadership Skills
     And I click on "Add a new job listing" button
     And I click on "Add Leadership" button
     When I select any leadership skill and save
-    Then added leadership skill should saved and displayed
+    Then Added leadership skill should saved and displayed
 
   Scenario: Add Sectors
     And I click on "Add a new job listing" button
     And I click on "Add Sector" button
     When I select any sector and save
-    Then added sectors skill should saved and displayed
+    Then Added sectors skill should saved and displayed
 
   Scenario: Add Qualifications Skills
     And I click on "Add a new job listing" button
     And I click on "Add Qualification" button
     When I select any qualification and save
-    Then added qualifications skill should saved and displayed
+    Then Added qualifications skill should saved and displayed
 
   Scenario: Verify next section button while adding skills
     And I click on "Add a new job listing" button
