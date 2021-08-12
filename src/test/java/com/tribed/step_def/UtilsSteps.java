@@ -12,7 +12,6 @@ import com.tribed.pages.search.FilterOptionsPage;
 import com.tribed.pages.search.SearchPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
-import org.junit.rules.DisableOnDebug;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;

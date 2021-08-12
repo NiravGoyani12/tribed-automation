@@ -1,11 +1,13 @@
 package com.tribed.step_def.home;
+
 import com.tribed.pages.home.SignUpPage;
 import cucumber.api.DataTable;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
 import java.util.List;
 import java.util.Map;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;

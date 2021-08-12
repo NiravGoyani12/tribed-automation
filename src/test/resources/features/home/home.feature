@@ -31,4 +31,3 @@ Feature: home
     And I click on "Login" button
     When I click on "View Company" button
     Then I should be able to see founded and number of employee text
-

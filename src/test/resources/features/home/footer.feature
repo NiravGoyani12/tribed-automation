@@ -10,5 +10,5 @@ Feature: footer
   Scenario: Verify copyright statement
     When I am on the home page
     Then I should able to see copyright statement
-#    Note: To be added scenario for Copyright © 2021 Tribed, Inc.
+
     

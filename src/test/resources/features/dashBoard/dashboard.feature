@@ -52,4 +52,3 @@ Feature: dashboard page
     And I click on "Dashboard" menu
     When I click on "Previous icon" button
     Then I should able to see previous icon in gray color
-
