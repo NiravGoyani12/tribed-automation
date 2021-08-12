@@ -21,6 +21,5 @@ public class FooterSteps {
     @Then("^I should able to see copyright statement$")
     public void iShouldAbleToSeeCopyrightStatement() {
         assertThat(footerpage.isCopyrightSentenceDisplayed(), is(true));
-
     }
 }

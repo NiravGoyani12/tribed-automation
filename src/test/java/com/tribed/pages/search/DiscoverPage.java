@@ -1,7 +1,6 @@
 package com.tribed.pages.search;
 
 import com.tribed.driver.DriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -21,6 +20,4 @@ public class DiscoverPage extends DriverManager {
     {
         return  headLines.isDisplayed();
     }
-
-
 }

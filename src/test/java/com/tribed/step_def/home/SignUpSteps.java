@@ -17,7 +17,6 @@ public class SignUpSteps {
     SignUpPage signUpPage =new SignUpPage();
     List<Map<String, String>> data;
 
-
     @When("^I enter following details to sign up for new company$")
     public void iEnterFollowingDetailsToSignUpForNewCompany(DataTable dataTable) {
         data =  dataTable.asMaps(String.class, String.class);

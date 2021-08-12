@@ -6,6 +6,4 @@ public class MyProfileSteps {
 
     MyProfilePage myProfilePage =new MyProfilePage();
 
-
-
 }

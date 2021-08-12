@@ -65,5 +65,4 @@ public class CulturePage extends DriverManager {
     {
         clickOnElement(acceptBtn);
     }
-
 }

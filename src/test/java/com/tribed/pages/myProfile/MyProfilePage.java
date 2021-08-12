@@ -1,7 +1,6 @@
 package com.tribed.pages.myProfile;
 
 import com.tribed.driver.DriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -43,5 +42,4 @@ public class MyProfilePage extends DriverManager {
         Thread.sleep(2000);
         return editMyProfile.isDisplayed();
     }
-
 }

@@ -82,5 +82,4 @@ public class PreviewPage extends DriverManager {
         waitForElementVisibility(editJobTitle, 5, "Edit company page not displayed");
         return editJobTitle.isDisplayed();
     }
-
 }

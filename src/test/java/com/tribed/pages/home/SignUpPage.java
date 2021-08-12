@@ -114,5 +114,4 @@ public class SignUpPage extends DriverManager {
             return  false;
         }
     }
-
 }

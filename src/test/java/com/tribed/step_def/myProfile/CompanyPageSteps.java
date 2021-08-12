@@ -27,10 +27,8 @@ public class CompanyPageSteps {
                 data.get(0).get("TestimonialRole"));
     }
 
-
     @And("^I click on publish button$")
     public void iClickOnPublishButton() {
         companyPage.clickOnPublishButton();
     }
-
 }

@@ -29,5 +29,4 @@ public class FooterPage extends DriverManager {
     {
         return copyRight.isDisplayed();
     }
-
 }

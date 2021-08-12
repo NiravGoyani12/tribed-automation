@@ -5,8 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.tribed.utilities.CommonUtils.*;
-
 public class SearchPage extends DriverManager {
 
     @FindBy(name = "email")
@@ -62,8 +60,5 @@ public class SearchPage extends DriverManager {
         {
             return false;
         }
-
     }
-
-
 }

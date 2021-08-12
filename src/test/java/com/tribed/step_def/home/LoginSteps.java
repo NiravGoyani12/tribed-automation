@@ -82,7 +82,6 @@ public class LoginSteps {
 
     @When("^I click on close button$")
     public void iClickOnCloseButton() {
-
         loginPage.clickonSignUpClose();
     }
 
