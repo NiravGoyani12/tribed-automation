@@ -282,6 +282,9 @@ public class UtilsSteps extends DriverManager {
             case "Edit job":
                 dashboardPage.clickOnEditJob();
                 break;
+            case "Edit job listing":
+                dashboardPage.clickOnEditJobListingMenu();
+                break;
             case "Add a new job listing":
                 dashboardPage.clickOnAddANewJobListingBtn();
                 break;
@@ -293,6 +296,9 @@ public class UtilsSteps extends DriverManager {
                 break;
             case "Discover":
                 discoverPage.clickOnDisCoverTab();
+                break;
+            case "Back":
+                dashboardPage.clickBackBtn();
                 break;
             default:
                 throw new IllegalStateException("Unexpected service name: " + expButton);

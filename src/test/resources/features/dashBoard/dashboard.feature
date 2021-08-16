@@ -14,14 +14,17 @@ Feature: dashboard page
   Scenario: Verify edit job screen display
     And I click on "Dashboard" menu
     When I click on "Edit job" button
+    And I click on "Edit job listing" button
     Then I should able to see "Edit job" screen
 
   Scenario: Verify edit job functionality from dashboard
     And I click on "Dashboard" menu
     And I click on "Edit job" button
+    And I click on "Edit job listing" button
     And I edit team name from edit job screen
     And I click on "Dashboard after edit Job" menu
     When I click on "Edit job" button
+    And I click on "Edit job listing" button
     Then I should able to see updated team name
 
   Scenario: Verify Add new job listing screen display
@@ -52,3 +55,10 @@ Feature: dashboard page
     And I click on "Dashboard" menu
     When I click on "Previous icon" button
     Then I should able to see previous icon in gray color
+
+  Scenario: Verify back button on edit
+    And I click on "Dashboard" menu
+    And I click on "Edit job" button
+    And I click on "Edit job listing" button
+    When I click on "Back" button
+    Then I should able to see Dashboard screen

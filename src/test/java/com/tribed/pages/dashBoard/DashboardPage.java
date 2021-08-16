@@ -15,8 +15,11 @@ public class DashboardPage extends DriverManager {
     @FindBy(xpath = "//p[text()='Live jobs']")
     public WebElement liveJObs;
 
-    @FindBy(xpath = "(//a[text()='Edit job'])[1]")
+    @FindBy(xpath = "(//div[text()='Edit job'])[1]")
     public WebElement editJob;
+
+    @FindBy(xpath = "(//li[text()='Edit job listing'])[1]")
+    public WebElement editJobListing;
 
     @FindBy(xpath = "(//h1[contains(@class,'JobTile___StyledSubHeading')])[1]")
     public WebElement firstJobTitle;
@@ -47,6 +50,10 @@ public class DashboardPage extends DriverManager {
 
     @FindBy(xpath = "(//div[contains(@class,'JobsCarousel___StyledDiv')]/button)[2][@disabled]")
     public WebElement previousDisabledBtn;
+
+    @FindBy(xpath = "//div[contains(@class,'job_edit__TitleContainerLeft')]/*")
+    public WebElement backBtn;
+
 
     public static String jobName;
     public static String teamName;
@@ -124,5 +131,14 @@ public class DashboardPage extends DriverManager {
     public boolean isPreviousBtnWorking()
     {
         return previousDisabledBtn.isDisplayed();
+    }
+
+    public void clickOnEditJobListingMenu()
+    {
+        clickOnElement(editJobListing);
+    }
+    public void clickBackBtn()
+    {
+        clickOnElement(backBtn);
     }
 }

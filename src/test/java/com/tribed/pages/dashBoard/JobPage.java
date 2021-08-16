@@ -101,10 +101,10 @@ public class JobPage extends DriverManager {
     @FindBy(xpath = "//div[text()='Amazon Web Services']")
     public WebElement amazonWebService;
 
-    @FindBy(xpath = "//p[text()='Upload image']")
+    @FindBy(xpath = "//div[text()='Upload image']")
     public WebElement uploadImageLogo;
 
-    @FindBy(xpath = "(//p[text()='Upload image of team or company']")
+    @FindBy(xpath = "(//div[text()='Upload image of team or company']")
     public WebElement uploadTeamImage;
 
     @FindBy(xpath = "(//button[text()='About this job'])[1]")
@@ -193,7 +193,7 @@ public class JobPage extends DriverManager {
         SendKeys(jobTitleTxt, jobTitle);
         clickOnElement(uploadImageLogo);
         uploadFile(JOB_LOGO);
-        //clickOnElement(saveImgBtn);
+        clickOnElement(saveImgBtn);
         SendKeys(basicsTeamTxt, team);
         SendKeys(basicsPreferencesOfficeLocationTxt, officeLocation);
         scrollWindow();
@@ -219,7 +219,7 @@ public class JobPage extends DriverManager {
         SendKeys(infoTxt, info);
         clickOnElement(uploadTeamImage);
         uploadFile(JOB_TEAM_IMAGE);
-        //clickOnElement(saveImgBtn);
+        clickOnElement(saveImgBtn);
     }
 
     public void clickOnAboutThisJobBtn()
