@@ -54,13 +54,27 @@ public class DashboardPage extends DriverManager {
     @FindBy(xpath = "//div[contains(@class,'job_edit__TitleContainerLeft')]/*")
     public WebElement backBtn;
 
+    @FindBy(xpath = "(//li[text()='Activate job'])[1]")
+    public WebElement activateJobBtn;
+
+    @FindBy(xpath = "(//li[text()='Deactivate job'])[1]")
+    public WebElement deactivateJobBtn;
+
+    @FindBy(xpath = "(//div[contains(@class,'JobTile__JobStatus')])[1]")
+    public WebElement jobStatus;
+
+    @FindBy(xpath = "(//button[text()='Manage candidates'])[1]")
+    public WebElement manageCandidateBtn;
+
+    @FindBy(xpath = "//h1[contains(@class,'applied_candidates___StyledSectionHeading')]")
+    public WebElement candidatesScreen;
 
     public static String jobName;
     public static String teamName;
 
     public void clickOnEditJob()
     {
-        waitForElementVisibility(editJob,5, "Edit job button not displayed");
+        waitForElementVisibility(editJob,10, "Edit job button not displayed");
         jobName=firstJobTitle.getText();
         clickOnElement(editJob);
     }
@@ -140,5 +154,40 @@ public class DashboardPage extends DriverManager {
     public void clickBackBtn()
     {
         clickOnElement(backBtn);
+    }
+    public void clickActivateJob()
+    {
+        clickOnElement(activateJobBtn);
+    }
+
+    public void clickDeactivateJob()
+    {
+        clickOnElement(deactivateJobBtn);
+    }
+
+    public void clickManageCandidates()
+    {
+        clickOnElement(manageCandidateBtn);
+    }
+
+    public boolean isActivateJobWorking() throws InterruptedException {
+        Thread.sleep(3000);
+        if(jobStatus.getText().equals("Job live"))
+            return true;
+        else
+            return false;
+    }
+
+    public boolean isDeactivateJobWorking() throws InterruptedException {
+        Thread.sleep(3000);
+        if(jobStatus.getText().equals("Job deactivated"))
+            return true;
+        else
+            return false;
+    }
+
+    public boolean isManageCandidatesScreenDisplayed()
+    {
+        return candidatesScreen.isDisplayed();
     }
 }

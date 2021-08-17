@@ -99,6 +99,10 @@ public class UtilsSteps extends DriverManager {
             case "Discover":
                 isValidScreen = discoverPage.isDiscoverScreenDisplayed();
                 break;
+            case "candidates":
+                isValidScreen = dashboardPage.isManageCandidatesScreenDisplayed();
+                break;
+
             default:
                 throw new IllegalStateException("Unexpected service name: " + expScreenName);
         }
@@ -299,6 +303,15 @@ public class UtilsSteps extends DriverManager {
                 break;
             case "Back":
                 dashboardPage.clickBackBtn();
+                break;
+            case "Activate job":
+                dashboardPage.clickActivateJob();
+                break;
+            case "Deactivate job":
+                dashboardPage.clickDeactivateJob();
+                break;
+            case "Manage candidates":
+                dashboardPage.clickManageCandidates();
                 break;
             default:
                 throw new IllegalStateException("Unexpected service name: " + expButton);

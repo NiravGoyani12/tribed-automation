@@ -40,4 +40,14 @@ public class DashboardSteps {
     public void iShouldAbleToSeeDashboardScreen() {
         assertThat(dashboardPage.isDashboardScreenOpen(), is(true));
     }
+
+    @Then("^Job should be activated$")
+    public void jobShouldBeActivated() throws InterruptedException {
+        assertThat(dashboardPage.isActivateJobWorking(), is(true));
+    }
+
+    @Then("^Job should be deactivated$")
+    public void jobShouldBeDeactivated() throws InterruptedException {
+        assertThat(dashboardPage.isDeactivateJobWorking(), is(true));
+    }
 }

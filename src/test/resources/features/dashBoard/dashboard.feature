@@ -56,9 +56,19 @@ Feature: dashboard page
     When I click on "Previous icon" button
     Then I should able to see previous icon in gray color
 
-  Scenario: Verify back button on edit
+  Scenario: Verify activate job functionality
     And I click on "Dashboard" menu
     And I click on "Edit job" button
-    And I click on "Edit job listing" button
-    When I click on "Back" button
-    Then I should able to see Dashboard screen
+    When I click on "Activate job" button
+    Then Job should be activated
+
+  Scenario: Verify deactivate job functionality
+    And I click on "Dashboard" menu
+    And I click on "Edit job" button
+    When I click on "Deactivate job" button
+    Then Job should be deactivated
+
+  Scenario: Verify deactivate job functionality
+    And I click on "Dashboard" menu
+    When I click on "Manage candidates" button
+    Then I should able to see "candidates" screen
