@@ -1,4 +1,4 @@
-@sanity
+@sanity4
 Feature: dashboard page
 
   Background: Login into the application

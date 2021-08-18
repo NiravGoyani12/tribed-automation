@@ -4,7 +4,6 @@ import com.tribed.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import static com.tribed.utilities.CommonUtils.getRandomString;
 
 public class DashboardPage extends DriverManager {
