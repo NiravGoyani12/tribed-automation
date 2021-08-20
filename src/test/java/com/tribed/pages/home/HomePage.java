@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends DriverManager {
 
-    @FindBy(xpath = "(//div[text()='Sign in'])[2]")
+    @FindBy(xpath = "//div[text()='Sign in']")
     public WebElement signInBtn;
 
     @FindBy(xpath="(//div[text()='Sign up'])[2]")

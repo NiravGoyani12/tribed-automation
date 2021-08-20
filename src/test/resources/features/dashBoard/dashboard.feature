@@ -1,4 +1,4 @@
-@sanity4
+@sanity
 Feature: dashboard page
 
   Background: Login into the application
@@ -42,9 +42,6 @@ Feature: dashboard page
     And I click on "Accept" button
     Then I should able to see "Congratulations!" message
 
-  Scenario: Verify live jobs count is updated accordingly
-    When I click on "Dashboard" menu
-    Then I should able to accurate live jobs count
 
   Scenario: Verify next button on job slides
     And I click on "Dashboard" menu

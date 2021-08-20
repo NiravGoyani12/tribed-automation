@@ -26,8 +26,11 @@ public class JobPage extends DriverManager {
     @FindBy(xpath = "//input[@name='basics.preferences.officeLocation']")
     public WebElement basicsPreferencesOfficeLocationTxt;
 
-    @FindBy(xpath = "//button[text()='Save']")
+    @FindBy(xpath = "(//button[text()='Save'])[1]")
     public WebElement saveImgBtn;
+
+    @FindBy(xpath = "(//button[text()='Save'])[last()]")
+    public WebElement saveImgBtnLast;
 
     @FindBy(xpath = "//input[@placeholder='Select option']/following-sibling::img")
     public WebElement jobFlexDP;
@@ -104,7 +107,7 @@ public class JobPage extends DriverManager {
     @FindBy(xpath = "//div[text()='Upload image']")
     public WebElement uploadImageLogo;
 
-    @FindBy(xpath = "(//div[text()='Upload image of team or company']")
+    @FindBy(xpath = "//div[text()='Upload image of team or company']")
     public WebElement uploadTeamImage;
 
     @FindBy(xpath = "(//button[text()='About this job'])[1]")
@@ -219,7 +222,7 @@ public class JobPage extends DriverManager {
         SendKeys(infoTxt, info);
         clickOnElement(uploadTeamImage);
         uploadFile(JOB_TEAM_IMAGE);
-        clickOnElement(saveImgBtn);
+        clickOnElement(saveImgBtnLast);
     }
 
     public void clickOnAboutThisJobBtn()

@@ -33,7 +33,7 @@ public class LoginPage extends DriverManager {
     @FindBy(xpath = "(//div[text()='My profile'])[2]")
     public WebElement myProfileMenu;
 
-    @FindBy(xpath = "(//div[contains(text(),'Dashboard')])[2]")
+    @FindBy(xpath = "//div[contains(text(),'Dashboard')]")
     public WebElement dashboardMenu;
 
     @FindBy(xpath = "//div[contains(text(),'Dashboard')]")
