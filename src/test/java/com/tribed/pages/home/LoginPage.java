@@ -21,16 +21,16 @@ public class LoginPage extends DriverManager {
     @FindBy(xpath="//label[text()='Password can only contain Latin letters.']")
     public  WebElement invalidLogInText;
 
-    @FindBy(xpath="(//div[contains(text(),'Log out')])[2]")
+    @FindBy(xpath="(//div[contains(text(),'Log out')])[1]")
     public  WebElement logoutBtn;
 
     @FindBy(xpath = "(//div[text()='Sign in'])[1]")
     public WebElement signInBtn;
 
-    @FindBy(xpath = "(//div[text()='Messages'])[2]")
+    @FindBy(xpath = "(//div[text()='Messages'])[1]")
     public WebElement messageMenu;
 
-    @FindBy(xpath = "(//div[text()='My profile'])[2]")
+    @FindBy(xpath = "(//div[text()='My profile'])[1]")
     public WebElement myProfileMenu;
 
     @FindBy(xpath = "//div[contains(text(),'Dashboard')]")
@@ -42,7 +42,7 @@ public class LoginPage extends DriverManager {
     @FindBy(xpath = "//div[contains(text(),'Search')]")
     public WebElement searchMenu;
 
-    @FindBy(xpath = "(//div[contains(text(),'Search')])[2]")
+    @FindBy(xpath = "(//div[contains(text(),'Search')])[1]")
     public WebElement searchMenuAfterLogin;
 
     @FindBy(xpath = "//img[contains(@src,'signUpHero')]/following-sibling::*")

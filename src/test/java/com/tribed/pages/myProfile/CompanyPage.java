@@ -99,6 +99,7 @@ public class CompanyPage extends DriverManager {
         clearAndSendKeys(aboutUsTitleTxt, aboutUsTitle);
         clearAndSendKeys(aboutUsTxt, aboutUs);
         waitForElementClickable(uploadSupportImage,10,"Upload support email not displayed");
+        scrollWindow();
         clickOnElement(uploadSupportImage);
         uploadFile(COMPANY_SUPPORT_IMAGE);
         clickOnElement(saveImgBtn);
@@ -116,9 +117,10 @@ public class CompanyPage extends DriverManager {
         clearAndSendKeys(testimonialQuoteTxt, testimonialQuote);
         clearAndSendKeys(testimonialNameTxt, testimonialName);
         clearAndSendKeys(testimonialRoleTxt, testimonialRole);
+        scrollWindow();
         clickOnElement(uploadEmpImage);
         uploadFile(COMPANY_IMP_IMAGE);
-        clickOnElement(saveImgBtn);
+        //clickOnElement(saveImgBtn);
     }
 
     public void clickonSaveAndGoToCulturalPageButton() {

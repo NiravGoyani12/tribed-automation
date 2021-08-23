@@ -133,6 +133,7 @@ public class UtilsSteps extends DriverManager {
                 break;
             case "My Profile":
                 loginPage.clickonMyProfileMenu();
+                loginPage.clickonMyProfileMenu();
                 break;
             case "Logout":
                 loginPage.clickOnLogoutBtn();

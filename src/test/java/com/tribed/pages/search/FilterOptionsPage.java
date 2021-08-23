@@ -109,6 +109,7 @@ public class FilterOptionsPage extends DriverManager {
 
     public void selectOtherDevelopment() throws InterruptedException {
         //moveOnElement(firstDevelopment);
+        scrollWindow();
         waitForElementVisibility(firstDevelopment,10,"Development not visible");
         scrollWindow();
         scrollWindow();

@@ -6,10 +6,10 @@ import org.openqa.selenium.support.FindBy;
 
 public class MyProfilePage extends DriverManager {
 
-    @FindBy(xpath = "(//li[text()='Edit my profile'])[2]")
+    @FindBy(xpath = "(//li[text()='Edit my profile'])[1]")
     public WebElement editMyProfile;
 
-    @FindBy(xpath = "(//li[text()='View my profile'])[2]")
+    @FindBy(xpath = "(//li[text()='View my profile'])[1]")
     public WebElement viewMyProfile;
 
     @FindBy(xpath = "//h3[text()='Company page']")

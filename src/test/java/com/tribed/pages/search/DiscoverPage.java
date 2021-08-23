@@ -9,7 +9,7 @@ public class DiscoverPage extends DriverManager {
     @FindBy(xpath = "//a[text()='Discover']")
     public   WebElement discoverTab;
 
-    @FindBy(xpath = "//h1[contains(text(),'Candidates who prioritize company culture')]")
+    @FindBy(xpath = "//h1[contains(text(),'Candidates who prioritise company culture')]")
     public   WebElement headLines;
 
     public void clickOnDisCoverTab()

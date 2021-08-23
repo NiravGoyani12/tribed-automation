@@ -91,3 +91,35 @@ Feature: Job page
     And I select any qualification
     When I click on "Save and Exit" button
     Then I should be able to see all selected skills sector and qualification
+
+  Scenario: Verify return to home button from job page publish
+    And I click on "Add a new job listing" button
+    And I enter following details for job page
+      | JobTitle       | Team              | Office Location     | MinSalary | MaxSalary | InfoTitle                      | Info                |
+      | Automation Eng | Quality Assurance | London              | 3000000   | 3500000    | Looking for Automation Eng     | Selenium Cucumber   |
+    When I click on "Publish" button
+    And I click on "Accept" button
+    And I click on "Publish" button
+    And I click on "Accept" button
+    When I click on "Return to home" button
+    Then I should able to see "Home" screen
+
+  Scenario: Verify edit company tile button from job page publish
+    And I click on "Add a new job listing" button
+    And I enter following details for job page
+      | JobTitle       | Team              | Office Location     | MinSalary | MaxSalary | InfoTitle                      | Info                |
+      | Automation Eng | Quality Assurance | London              | 3000000   | 3500000    | Looking for Automation Eng     | Selenium Cucumber   |
+    When I click on "Publish" button
+    And I click on "Accept" button
+    When I click on "Edit company" button
+    Then I should able to see "Company edit" screen
+
+  Scenario: Verify view company page button from job page publish
+    And I click on "Add a new job listing" button
+    And I enter following details for job page
+      | JobTitle       | Team              | Office Location     | MinSalary | MaxSalary | InfoTitle                      | Info                |
+      | Automation Eng | Quality Assurance | London              | 3000000   | 3500000    | Looking for Automation Eng     | Selenium Cucumber   |
+    When I click on "Publish" button
+    And I click on "Accept" button
+    When I click on "View company" button
+    Then I should see company page

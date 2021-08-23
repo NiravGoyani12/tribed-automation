@@ -58,30 +58,6 @@ Feature: publish page
     When I click on "View company" button
     Then I should see company page
 
-  Scenario: Verify return to home button from job page publish
-    And I click on "Dashboard" menu
-    And I click on "Add a new job listing" button
-    And I click on "Publish" button
-    And I click on "Accept" button
-    When I click on "Return to home" button
-    Then I should able to see "Home" screen
-
-  Scenario: Verify edit company tile button from job page publish
-    And I click on "Dashboard" menu
-    And I click on "Add a new job listing" button
-    And I click on "Publish" button
-    And I click on "Accept" button
-    When I click on "Edit company" button
-    Then I should able to see "Company edit" screen
-
-  Scenario: Verify view company page button from job page publish
-    And I click on "Dashboard" menu
-    And I click on "Add a new job listing" button
-    And I click on "Publish" button
-    And I click on "Accept" button
-    When I click on "View company" button
-    Then I should see company page
-
   Scenario: Verify confirmation asks while user try to publish
     And I click on "My Profile" menu
     And I click on "Edit my profile" button

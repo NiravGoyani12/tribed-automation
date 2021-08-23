@@ -8,13 +8,13 @@ public class HomePage extends DriverManager {
     @FindBy(xpath = "//div[text()='Sign in']")
     public WebElement signInBtn;
 
-    @FindBy(xpath="(//div[text()='Sign up'])[2]")
+    @FindBy(xpath="(//div[text()='Sign up'])[1]")
     public  WebElement signUpBtn;
 
     @FindBy(xpath="//input[@placeholder='Search for a key skill']")
     public  WebElement searchPlaceholder;
 
-    @FindBy(xpath="(//div[text()='Search'])[2]")
+    @FindBy(xpath="(//div[text()='Search'])[1]")
     public  WebElement searchMenu;
 
     @FindBy(name = "email")
@@ -23,10 +23,10 @@ public class HomePage extends DriverManager {
     @FindBy(xpath = "//div[text()='Register your company']")
     public   WebElement registerMsg;
 
-    @FindBy(xpath = "(//div[contains(text(),'m Hiring')])[2]")
+    @FindBy(xpath = "(//div[contains(text(),'m Hiring')])[1]")
     public   WebElement iAmHiringMenu;
 
-    @FindBy(xpath="(//div[text()='Home'])[2]")
+    @FindBy(xpath="(//div[text()='Home'])[1]")
     public  WebElement homeMenu;
 
     @FindBy(xpath="(//div[text()='Home'])[1]")
