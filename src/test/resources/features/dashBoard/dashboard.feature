@@ -42,7 +42,6 @@ Feature: dashboard page
     And I click on "Accept" button
     Then I should able to see "Congratulations!" message
 
-
   Scenario: Verify next button on job slides
     And I click on "Dashboard" menu
     When I click on "Next icon" button
@@ -69,3 +68,27 @@ Feature: dashboard page
     And I click on "Dashboard" menu
     When I click on "Manage candidates" button
     Then I should able to see "candidates" screen
+
+  Scenario: Verify sort by date posted pop up displayed
+    And I click on "Dashboard" menu
+    When I click on "Date Posted" button
+    Then I should able to date posted pop up
+
+  Scenario: Verify sort by job status pop up displayed
+    And I click on "Dashboard" menu
+    When I click on "Job Status" button
+    Then I should able to job status pop up
+
+  Scenario: Verify save sort by date posted pop up
+    And I click on "Dashboard" menu
+    And I click on "Date Posted" button
+    And I click on "Alphabetical" button
+    When I click on "Save Date Posted" button
+    Then Date Posted popup should get close with selected value
+
+  Scenario: Verify save sort by job status pop up
+    And I click on "Dashboard" menu
+    And I click on "Job Status" button
+    And I click on "Job inactive" button
+    When I click on "Save Job Status" button
+    Then Job Status popup should get close with selected value

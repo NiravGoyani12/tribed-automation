@@ -68,6 +68,24 @@ public class DashboardPage extends DriverManager {
     @FindBy(xpath = "//h1[contains(@class,'applied_candidates___StyledSectionHeading')]")
     public WebElement candidatesScreen;
 
+    @FindBy(xpath = "//div[contains(text(),'Date posted')]")
+    public WebElement dpDatePosted;
+
+    @FindBy(xpath = "//div[contains(text(),'Show All')]")
+    public WebElement dpJobStatus;
+
+    @FindBy(xpath = "//li[contains(text(),'Alphabetical')]/following-sibling::input")
+    public WebElement optionAlphabetical;
+
+    @FindBy(xpath = "//li[contains(text(),'Job Inactive')]/following-sibling::input")
+    public WebElement optionJobInactive;
+
+    @FindBy(xpath = "(//button[text()='Save'])[1]")
+    public WebElement btnSaveByDate;
+
+    @FindBy(xpath = "(//button[text()='Save'])[1]")
+    public WebElement btnSaveByJobStatus;
+
     public static String jobName;
     public static String teamName;
 
@@ -188,5 +206,70 @@ public class DashboardPage extends DriverManager {
     public boolean isManageCandidatesScreenDisplayed()
     {
         return candidatesScreen.isDisplayed();
+    }
+
+    public void clickDatePosted()
+    {
+        clickOnElement(dpDatePosted);
+    }
+    public void clickJobStatus()
+    {
+        clickOnElement(dpJobStatus);
+    }
+
+    public boolean isDatePostedPopupDisplayed()
+    {
+        return optionAlphabetical.isDisplayed();
+    }
+
+    public boolean isJobStatusPopupDisplayed()
+    {
+        return optionJobInactive.isDisplayed();
+    }
+
+    public void clickSaveDatePosted()
+    {
+        clickOnElement(btnSaveByDate);
+    }
+
+    public void clickSaveJobStatus()
+    {
+        clickOnElement(btnSaveByJobStatus);
+    }
+
+    public void selectAlphabetical()
+    {
+        clickOnElement(optionAlphabetical);
+    }
+
+    public void selectJobInactive()
+    {
+        clickOnElement(optionJobInactive);
+    }
+
+    public boolean isDateSortedPopupClose()
+    {
+        try{
+            clickOnElement(optionAlphabetical);
+            return false;
+        }
+        catch(Exception e)
+        {
+            return true;
+        }
+
+    }
+
+    public boolean isJobStatusPopupClose()
+    {
+        try{
+            clickOnElement(optionJobInactive);
+            return false;
+        }
+        catch(Exception e)
+        {
+            return true;
+        }
+
     }
 }

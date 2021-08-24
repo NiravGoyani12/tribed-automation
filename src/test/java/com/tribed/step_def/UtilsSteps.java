@@ -314,6 +314,24 @@ public class UtilsSteps extends DriverManager {
             case "Manage candidates":
                 dashboardPage.clickManageCandidates();
                 break;
+            case "Date Posted":
+                dashboardPage.clickDatePosted();
+                break;
+            case "Job Status":
+                dashboardPage.clickJobStatus();
+                break;
+            case "Save Date Posted":
+                dashboardPage.clickSaveDatePosted();
+                break;
+            case "Save Job Status":
+                dashboardPage.clickSaveJobStatus();
+                break;
+            case "Alphabetical":
+                dashboardPage.selectAlphabetical();
+                break;
+            case "Job inactive":
+                dashboardPage.selectJobInactive();
+                break;
             default:
                 throw new IllegalStateException("Unexpected service name: " + expButton);
         }

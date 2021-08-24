@@ -50,4 +50,24 @@ public class DashboardSteps {
     public void jobShouldBeDeactivated() throws InterruptedException {
         assertThat(dashboardPage.isDeactivateJobWorking(), is(true));
     }
+
+    @Then("^I should able to date posted pop up$")
+    public void iShouldAbleToDatePostedPopUp() {
+        assertThat(dashboardPage.isDatePostedPopupDisplayed(), is(true));
+    }
+
+    @Then("^I should able to job status pop up$")
+    public void iShouldAbleToJobStatusPopUp() {
+        assertThat(dashboardPage.isJobStatusPopupDisplayed(), is(true));
+    }
+
+    @Then("^Job Status popup should get close with selected value$")
+    public void jobStatusPopupShouldGetCloseWithSelectedValue() {
+        assertThat(dashboardPage.isJobStatusPopupClose(), is(true));
+    }
+
+    @Then("^Date Posted popup should get close with selected value$")
+    public void datePostedPopupShouldGetCloseWithSelectedValue() {
+        assertThat(dashboardPage.isDateSortedPopupClose(), is(true));
+    }
 }
