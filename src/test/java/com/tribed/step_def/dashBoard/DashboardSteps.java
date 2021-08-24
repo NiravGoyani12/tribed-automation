@@ -51,12 +51,12 @@ public class DashboardSteps {
         assertThat(dashboardPage.isDeactivateJobWorking(), is(true));
     }
 
-    @Then("^I should able to date posted pop up$")
+    @Then("^I should able to see date posted pop up$")
     public void iShouldAbleToDatePostedPopUp() {
         assertThat(dashboardPage.isDatePostedPopupDisplayed(), is(true));
     }
 
-    @Then("^I should able to job status pop up$")
+    @Then("^I should able to see job status pop up$")
     public void iShouldAbleToJobStatusPopUp() {
         assertThat(dashboardPage.isJobStatusPopupDisplayed(), is(true));
     }

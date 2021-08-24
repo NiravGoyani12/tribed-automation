@@ -72,12 +72,12 @@ Feature: dashboard page
   Scenario: Verify sort by date posted pop up displayed
     And I click on "Dashboard" menu
     When I click on "Date Posted" button
-    Then I should able to date posted pop up
+    Then I should able to see date posted pop up
 
   Scenario: Verify sort by job status pop up displayed
     And I click on "Dashboard" menu
     When I click on "Job Status" button
-    Then I should able to job status pop up
+    Then I should able to see job status pop up
 
   Scenario: Verify save sort by date posted pop up
     And I click on "Dashboard" menu
