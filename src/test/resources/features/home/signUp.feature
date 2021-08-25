@@ -38,3 +38,10 @@ Feature: Sign up
   Scenario: Verify close button on singUp page
     When I click on "Close" button
     Then Signup popup should be closed
+
+  Scenario: Verify Show password functionality
+    When I enter following details to sign up for new company
+      | Name       | Email               | CompanyName | CreatePassword |
+      | Joe Bloggs | joeBloggs@gmail.com | Tribed      | Test@123       |
+    And I click on "Show Password Icon" button
+    Then I should be able to see password

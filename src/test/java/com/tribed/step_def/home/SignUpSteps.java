@@ -54,4 +54,9 @@ public class SignUpSteps {
     public void signupPopupShouldBeClosed() throws InterruptedException {
         assertThat(signUpPage.isSignUpClosed(), is(false));
     }
+
+    @Then("^I should be able to see password$")
+    public void iShouldBeAbleToSeePassword() throws InterruptedException {
+        assertThat(signUpPage.isShowPasswordWorking(), is(true));
+    }
 }

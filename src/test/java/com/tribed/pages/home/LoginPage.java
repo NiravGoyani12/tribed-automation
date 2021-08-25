@@ -1,5 +1,6 @@
 package com.tribed.pages.home;
 import com.tribed.driver.DriverManager;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import static com.tribed.utilities.CommonUtils.*;
@@ -56,6 +57,15 @@ public class LoginPage extends DriverManager {
 
     @FindBy(xpath = "//span[text()='Register now']")
     public WebElement registerNowBtn;
+
+    @FindBy(xpath = "//input[@name='email']")
+    public WebElement forgetEmailTxt;
+
+    @FindBy(xpath = "//button[text()='Send reset link']")
+    public WebElement sendResetLinkBtn;
+
+    @FindBy(xpath = "//h2[text()='Reset password email sent']")
+    public WebElement ResetPasswordEmailSentMsg;
 
     public void enterEmailAndPassword(String userType) {
         clearAndSendKeys(emmailField,getUserName(userType));
@@ -182,5 +192,24 @@ public class LoginPage extends DriverManager {
         {
             return  resetPassword.isDisplayed();
         }
+    }
+    public void pressEnterKey()
+    {
+        passwordField.sendKeys(Keys.ENTER);
+    }
+
+    public void enterEmailId()
+    {
+        forgetEmailTxt.sendKeys(getRandomString(10)+"@gmail.com");
+    }
+
+    public void clickOnSentResetLink()
+    {
+        clickOnElement(sendResetLinkBtn);
+    }
+
+    public boolean isSendResetLinkButtonWorking()
+    {
+        return ResetPasswordEmailSentMsg.isDisplayed();
     }
 }

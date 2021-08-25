@@ -104,4 +104,14 @@ public class LoginSteps {
     public void iClickOnMyProfileMenu() throws InterruptedException {
         loginPage.clickonMyProfileMenu();
     }
+
+    @And("^Press 'Enter' key$")
+    public void pressEnterKey() {
+        loginPage.pressEnterKey();
+    }
+
+    @And("^I enter email for forget password$")
+    public void iEnterEmailForForgetPassword() {
+        loginPage.enterEmailId();
+    }
 }

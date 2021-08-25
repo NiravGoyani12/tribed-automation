@@ -5,7 +5,7 @@ Feature: login
     Given I am on the home page
     And I click on "SignIn" menu
 
-  Scenario Outline: login with valid email and password
+  Scenario Outline: Login with valid email and password
     When I enter email and password for "<userType>"
     And I click on "Login" button
     Then I should be able to see "<loggedMessage>" for "<userType>"
@@ -14,7 +14,7 @@ Feature: login
       | userType     | loggedMessage       |
       | Valid User   | My profile          |
 
-  Scenario Outline: login with invalid email and password
+  Scenario Outline: Login with invalid email and password
     When I enter email and password for "<userType>"
     Then I should be able to see "<loggedMessage>" for "<userType>"
 
@@ -66,3 +66,24 @@ Feature: login
       | Joe Bloggs | joeBloggs@gmail.com | Tribed      | Test@123       |
     And I click on "Create account" button
     Then I should be able to see "Congratulations for registering on tribed!" message
+
+  Scenario: Verify Show password functionality
+    And I enter email and password for "Valid User"
+    When I click on "Show Password Icon" button
+    Then I should be able to see password
+
+  Scenario Outline: Verify login by pressing Enter key
+    When I enter email and password for "<userType>"
+    And Press 'Enter' key
+    Then I should be able to see "<loggedMessage>" for "<userType>"
+
+    Examples:
+      | userType     | loggedMessage       |
+      | Valid User   | My profile          |
+
+  Scenario: Verify forget password link
+    And I click on "Forget Password" button
+    And I enter email for forget password
+    When I click on "Sent reset link" button
+    Then I should able to see "Email sent" screen
+

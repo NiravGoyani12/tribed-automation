@@ -12,8 +12,14 @@ public class MyProfilePage extends DriverManager {
     @FindBy(xpath = "(//li[text()='View my profile'])[1]")
     public WebElement viewMyProfile;
 
+    @FindBy(xpath = "(//li[text()='Edit tile image'])[1]")
+    public WebElement editTileImage;
+
     @FindBy(xpath = "//h3[text()='Company page']")
     public WebElement companyPage;
+
+    @FindBy(xpath = "//div[text()='Company tile']")
+    public WebElement companyTile;
 
     @FindBy(xpath = "(//strong[text()='Number of employees:'])[1]")
     public WebElement noOfEmployees;
@@ -41,5 +47,15 @@ public class MyProfilePage extends DriverManager {
     public boolean isMyProfileButtonWorking() throws InterruptedException {
         Thread.sleep(2000);
         return editMyProfile.isDisplayed();
+    }
+
+    public void clickOnEditTileImage()
+    {
+        clickOnElement(editTileImage);
+    }
+
+    public boolean isEditTileImageScreenOpen()
+    {
+        return companyTile.isDisplayed();
     }
 }

@@ -16,3 +16,4 @@ Feature: My profile page
       | menu              | screen        |
       | Edit my profile   | Edit profile  |
       | View my profile   | View profile  |
+      | Edit tile image   | Company tile  |

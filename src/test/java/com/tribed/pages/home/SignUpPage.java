@@ -58,6 +58,9 @@ public class SignUpPage extends DriverManager {
     @FindBy(xpath = "//img[contains(@src,'signUpHero')]/following-sibling::*")
     public WebElement signUpClose;
 
+    @FindBy(xpath = "//input[@name='password']/following-sibling::div")
+    public WebElement showPasswordBtn;
+
     public void enterSignUpDetails(String name, String email, String companyName, String createPassword) {
         clearAndSendKeys(fullNameTxt, name);
         clearAndSendKeys(companyEmailTxt, getRandomString(3) + email);
@@ -112,6 +115,21 @@ public class SignUpPage extends DriverManager {
         catch (Exception e)
         {
             return  false;
+        }
+    }
+
+    public void clickOnShowPasswordBtn() {
+        clickOnElement(showPasswordBtn);
+    }
+
+    public boolean isShowPasswordWorking() throws InterruptedException {
+        String password=passwordTxt.getAttribute("placeholder");
+        if(password.equals(password)) {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

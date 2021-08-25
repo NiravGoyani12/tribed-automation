@@ -33,6 +33,7 @@ public class UtilsSteps extends DriverManager {
     MyProfilePage myProfilePage=new MyProfilePage();
     DashboardPage dashboardPage=new DashboardPage();
     DiscoverPage discoverPage=new DiscoverPage();
+    EditTileImagePage editTileImagePage=new EditTileImagePage();
 
     @Then("^the url should contain with \"([^\"]*)\"$")
     public void the_url_should_contain(String url) {
@@ -101,6 +102,15 @@ public class UtilsSteps extends DriverManager {
                 break;
             case "candidates":
                 isValidScreen = dashboardPage.isManageCandidatesScreenDisplayed();
+                break;
+            case "Email sent":
+                isValidScreen = loginPage.isSendResetLinkButtonWorking();
+                break;
+            case "Company tile":
+                isValidScreen = myProfilePage.isEditTileImageScreenOpen();
+                break;
+            case "Culture":
+                isValidScreen = editTileImagePage.isCultureScreenOpen();
                 break;
 
             default:
@@ -332,6 +342,19 @@ public class UtilsSteps extends DriverManager {
             case "Job inactive":
                 dashboardPage.selectJobInactive();
                 break;
+            case "Show Password Icon":
+                signUpPage.clickOnShowPasswordBtn();
+                break;
+            case "Sent reset link":
+                loginPage.clickOnSentResetLink();
+                break;
+            case "Edit tile image":
+                myProfilePage.clickOnEditTileImage();
+                break;
+            case "Edit culture":
+                editTileImagePage.clickOnEditCulture();
+                break;
+
             default:
                 throw new IllegalStateException("Unexpected service name: " + expButton);
         }
