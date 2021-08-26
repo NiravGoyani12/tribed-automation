@@ -354,7 +354,9 @@ public class UtilsSteps extends DriverManager {
             case "Edit culture":
                 editTileImagePage.clickOnEditCulture();
                 break;
-
+            case "Close culture window":
+                editTileImagePage.clickOnCloseButton();
+                break;
             default:
                 throw new IllegalStateException("Unexpected service name: " + expButton);
         }

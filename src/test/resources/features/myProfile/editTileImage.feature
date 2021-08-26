@@ -12,3 +12,17 @@ Feature: Edit Tile Email page
   Scenario: Verify edit culture button
     When I click on "Edit culture" button
     Then I should able to see "Culture" screen
+
+  Scenario: Verify view company page button from job page publish
+    And I click on "Edit culture" button
+    When I click on "View company" button
+    Then I should see company page
+
+  Scenario: Verify change image button
+    And I click on "Change image" button
+
+  Scenario: Verify close culture window
+    When I click on "Edit culture" button
+    Then I should able to see "Culture" screen
+    When I click on "Close culture window" button
+    Then culture window should be close

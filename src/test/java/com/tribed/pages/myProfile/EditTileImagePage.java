@@ -12,6 +12,9 @@ public class EditTileImagePage extends DriverManager {
     @FindBy(xpath = "//h2[text()='Culture']")
     public WebElement cultureScreen;
 
+    @FindBy(xpath = "//img[contains(@src,'/static/media/cross')]")
+    public WebElement closeBtn;
+
     public void clickOnEditCulture() {
         clickOnElement(editCultureLink);
     }
@@ -20,4 +23,9 @@ public class EditTileImagePage extends DriverManager {
     {
         return cultureScreen.isDisplayed();
     }
+
+    public void clickOnCloseButton() {
+        clickOnElement(closeBtn);
+    }
+
 }
