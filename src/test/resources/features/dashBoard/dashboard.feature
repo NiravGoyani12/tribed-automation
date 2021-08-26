@@ -7,10 +7,12 @@ Feature: dashboard page
     And I enter email and password for "Valid User"
     And I click on "Login" button
 
+  @ignore
   Scenario: Verify dashboard working
     When I click on "Dashboard" menu
     Then I should able to see Dashboard screen
 
+  @test
   Scenario: Verify edit job screen display
     And I click on "Dashboard" menu
     When I click on "Edit job" button
