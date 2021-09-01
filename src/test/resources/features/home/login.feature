@@ -21,6 +21,7 @@ Feature: login
     Examples:
       | userType     | loggedMessage       |
       | Invalid User | Password can only contain Latin letters. |
+      | Invalid User | Password can only contain Latin letters. |
 
   Scenario: Default Login button should be Disabled
     Then Log in button should be "disabled"
@@ -86,4 +87,13 @@ Feature: login
     And I enter email for forget password
     When I click on "Sent reset link" button
     Then I should able to see "Email sent" screen
+
+  Scenario: Verify validation if email address invalid
+    When I enter invalid email
+    Then I should be able to see validation message
+
+  Scenario: Verify validation if password is incorrect
+    When I enter invalid email
+    Then I should be able to see validation message
+
 
