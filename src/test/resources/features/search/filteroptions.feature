@@ -68,5 +68,3 @@ Feature: filter options
     And I click on "Skills & experience" button
     When I click on "HR" button
     Then I should be able to see hr related skills
-
-
