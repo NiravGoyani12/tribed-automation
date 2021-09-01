@@ -56,3 +56,17 @@ Feature: filter options
     And I click on "First Benefits" button
     And I click on "Clear benefits filter" button
     Then I should be able to see selected benefits get clear
+
+  Scenario: Verify main header filters on skills and experienced page for development tab
+    And  I click on "Filter Option" button
+    And I click on "Skills & experience" button
+    When I click on "Development" button
+    Then I should be able to see development related skills
+
+  Scenario: Verify main header filters on skills and experienced page for finance tab
+    And  I click on "Filter Option" button
+    And I click on "Skills & experience" button
+    When I click on "HR" button
+    Then I should be able to see hr related skills
+
+

@@ -58,6 +58,24 @@ public class FilterOptionsPage extends DriverManager {
     @FindBy(xpath = "(//p[contains(@class,'SearchPage___StyledText')])[1]")
     public WebElement resultCount;
 
+    @FindBy(xpath = "//div[@name='skillsAndExperience']")
+    public WebElement skillAndExperienceTab;
+
+    @FindBy(xpath = "//div[@name='preferences']")
+    public WebElement workStyleTab;
+
+    @FindBy(xpath = "//div[text()='Development']")
+    public WebElement developmentTab;
+
+    @FindBy(xpath = "//div[text()='.Net']")
+    public WebElement dotNet;
+
+    @FindBy(xpath = "//div[text()='HR']")
+    public WebElement hrTab;
+
+    @FindBy(xpath = "//div[text()='Asset Creation']")
+    public WebElement assetCreation;
+
     public static String selectedcandidate;
 
     public void clickOnFilterOption()
@@ -241,5 +259,28 @@ public class FilterOptionsPage extends DriverManager {
         {
             return true;
         }
+    }
+    public void clickOnDevelopmentTab() throws InterruptedException {
+        //moveOnElement(clearDevelopment);
+        waitForElementVisibility(developmentTab,10,"development tab not displayed");
+        clickOnElement(developmentTab);
+    }
+    public void clickOnHRTab() throws InterruptedException {
+        //moveOnElement(clearDevelopment);
+        waitForElementVisibility(hrTab,10,"HR tab not displayed");
+        clickOnElement(hrTab);
+    }
+    public void clickONSkillsAndExperienceTab() throws InterruptedException {
+        //moveOnElement(clearDevelopment);
+        waitForElementVisibility(skillAndExperienceTab,10,"Skills and Experienced tab not displayed");
+        clickOnElement(skillAndExperienceTab);
+    }
+    public boolean isDevelopmentRelatedSkillsDisplayed()
+    {
+        return dotNet.isDisplayed();
+    }
+    public boolean isFinanceRelatedSkillsDisplayed()
+    {
+        return assetCreation.isDisplayed();
     }
 }

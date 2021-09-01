@@ -22,4 +22,5 @@ public class FooterSteps {
     public void iShouldAbleToSeeCopyrightStatement() {
         assertThat(footerpage.isCopyrightSentenceDisplayed(), is(true));
     }
+
 }

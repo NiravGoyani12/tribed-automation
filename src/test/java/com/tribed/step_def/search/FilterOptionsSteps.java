@@ -49,7 +49,6 @@ public class FilterOptionsSteps {
     @Then("^I should be able to see selected development get clear$")
     public void iShouldBeAbleToSeeSelectedDevelopmentGetClear() {
 
-
     }
 
     @Then("^I should be able to see selected well-being get clear$")
@@ -59,5 +58,16 @@ public class FilterOptionsSteps {
 
     @Then("^I should be able to see selected benefits get clear$")
     public void iShouldBeAbleToSeeSelectedBenefitsGetClear() {
+
+    }
+
+    @Then("^I should be able to see hr related skills$")
+    public void iShouldBeAbleToSeehrRelatedSkills() {
+        assertThat(filterOptionsPage.isFinanceRelatedSkillsDisplayed(), is(true));
+    }
+
+    @Then("^I should be able to see development related skills$")
+    public void iShouldBeAbleToSeeDevelopmentRelatedSkills() {
+        assertThat(filterOptionsPage.isDevelopmentRelatedSkillsDisplayed(), is(true));
     }
 }
