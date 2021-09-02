@@ -1,5 +1,5 @@
 @sanity
-Feature: filter options
+Feature: Filter options
 
   Background: Login into the application
     Given I am on the home page

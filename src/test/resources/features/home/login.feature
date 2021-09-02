@@ -1,5 +1,5 @@
 @sanity
-Feature: login
+Feature: Login
 
   Background: Login into the application
     Given I am on the home page
@@ -86,7 +86,3 @@ Feature: login
     And I enter email for forget password
     When I click on "Sent reset link" button
     Then I should able to see "Email sent" screen
-
-  
-
-

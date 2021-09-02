@@ -1,5 +1,5 @@
 @sanity
-Feature: discover
+Feature: Discover
 
   Scenario: Verify discover tab working
     Given I am on the home page

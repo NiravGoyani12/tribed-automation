@@ -1,5 +1,5 @@
 @sanity
-Feature: home
+Feature: Home
 
   Background: Login into the application
     Given I am on the home page

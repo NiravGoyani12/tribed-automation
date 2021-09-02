@@ -1,5 +1,5 @@
 @sanity
-Feature: search
+Feature: Search
 
   Scenario: Verify search functionality
     Given I am on the home page

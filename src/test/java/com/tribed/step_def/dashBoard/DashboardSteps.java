@@ -36,11 +36,6 @@ public class DashboardSteps {
         assertThat(dashboardPage.isPreviousBtnWorking(), is(true));
     }
 
-    @Then("^I should able to see Dashboard screen$")
-    public void iShouldAbleToSeeDashboardScreen() {
-        assertThat(dashboardPage.isDashboardScreenOpen(), is(true));
-    }
-
     @Then("^Job should be activated$")
     public void jobShouldBeActivated() throws InterruptedException {
         assertThat(dashboardPage.isActivateJobWorking(), is(true));

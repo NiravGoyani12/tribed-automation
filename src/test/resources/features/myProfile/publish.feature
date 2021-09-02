@@ -1,5 +1,5 @@
 @sanity
-Feature: publish page
+Feature: Publish page
 
   Background: Login into the application
     Given I am on the home page
