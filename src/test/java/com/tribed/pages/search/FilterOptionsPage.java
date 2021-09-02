@@ -76,6 +76,33 @@ public class FilterOptionsPage extends DriverManager {
     @FindBy(xpath = "//div[text()='Asset Creation']")
     public WebElement assetCreation;
 
+    @FindBy(xpath = "((//div[@title='Technical'])[1]/parent::div/following-sibling::div//li//div[contains(@class,'Tag__Label')])[1]")
+    public WebElement firstTechnical;
+
+    @FindBy(xpath = "//div[contains(@class,'hAedIP')]")
+    public WebElement firstSkillSelected;
+
+    @FindBy(xpath = "((//div[@title='Leadership'])[1]/parent::div/following-sibling::div//li//div[contains(@class,'Tag__Label')])[1]")
+    public WebElement firstLeadership;
+
+    @FindBy(xpath = "((//div[@title='Sectors'])[1]/parent::div/following-sibling::div//li//div[contains(@class,'Tag__Label')])[1]")
+    public WebElement firstSector;
+
+    @FindBy(xpath = "((//div[@title='Qualifications'])[1]/parent::div/following-sibling::div//li//div[contains(@class,'Tag__Label')])[1]")
+    public WebElement firstQualification;
+
+    @FindBy(xpath = "//div[text()='Clear technical filters']")
+    public WebElement clearTechnical;
+
+    @FindBy(xpath = "//div[text()='Clear leadership filters']")
+    public WebElement clearLeadership;
+
+    @FindBy(xpath = "//div[text()='Clear sectors filters']")
+    public WebElement clearSectors;
+
+    @FindBy(xpath = "//div[text()='Clear qualifications filters']")
+    public WebElement clearQualification;
+
     public static String selectedcandidate;
 
     public void clickOnFilterOption()
@@ -96,6 +123,7 @@ public class FilterOptionsPage extends DriverManager {
         waitForElementClickable(firstCulture,10,"culture not visible");
         clickOnElement(firstCulture);
     }
+
     public void clickOnShowCandidate()
     {
         clickOnElement(showCandidate);
@@ -125,6 +153,12 @@ public class FilterOptionsPage extends DriverManager {
         }
     }
 
+    public void selectOtherTechnical() throws InterruptedException {
+        Thread.sleep(2000);
+        waitForElementClickable(firstTechnical,10,"Technical not visible");
+        clickOnElement(firstTechnical);
+    }
+
     public void selectOtherDevelopment() throws InterruptedException {
         //moveOnElement(firstDevelopment);
         scrollWindow();
@@ -145,6 +179,28 @@ public class FilterOptionsPage extends DriverManager {
         scrollIntoViewSelenium(firstBenefit);
         scrollWindow();
         clickOnElement(firstBenefit);
+    }
+
+    public void selectOtherLeadership() throws InterruptedException {
+        //moveOnElement(firstDevelopment);
+        scrollWindow();
+        waitForElementVisibility(firstLeadership,10,"Leadership not visible");
+        scrollWindow();
+        scrollWindow();
+        clickOnElement(firstLeadership);
+    }
+    public void selectOtherSectors() throws InterruptedException {
+        Thread.sleep(2000);
+        waitForElementVisibility(firstSector,10,"Sectors not visible");
+        scrollIntoViewSelenium(firstQualification);
+        clickOnElement(firstSector);
+    }
+    public void selectOtherQualification() throws InterruptedException {
+        Thread.sleep(2000);
+        waitForElementVisibility(firstQualification,10,"Qualification not visible");
+        scrollIntoViewSelenium(firstQualification);
+        scrollWindow();
+        clickOnElement(firstQualification);
     }
 
     public void clickOnClearCulture() throws InterruptedException {
@@ -168,12 +224,50 @@ public class FilterOptionsPage extends DriverManager {
         clickOnElement(clearBenefits);
     }
 
+    public void clickOnClearTechnical() throws InterruptedException {
+        //moveOnElement(clearCulture);
+        waitForElementVisibility(clearTechnical,10,"Clear Technical not visible");
+        clickOnElement(clearTechnical);
+    }
+    public void clickOnClearLeadership() throws InterruptedException {
+        //moveOnElement(clearDevelopment);
+        waitForElementVisibility(clearLeadership,10,"Clear Leadership not visible");
+        scrollIntoViewSelenium(clearLeadership);
+        clickOnElement(clearLeadership);
+    }
+    public void clickOnClearSectors() throws InterruptedException {
+        //moveOnElement(clearWellBeing);
+        waitForElementVisibility(clearSectors,10,"Clear Sectors not visible");
+        scrollIntoViewSelenium(clearLeadership);
+        clickOnElement(clearSectors);
+    }
+    public void clickOnClearQualification() throws InterruptedException {
+        //moveOnElement(clearBenefits);
+        waitForElementVisibility(clearQualification,10,"Clear Qualification not visible");
+        scrollIntoViewSelenium(clearLeadership);
+        clickOnElement(clearQualification);
+    }
 
     public boolean isClearAllFilterWorking()
     {
         try
         {
             if (firstCultureSelected.isDisplayed() || firstDevelopmentSelected.isDisplayed() || firstWellbeingSelected.isDisplayed() || firstBenefitsSelected.isDisplayed()) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        catch(Exception e)
+        {
+            return true;
+        }
+    }
+    public boolean isClearAllFilterWorkingForSkillsAndExperience()
+    {
+        try
+        {
+            if (firstSkillSelected.isDisplayed()) {
                 return false;
             } else {
                 return true;
@@ -282,5 +376,10 @@ public class FilterOptionsPage extends DriverManager {
     public boolean isFinanceRelatedSkillsDisplayed()
     {
         return assetCreation.isDisplayed();
+    }
+
+    public boolean isWorkstyleTabDisplayed()
+    {
+        return workStyleTab.isDisplayed();
     }
 }

@@ -68,3 +68,45 @@ Feature: Filter options
     And I click on "Skills & experience" button
     When I click on "HR" button
     Then I should be able to see hr related skills
+
+  Scenario: Verify clear all filter skills and experienced tab
+    And  I click on "Filter Option" button
+    And I click on "Skills & experience" button
+    And I click on "First Technical" button
+    And I click on "First Leadership" button
+    And I click on "First Sector" button
+    And I click on "First Qualification" button
+    When I click on "Clear all filters" button
+    Then I should be able to see all selected filters get clear for skills and Experience
+
+  Scenario: Verify clear technical filters on skills and experienced tab
+    And  I click on "Filter Option" button
+    And I click on "Skills & experience" button
+    And I click on "First Technical" button
+    And I click on "Clear technical filter" button
+    Then I should be able to see selected technical skills get clear
+
+  Scenario: Verify clear leadership filters on skills and experienced tab
+    And  I click on "Filter Option" button
+    And I click on "Skills & experience" button
+    And I click on "First Leadership" button
+    And I click on "Clear leadership filter" button
+    Then I should be able to see selected leadership get clear
+
+  Scenario: Verify clear sectors filters on skills and experienced tab
+    And  I click on "Filter Option" button
+    And I click on "Skills & experience" button
+    And I click on "First Sector" button
+    And I click on "Clear sectors filter" button
+    Then I should be able to see selected sectors get clear
+
+  Scenario: Verify clear qualification filters for skills and experienced tab
+    And  I click on "Filter Option" button
+    And I click on "Skills & experience" button
+    And I click on "First Qualification" button
+    And I click on "Clear qualification filter" button
+    Then I should be able to see selected qualification get clear
+
+  Scenario: Verify job preference tab renamed to workstyle
+    When I click on "Filter Option" button
+    Then I should be able to worktyle tab

@@ -39,25 +39,27 @@ public class FilterOptionsSteps {
 
     @Then("^I should be able to see all selected filters get clear$")
     public void iShouldBeAbleToAllSelectedFiltersGetClear() {
+        assertThat(filterOptionsPage.isClearAllFilterWorking(), is(true));
     }
 
     @Then("^I should be able to see selected culture get clear$")
     public void iShouldBeAbleToSeeSelectedCultureGetClear() {
+        assertThat(filterOptionsPage.isClearCultureFilterWorking(), is(true));
     }
 
     @Then("^I should be able to see selected development get clear$")
     public void iShouldBeAbleToSeeSelectedDevelopmentGetClear() {
-
+        assertThat(filterOptionsPage.isClearDevelopmentFilterWorking(), is(true));
     }
 
     @Then("^I should be able to see selected well-being get clear$")
     public void iShouldBeAbleToSeeSelectedWellBeingGetClear() {
-        
+        assertThat(filterOptionsPage.isClearWellBeingFilterWorking(), is(true));
     }
 
     @Then("^I should be able to see selected benefits get clear$")
     public void iShouldBeAbleToSeeSelectedBenefitsGetClear() {
-
+        assertThat(filterOptionsPage.isClearBenefitsFilterWorking(), is(true));
     }
 
     @Then("^I should be able to see hr related skills$")
@@ -68,5 +70,35 @@ public class FilterOptionsSteps {
     @Then("^I should be able to see development related skills$")
     public void iShouldBeAbleToSeeDevelopmentRelatedSkills() {
         assertThat(filterOptionsPage.isDevelopmentRelatedSkillsDisplayed(), is(true));
+    }
+
+    @Then("^I should be able to see all selected filters get clear for skills and Experience$")
+    public void iShouldBeAbleToSeeAllSelectedFiltersGetClearForSkillsAndExperience() {
+        assertThat(filterOptionsPage.isClearAllFilterWorkingForSkillsAndExperience(), is(true));
+    }
+
+    @Then("^I should be able to see selected technical skills get clear$")
+    public void iShouldBeAbleToSeeSelectedTechnicalSkillsGetClear() {
+        assertThat(filterOptionsPage.isClearAllFilterWorkingForSkillsAndExperience(), is(true));
+    }
+
+    @Then("^I should be able to see selected leadership get clear$")
+    public void iShouldBeAbleToSeeSelectedLeadershipGetClear() {
+        assertThat(filterOptionsPage.isClearAllFilterWorkingForSkillsAndExperience(), is(true));
+    }
+
+    @Then("^I should be able to see selected sectors get clear$")
+    public void iShouldBeAbleToSeeSelectedSectorsGetClear() {
+        assertThat(filterOptionsPage.isClearAllFilterWorkingForSkillsAndExperience(), is(true));
+    }
+
+    @Then("^I should be able to see selected qualification get clear$")
+    public void iShouldBeAbleToSeeSelectedQualificationGetClear() {
+        assertThat(filterOptionsPage.isClearAllFilterWorkingForSkillsAndExperience(), is(true));
+    }
+
+    @Then("^I should be able to worktyle tab$")
+    public void iShouldBeAbleToWorktyleTab() {
+        assertThat(filterOptionsPage.isWorkstyleTabDisplayed(), is(true));
     }
 }

@@ -366,6 +366,30 @@ public class UtilsSteps extends DriverManager {
             case "Skills & experience":
                 filterOptionsPage.clickONSkillsAndExperienceTab();
                 break;
+            case "First Technical":
+                filterOptionsPage.selectOtherTechnical();
+                break;
+            case "First Leadership":
+                filterOptionsPage.selectOtherLeadership();
+                break;
+            case "First Sector":
+                filterOptionsPage.selectOtherSectors();
+                break;
+            case "First Qualification":
+                filterOptionsPage.selectOtherQualification();
+                break;
+            case "Clear technical filter":
+                filterOptionsPage.clickOnClearTechnical();
+                break;
+            case "Clear leadership filter":
+                filterOptionsPage.clickOnClearLeadership();
+                break;
+            case "Clear sectors filter":
+                filterOptionsPage.clickOnClearSectors();
+                break;
+            case "Clear qualification filter":
+                filterOptionsPage.clickOnClearQualification();
+                break;
             default:
                 throw new IllegalStateException("Unexpected service name: " + expButton);
         }
