@@ -4,7 +4,7 @@ Test project with automated tests for the Tribed Web Automation  application
 #Test project repository :
 
 
-#Software Stacks to automate application for both Windows and Mac: 
+#Software Stacks to automate application for both Windows and Mac:
 
 - System under testing: stable version
 - Intellij
@@ -22,11 +22,11 @@ Test project with automated tests for the Tribed Web Automation  application
 
 # Report Generation InteliJ
 Run main class RunSanityTest or other test runner file.
-   - After test run completion, the report can be found under the `target\cucumber-reports` folder.
-   - Application level logging can be found under the `resources\logs` folder.
-   
+- After test run completion, the report can be found under the `target\cucumber-reports` folder.
+- Application level logging can be found under the `resources\logs` folder.
+- Detailed cucumber report can be generated via cluecumber report plugin.
+  -After test run complete, run 'mvn cluecumber-report:reporting' from maven goal.
+  Report can be found under 'target/generated-report'.
+
 ## Run tests via Command Line with Maven
-mvn test 
-
-
-
+mvn test
