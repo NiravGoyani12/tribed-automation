@@ -43,7 +43,6 @@ public class FilterOptionsSteps {
 
     @Then("^I should be able to see selected culture get clear$")
     public void iShouldBeAbleToSeeSelectedCultureGetClear() {
-        
     }
 
     @Then("^I should be able to see selected development get clear$")
