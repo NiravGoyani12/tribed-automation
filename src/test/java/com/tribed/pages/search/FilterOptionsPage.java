@@ -378,8 +378,7 @@ public class FilterOptionsPage extends DriverManager {
         return assetCreation.isDisplayed();
     }
 
-    public boolean isWorkstyleTabDisplayed()
-    {
+    public boolean isWorkstyleTabDisplayed()    {
         return workStyleTab.isDisplayed();
     }
 }
