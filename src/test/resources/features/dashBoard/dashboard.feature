@@ -6,7 +6,7 @@ Feature: Dashboard page
     And I click on "SignIn" menu
     And I enter email and password for "Valid User"
     And I click on "Login" button
-    
+    And I click on "Dashboard" menu
     
   Scenario: Verify dashboard working
     Then I should able to see "Dashboard" screen
