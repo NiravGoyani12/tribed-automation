@@ -110,3 +110,16 @@ Feature: Filter options
   Scenario: Verify job preference tab renamed to workstyle
     When I click on "Filter Option" button
     Then I should be able to worktyle tab
+
+  Scenario: Verify office location selection
+    And I click on "Filter Option" button
+    And I click on "Workstyle" button
+    And I enter job location and distance
+      | Location       |
+      | London         |
+
+  Scenario: Verify salary selection
+    And I click on "Filter Option" button
+    And I click on "Workstyle" button
+    And I select salary details
+

@@ -2,6 +2,8 @@ package com.tribed.step_def.search;
 
 import com.tribed.driver.DriverManager;
 import com.tribed.pages.search.FilterOptionsPage;
+import cucumber.api.DataTable;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -14,7 +16,7 @@ import static org.hamcrest.Matchers.is;
 public class FilterOptionsSteps {
 
     DriverManager driverManager = new DriverManager();
-    FilterOptionsPage filterOptionsPage=new FilterOptionsPage();
+    FilterOptionsPage filterOptionsPage = new FilterOptionsPage();
     List<Map<String, String>> data;
 
     @Then("^I should able to different filter options$")
@@ -24,7 +26,7 @@ public class FilterOptionsSteps {
 
     @When("^I select any other culture from filter option$")
     public void iSelectAnyOtherCultureFromFilterOption() throws InterruptedException {
-            filterOptionsPage.selectOtherCulture();
+        filterOptionsPage.selectOtherCulture();
     }
 
     @Then("^I should able to see updated candidate count$")
@@ -100,5 +102,17 @@ public class FilterOptionsSteps {
     @Then("^I should be able to worktyle tab$")
     public void iShouldBeAbleToWorktyleTab() {
         assertThat(filterOptionsPage.isWorkstyleTabDisplayed(), is(true));
+    }
+
+    @And("^I enter job location and distance$")
+    public void iEnterJobLocationAndDistance(DataTable dataTable) {
+        data = dataTable.asMaps(String.class, String.class);
+        filterOptionsPage.enterJobLocation(data.get(0).get("Location"));
+    }
+
+
+    @And("^I select salary details$")
+    public void iSelectSalaryDetails() {
+        filterOptionsPage.selectSalaryDetail();
     }
 }

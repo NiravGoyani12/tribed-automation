@@ -4,6 +4,7 @@ import com.tribed.pages.myProfile.EditTileImagePage;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 import java.awt.*;
 import java.util.List;
@@ -21,5 +22,14 @@ public class EditTileImageSteps {
     @Then("^culture window should be close$")
     public void cultureWindowShouldBeClose() {
         assertThat(editTileImagePage.isCultureScreenOpen(), is(false));
+    }
+
+    @When("^I upload new image$")
+    public void iUploadNewImage() throws InterruptedException, AWTException {
+               editTileImagePage.uploadImage();
+    }
+
+    @Then("^I should able to upload image$")
+    public void iShouldAbleToUploadImage() {
     }
 }

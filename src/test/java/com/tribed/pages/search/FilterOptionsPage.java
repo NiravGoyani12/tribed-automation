@@ -103,6 +103,15 @@ public class FilterOptionsPage extends DriverManager {
     @FindBy(xpath = "//div[text()='Clear qualifications filters']")
     public WebElement clearQualification;
 
+    @FindBy(xpath = "//h1[text()='Office location']/following-sibling::div//input")
+    public WebElement officeLocationTxt;
+
+    @FindBy(xpath = "//h1[text()='Office location']/following-sibling::div//input/following-sibling::div//input")
+    public WebElement officeDistance;
+
+    @FindBy(xpath = "//li[text()='Within 10 Miles']/following-sibling::input")
+    public WebElement miles;
+
     public static String selectedcandidate;
 
     public void clickOnFilterOption()
@@ -373,6 +382,7 @@ public class FilterOptionsPage extends DriverManager {
     {
         return dotNet.isDisplayed();
     }
+
     public boolean isFinanceRelatedSkillsDisplayed()
     {
         return assetCreation.isDisplayed();
@@ -380,5 +390,43 @@ public class FilterOptionsPage extends DriverManager {
 
     public boolean isWorkstyleTabDisplayed()    {
         return workStyleTab.isDisplayed();
+    }
+
+    public void clickOnWorkstyletab() throws InterruptedException {
+        //moveOnElement(clearDevelopment);
+        waitForElementVisibility(workStyleTab,10,"workStyleTab tab not displayed");
+        clickOnElement(workStyleTab);
+    }
+
+    public  void enterJobLocation(String Location)
+    {
+        officeLocationTxt.sendKeys(Location);
+        officeDistance.click();
+        miles.click();
+    }
+
+    @FindBy(xpath = "(//h1[text()='Minimum salary']/following-sibling::div//input)[1]")
+    public WebElement currencydp;
+
+    @FindBy(xpath = "//li[text()='£']/following-sibling::input")
+    public WebElement currency;
+
+    @FindBy(xpath = "(//h1[text()='Minimum salary']/following-sibling::div//input)[5]")
+    public WebElement salarytxt;
+
+    @FindBy(xpath = "(//h1[text()='Minimum salary']/following-sibling::div//input)[6]")
+    public WebElement salaryDuration;
+
+    @FindBy(xpath = "//li[text()='Per year']/following-sibling::input")
+    public WebElement perYear;
+
+    public void selectSalaryDetail()
+    {
+        scrollIntoViewSelenium(currency);
+        currencydp.click();
+        currency.click();
+        salarytxt.sendKeys("2000");
+        salaryDuration.click();
+        perYear.click();
     }
 }

@@ -13,6 +13,11 @@ Feature: Edit Tile Email page
     When I click on "Edit culture" button
     Then I should able to see "Culture" screen
 
+  Scenario: Verify save and exist on edit culture page
+    And I click on "Edit culture" button
+    When I click on "Save and Exit" button
+    Then culture window should be close
+
   Scenario: Verify view company page button from job page publish
     And I click on "Edit culture" button
     When I click on "View company" button
@@ -20,9 +25,15 @@ Feature: Edit Tile Email page
 
   Scenario: Verify change image button
     And I click on "Change image" button
+    When I upload new image
+    Then I should able to upload image
 
   Scenario: Verify close culture window
     When I click on "Edit culture" button
     Then I should able to see "Culture" screen
     When I click on "Close culture window" button
     Then culture window should be close
+
+  Scenario: Verify Back button on edit tile image
+    When I click on "Back button" button
+    Then I should able to see "Search" screen

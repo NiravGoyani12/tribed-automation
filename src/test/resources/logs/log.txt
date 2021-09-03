@@ -1,1 +1,1 @@
-INFO    2021-09-02 19:04:35,855 [main] com.tribed.driver.DriverManager  - Launched Chrome Instance
+INFO    2021-09-03 19:48:05,356 [main] com.tribed.driver.DriverManager  - Launched Chrome Instance

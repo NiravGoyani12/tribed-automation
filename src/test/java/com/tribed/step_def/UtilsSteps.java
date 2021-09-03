@@ -315,6 +315,9 @@ public class UtilsSteps extends DriverManager {
             case "Back":
                 dashboardPage.clickBackBtn();
                 break;
+            case "Back button":
+                editTileImagePage.clickOnBackBtn();
+                break;
             case "Activate job":
                 dashboardPage.clickActivateJob();
                 break;
@@ -389,6 +392,12 @@ public class UtilsSteps extends DriverManager {
                 break;
             case "Clear qualification filter":
                 filterOptionsPage.clickOnClearQualification();
+                break;
+            case "Change image":
+                editTileImagePage.clickOnChangeImage();
+                break;
+            case "Workstyle":
+                filterOptionsPage.clickOnWorkstyletab();
                 break;
             default:
                 throw new IllegalStateException("Unexpected service name: " + expButton);
