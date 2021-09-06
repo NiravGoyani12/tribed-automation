@@ -2,6 +2,7 @@ package com.tribed.step_def.myProfile;
 
 import com.tribed.pages.myProfile.EditTileImagePage;
 import cucumber.api.DataTable;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -31,5 +32,11 @@ public class EditTileImageSteps {
 
     @Then("^I should able to upload image$")
     public void iShouldAbleToUploadImage() {
+    }
+
+    @When("^I click on \"([^\"]*)\" link$")
+    public void iClickOnLink(String arg0) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
     }
 }

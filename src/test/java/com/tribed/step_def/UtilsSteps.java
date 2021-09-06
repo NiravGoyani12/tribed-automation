@@ -34,6 +34,7 @@ public class UtilsSteps extends DriverManager {
     DashboardPage dashboardPage=new DashboardPage();
     DiscoverPage discoverPage=new DiscoverPage();
     EditTileImagePage editTileImagePage=new EditTileImagePage();
+    TermsConditionPage termsConditionPage= new TermsConditionPage();
 
     @Then("^the url should contain with \"([^\"]*)\"$")
     public void the_url_should_contain(String url) {
@@ -111,6 +112,9 @@ public class UtilsSteps extends DriverManager {
                 break;
             case "Culture":
                 isValidScreen = editTileImagePage.isCultureScreenOpen();
+                break;
+            case "T&C & privacy":
+                isValidScreen = termsConditionPage.isTermsAndConditionScreenOpen();
                 break;
 
             default:
@@ -399,6 +403,10 @@ public class UtilsSteps extends DriverManager {
             case "Workstyle":
                 filterOptionsPage.clickOnWorkstyletab();
                 break;
+            case "T&C's & privacy":
+                termsConditionPage.clickOnTermsConditionTab();
+                break;
+
             default:
                 throw new IllegalStateException("Unexpected service name: " + expButton);
         }
