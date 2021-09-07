@@ -40,7 +40,7 @@ public class TermsConditionSteps {
 
     @When("^I click on cross icon$")
     public void iClickOnCrossIcon() {
-        termsConditionPage.clickOnPrivacyPolicyLink();
+        termsConditionPage.clickOnCloseBtn();
     }
 
     @Then("^I should able to close T&C window$")

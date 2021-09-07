@@ -25,7 +25,7 @@ public class TermsConditionPage extends DriverManager {
     @FindBy(xpath = "//h2[text()='Yolba Terms']")
     public WebElement yoblaTermsTitle;
 
-    @FindBy(xpath = "//h2[text()='Privacy Policy']")
+    @FindBy(xpath = "//h2[text()='Yolba Privacy Policy']")
     public WebElement yoblaPrivacyPolicyTitle;
 
     @FindBy(xpath = "//img[contains(@src,'cross')]")
@@ -52,14 +52,23 @@ public class TermsConditionPage extends DriverManager {
         return terms.isDisplayed();
     }
 
-    public boolean isTermsLinkWorking()
-    {
-        return yoblaTermsTitle.isDisplayed();
+    public boolean isTermsLinkWorking() {
+        try {
+            return yoblaTermsTitle.isDisplayed();
+        } catch (Exception e)
+        {
+            return false;
+        }
     }
 
     public boolean isPrivacyPolicyLinkWorking()
     {
-        return yoblaPrivacyPolicyTitle.isDisplayed();
+        try {
+            return yoblaPrivacyPolicyTitle.isDisplayed();
+        }catch(Exception e)
+        {
+            return false;
+        }
     }
 
 }

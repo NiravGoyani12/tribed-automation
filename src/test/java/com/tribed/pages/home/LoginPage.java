@@ -7,10 +7,10 @@ import static com.tribed.utilities.CommonUtils.*;
 
 public class LoginPage extends DriverManager {
 
-    @FindBy(id = "email")
+    @FindBy(name = "email")
     public   WebElement emmailField;
 
-    @FindBy(id = "password")
+    @FindBy(name = "password")
     public   WebElement passwordField;
 
     @FindBy(xpath="//button[contains(text(),'Sign in')]")

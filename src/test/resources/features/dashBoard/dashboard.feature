@@ -56,7 +56,7 @@ Feature: Dashboard page
     When I click on "Deactivate job" button
     Then Job should be deactivated
 
-  Scenario: Verify deactivate job functionality
+  Scenario: Verify manage candidate functionality
     When I click on "Manage candidates" button
     Then I should able to see "candidates" screen
 
