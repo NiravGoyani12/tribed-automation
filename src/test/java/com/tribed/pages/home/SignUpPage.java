@@ -21,7 +21,7 @@ public class SignUpPage extends DriverManager {
     @FindBy(xpath="//button[text()='Create account']")
     public  WebElement createAccountBtn;
 
-    @FindBy(xpath="//h2[text()='Congratulations for registering on tribed!']")
+    @FindBy(xpath="//h2[text()='Congratulations for registering on yolba!']")
     public  WebElement signUpSuccessLabel;
 
     @FindBy(xpath="//label[text()='Duplicate user: A user with that email address already exists, please log in instead']")
@@ -90,7 +90,8 @@ public class SignUpPage extends DriverManager {
         return getElementText(signUpSuccessLabel);
     }
 
-    public void clickOnBuildCompanyProfileButton() {
+    public void clickOnBuildCompanyProfileButton() throws InterruptedException {
+        Thread.sleep(3000);
         clickOnElement(buildCompanyProfileBtn);
     }
 
@@ -99,7 +100,8 @@ public class SignUpPage extends DriverManager {
         return companyPageTab.isDisplayed();
     }
 
-    public String getExistingEmailErrorMsg() {
+    public String getExistingEmailErrorMsg() throws InterruptedException {
+        Thread.sleep(2000);
         return getElementText(emailExistMsg);
     }
 

@@ -10,7 +10,7 @@ Feature: Sign up
       | Name       | Email               | CompanyName | CreatePassword |
       | Joe Bloggs | joeBloggs@gmail.com | Tribed      | Test@123       |
     And I click on "Create account" button
-    Then I should be able to see "Congratulations for registering on tribed!" message
+    Then I should be able to see "Congratulations for registering on yolba!" message
 
   Scenario: Build company profile
     When I enter following details to sign up for new company

@@ -137,4 +137,7 @@ public class CompanyPage extends DriverManager {
         waitForElementVisibility(publishBtn, 5, "Publish button not displayed");
         clickOnElement(publishBtn);
     }
+    public void refresh() {
+        refreshBrowser();
+    }
 }

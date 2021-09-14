@@ -49,7 +49,7 @@ public class LoginPage extends DriverManager {
     @FindBy(xpath = "//img[contains(@src,'signUpHero')]/following-sibling::*")
     public WebElement signUpClose;
 
-    @FindBy(xpath = "//span[text()='Forgot your password?']")
+    @FindBy(xpath = "//span[contains(text(),'Forgot your password?')]")
     public WebElement forgetPasswordBtn;
 
     @FindBy(xpath = "//div[text()='Reset password']")
@@ -162,10 +162,10 @@ public class LoginPage extends DriverManager {
         //waitForElementVisibility(signInBtn,5, "Message screen not displayed");
         return true;
     }
-        public void clickonSignUpClose()
-    {
+        public void clickonSignUpClose() throws InterruptedException {
         waitForElementVisibility(signUpClose,10, "SingIn button not displayed");
         clickOnElement(signUpClose);
+        Thread.sleep(2000);
     }
     public boolean isSignUpClosed() throws InterruptedException {
         Thread.sleep(4000);

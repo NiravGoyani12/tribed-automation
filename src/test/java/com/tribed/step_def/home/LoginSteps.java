@@ -81,7 +81,7 @@ public class LoginSteps {
     }
 
     @When("^I click on close button$")
-    public void iClickOnCloseButton() {
+    public void iClickOnCloseButton() throws InterruptedException {
         loginPage.clickonSignUpClose();
     }
 

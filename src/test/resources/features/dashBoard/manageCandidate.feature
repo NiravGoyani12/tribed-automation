@@ -1,5 +1,5 @@
 @sanity
-Feature: Dashboard page
+Feature: Manage candidates
 
   Background: Login into the application
     Given I am on the home page

@@ -31,4 +31,9 @@ public class CompanyPageSteps {
     public void iClickOnPublishButton() {
         companyPage.clickOnPublishButton();
     }
+
+    @And("^I hit browser refresh button$")
+    public void iHitBrowserRefreshButton() {
+        companyPage.refresh();
+    }
 }

@@ -6,7 +6,7 @@ Feature: Filter options
     And I click on "Search" menu
     And I enter company for searching
       | SearchText   |
-      | Html |
+      | a |
     And I click on "Search icon" button
 
   Scenario: Verify filter options working

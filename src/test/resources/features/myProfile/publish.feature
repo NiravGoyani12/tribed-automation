@@ -13,7 +13,7 @@ Feature: Publish page
     And I click on "Publish" button
     And I click on "Accept" button
     When I click on "Return to home" button
-    Then I should able to see "Home" screen
+    Then I should able to see "Dashboard" screen
 
   Scenario: Verify edit company tile button from company page publish
     And I click on "My Profile" menu
@@ -21,7 +21,7 @@ Feature: Publish page
     And I click on "Publish" button
     And I click on "Accept" button
     When I click on "Edit company" button
-    Then I should able to see "Company edit" screen
+    Then I should able to see "Company tile" screen
 
   Scenario: Verify view company page button from company page publish
     And I click on "My Profile" menu
@@ -38,7 +38,7 @@ Feature: Publish page
     And I click on "Publish" button
     And I click on "Accept" button
     When I click on "Return to home" button
-    Then I should able to see "Home" screen
+    Then I should able to see "Dashboard" screen
 
   Scenario: Verify edit company tile button from culture page publish
     And I click on "My Profile" menu
@@ -47,7 +47,7 @@ Feature: Publish page
     And I click on "Publish" button
     And I click on "Accept" button
     When I click on "Edit company" button
-    Then I should able to see "Company edit" screen
+    Then I should able to see "Company tile" screen
 
   Scenario: Verify view company page button from culture page publish
     And I click on "My Profile" menu

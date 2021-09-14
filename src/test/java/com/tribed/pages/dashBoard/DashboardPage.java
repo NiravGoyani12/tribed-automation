@@ -83,7 +83,7 @@ public class DashboardPage extends DriverManager {
     @FindBy(xpath = "(//button[text()='Save'])[1]")
     public WebElement btnSaveByDate;
 
-    @FindBy(xpath = "(//button[text()='Save'])[1]")
+    @FindBy(xpath = "(//button[text()='Save'])[2]")
     public WebElement btnSaveByJobStatus;
 
     public static String jobName;
@@ -175,11 +175,13 @@ public class DashboardPage extends DriverManager {
     public void clickActivateJob()
     {
         clickOnElement(activateJobBtn);
+        refreshBrowser();
     }
 
     public void clickDeactivateJob()
     {
         clickOnElement(deactivateJobBtn);
+        refreshBrowser();
     }
 
     public void clickManageCandidates()

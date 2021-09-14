@@ -6,13 +6,13 @@ import org.openqa.selenium.support.FindBy;
 public class FooterPage extends DriverManager {
 
 
-    @FindBy(xpath="(//img[contains(@src,'/static/media/tribedLogo')])")
+    @FindBy(xpath="(//img[contains(@src,'/static/media/logo')])")
     public  WebElement tribedIcon;
 
     @FindBy(xpath="//h1[text()='Discover companies']")
     public  WebElement titleDiscoverCompanies;
 
-    @FindBy(xpath="//p[text()='Copyright © 2021 Tribed, Inc.']")
+    @FindBy(xpath="//p[text()='© 2021 yolba Ltd.']")
     public  WebElement copyRight;
 
 

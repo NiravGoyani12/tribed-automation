@@ -18,7 +18,7 @@ public class MyProfilePage extends DriverManager {
     @FindBy(xpath = "//h3[text()='Company page']")
     public WebElement companyPage;
 
-    @FindBy(xpath = "//div[text()='Company tile']")
+    @FindBy(xpath = "//h1[text()='Company tile']")
     public WebElement companyTile;
 
     @FindBy(xpath = "(//strong[text()='Number of employees:'])[1]")

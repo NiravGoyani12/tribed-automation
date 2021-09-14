@@ -135,6 +135,10 @@ public class DriverManager {
         e.click();
     }
 
+    public void refreshBrowser()
+    {
+        driver.get("https://dev.app.tribed.io/dashboard");
+    }
     public void moveOnElement(WebElement e) {
         Actions action = new Actions(driver);
         action.moveToElement(e).build().perform();

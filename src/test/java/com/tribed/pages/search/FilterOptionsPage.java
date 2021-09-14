@@ -10,7 +10,7 @@ public class FilterOptionsPage extends DriverManager {
     @FindBy(xpath = "//span[text()='Filter options']")
     public WebElement filterOption;
 
-    @FindBy(xpath = "//div[text()='Which aspects of your company culture should candidates prioritise?']")
+    @FindBy(xpath = "//h1[text()='Which aspects of your company culture should candidates prioritise?']")
     public WebElement filterOptionText;
 
     @FindBy(xpath = "//button[contains(text(),'Show')]")

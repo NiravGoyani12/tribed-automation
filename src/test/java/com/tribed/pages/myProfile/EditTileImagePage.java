@@ -41,7 +41,13 @@ public class EditTileImagePage extends DriverManager {
 
     public boolean isCultureScreenOpen()
     {
-        return cultureScreen.isDisplayed();
+        try {
+            return cultureScreen.isDisplayed();
+        }catch(Exception e)
+        {
+            return false;
+
+        }
     }
 
     public boolean isBackButtonWorking()

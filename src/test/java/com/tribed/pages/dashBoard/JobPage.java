@@ -104,10 +104,10 @@ public class JobPage extends DriverManager {
     @FindBy(xpath = "//div[text()='Amazon Web Services']")
     public WebElement amazonWebService;
 
-    @FindBy(xpath = "//div[text()='Upload image']")
+    @FindBy(xpath = "//span[text()='Upload image']")
     public WebElement uploadImageLogo;
 
-    @FindBy(xpath = "//div[text()='Upload image of team or company']")
+    @FindBy(xpath = "//span[text()='Upload image of team or company']")
     public WebElement uploadTeamImage;
 
     @FindBy(xpath = "(//button[text()='About this job'])[1]")
@@ -159,8 +159,10 @@ public class JobPage extends DriverManager {
         clickOnElement(saveAndExitBtn);
     }
 
-    public void clickonSaveAndExitBtn() {
+    public void clickonSaveAndExitBtn() throws InterruptedException {
+
         clickOnElement(saveAndExitBtn);
+        Thread.sleep(2000);
     }
 
     public boolean isAddedSkillSavedAndDisplayed()
@@ -210,6 +212,7 @@ public class JobPage extends DriverManager {
         clickOnElement(roleLevelDP);
         clickOnElement(entryLevelRole);
         clickOnElement(roleLevelDP);
+        scrollWindow();
         clickOnElement(currencyDP);
         clickOnElement(gBPCurrency);
         clickOnElement(currencyDP);
@@ -220,6 +223,8 @@ public class JobPage extends DriverManager {
         SendKeys(maxSalaryTxt, maxSalary);
         SendKeys(infoTitleTxt, infoTitle);
         SendKeys(infoTxt, info);
+        scrollWindow();
+        scrollWindow();
         clickOnElement(uploadTeamImage);
         uploadFile(JOB_TEAM_IMAGE);
         clickOnElement(saveImgBtnLast);
