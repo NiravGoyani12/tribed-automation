@@ -129,8 +129,8 @@ public class LoginPage extends DriverManager {
         return signInBtn.isDisplayed();
     }
 
-    public void clickonMessagemenu()
-    {
+    public void clickonMessagemenu() throws InterruptedException {
+        waitForElementClickable(messageMenu,5, "Message menu not displayed");
         clickOnElement(messageMenu);
     }
 
