@@ -86,6 +86,9 @@ public class DashboardPage extends DriverManager {
     @FindBy(xpath = "(//button[text()='Save'])[1]")
     public WebElement btnSaveByJobStatus;
 
+    @FindBy(xpath = "//button[contains(@class,'sc-dlnjwi fRayCF')]")
+    public WebElement BackToDashboard;
+
     public static String jobName;
     public static String teamName;
 
@@ -148,6 +151,8 @@ public class DashboardPage extends DriverManager {
     {
         clickOnElement(nextBtn);
     }
+
+
 
     public void clickPreviousBtn()
     {
@@ -235,6 +240,11 @@ public class DashboardPage extends DriverManager {
     public void clickSaveJobStatus()
     {
         clickOnElement(btnSaveByJobStatus);
+    }
+
+    public void clickBackTODashbord()
+    {
+        clickOnElement(BackToDashboard);
     }
 
     public void selectAlphabetical()
