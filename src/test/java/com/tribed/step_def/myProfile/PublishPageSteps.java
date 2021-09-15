@@ -33,6 +33,21 @@ public class PublishPageSteps {
         assertThat(publishPage.isViewCompanyBtnDisplayed(), is(true));
     }
 
+    @Then("^I should able to see return job button$")
+    public void iShouldAbleToSeeReturnJobButton() {
+        assertThat(publishPage.isReturnJobBtnDisplayed(), is(true));
+    }
+
+    @And("^I should able to see edit tile button$")
+    public void    iShouldAbleToSeeEditTileButton() {
+        assertThat(publishPage.isEditJobBtnDisplayed(), is(true));
+    }
+
+    @And("^I should able to see view job button$")
+    public void iShouldAbleToSeeViewJobButton() {
+        assertThat(publishPage.isViewJobBtnDisplayed(), is(true));
+    }
+
     @When("^I click on return to home$")
     public void iClickOnReturnToHome() {
         publishPage.clickOnReturnToHome();

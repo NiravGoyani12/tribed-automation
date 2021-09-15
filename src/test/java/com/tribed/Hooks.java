@@ -15,10 +15,10 @@ public class Hooks {
 
     @Before
     public void setUp() throws MalformedURLException {
-//        driverManager.openBrowser();
+        driverManager.openBrowser();
 //        driverManager.runHeadless();
 //        driverManager.runOnBsLocally();
-        driverManager.runOnRemoteHost();
+        //driverManager.runOnRemoteHost();
         CommonUtils.loadTestDataProp(testDataPropertyFile);
         driverManager.navigateTo("https://dev.app.tribed.io/");
         driverManager.maxBroser();

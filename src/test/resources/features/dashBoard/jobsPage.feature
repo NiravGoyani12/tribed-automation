@@ -13,6 +13,14 @@ Feature: Job page
     And I enter following details for job page
       | JobTitle       | Team              | Office Location     | MinSalary | MaxSalary | InfoTitle                      | Info                |
       | Automation Eng | Quality Assurance | London              | 3000000   | 3500000    | Looking for Automation Eng     | Selenium Cucumber   |
+    And I click on "Add Technical" button
+    And I select any technical skill and save
+    And I click on "Add Leadership" button
+    And I select any leadership skill and save
+    And I click on "Add Sector" button
+    And I select any sector and save
+    And I click on "Add Qualification" button
+    And I select any qualification and save
     When I click on "Preview" button
     Then I should see following details on preview page of job
       | JobTitle       | Team              |
@@ -25,12 +33,19 @@ Feature: Job page
     And I enter following details for job page
       | JobTitle       | Team              | Office Location     | MinSalary | MaxSalary | InfoTitle                      | Info                |
       | Automation Eng | Quality Assurance | London              | 3000000   | 3500000    | Looking for Automation Eng     | Selenium Cucumber   |
+    And I click on "Add Technical" button
+    And I select any technical skill and save
+    And I click on "Add Leadership" button
+    And I select any leadership skill and save
+    And I click on "Add Sector" button
+    And I select any sector and save
+    And I click on "Add Qualification" button
+    And I select any qualification and save
     When I click on "Publish" button
-    And I click on "Accept" button
     Then I should able to see "Congratulations!" message
-    And I should able to see edit company button
-    And I should able to see return home button
-    And I should able to see view company button
+    And I should able to see edit tile button
+    And I should able to see return job button
+    And I should able to see view job button
 
   Scenario: Verify do not make salary visible to candidate check box when it is selected on Preview Job
     And I click on "Add a new job listing" button
@@ -38,6 +53,14 @@ Feature: Job page
       | JobTitle       | Team              | Office Location     | MinSalary | MaxSalary | InfoTitle                      | Info                |
       | Automation Eng | Quality Assurance | London              | 3000000   | 3500000    | Looking for Automation Eng     | Selenium Cucumber   |
     And I click on salary not visible checkbox
+    And I click on "Add Technical" button
+    And I select any technical skill and save
+    And I click on "Add Leadership" button
+    And I select any leadership skill and save
+    And I click on "Add Sector" button
+    And I select any sector and save
+    And I click on "Add Qualification" button
+    And I select any qualification and save
     When I click on "Preview" button
     Then I should not able to see salary on preview
       | MinSalary       | MaxSalary              |
@@ -49,35 +72,18 @@ Feature: Job page
       | JobTitle       | Team              | Office Location     | MinSalary | MaxSalary | InfoTitle                      | Info                |
       | Automation Eng | Quality Assurance | London              | 3000000   | 3500000    | Looking for Automation Eng     | Selenium Cucumber   |
     And I click on salary not visible checkbox
+    And I click on "Add Technical" button
+    And I select any technical skill and save
+    And I click on "Add Leadership" button
+    And I select any leadership skill and save
+    And I click on "Add Sector" button
+    And I select any sector and save
+    And I click on "Add Qualification" button
+    And I select any qualification and save
     When I click on "Publish" button
-    And I click on "Accept" button
     Then I should not able to see salary on preview
       | MinSalary       | MaxSalary              |
       | 3000000         | 3500000                |
-
-  Scenario: Add Technical Skills
-    And I click on "Add a new job listing" button
-    And I click on "Add Technical" button
-    When I select any technical skill and save
-    Then Added technical skill should saved and displayed
-
-  Scenario: Add Leadership Skills
-    And I click on "Add a new job listing" button
-    And I click on "Add Leadership" button
-    When I select any leadership skill and save
-    Then Added leadership skill should saved and displayed
-
-  Scenario: Add Sectors
-    And I click on "Add a new job listing" button
-    And I click on "Add Sector" button
-    When I select any sector and save
-    Then Added sectors skill should saved and displayed
-
-  Scenario: Add Qualifications Skills
-    And I click on "Add a new job listing" button
-    And I click on "Add Qualification" button
-    When I select any qualification and save
-    Then Added qualifications skill should saved and displayed
 
   Scenario: Verify next section button while adding skills
     And I click on "Add a new job listing" button
@@ -92,34 +98,53 @@ Feature: Job page
     When I click on "Save and Exit" button
     Then I should be able to see all selected skills sector and qualification
 
-  Scenario: Verify return to home button from job page publish
+  Scenario: Verify return to job button from job page publish
     And I click on "Add a new job listing" button
     And I enter following details for job page
       | JobTitle       | Team              | Office Location     | MinSalary | MaxSalary | InfoTitle                      | Info                |
       | Automation Eng | Quality Assurance | London              | 3000000   | 3500000    | Looking for Automation Eng     | Selenium Cucumber   |
+    And I click on "Add Technical" button
+    And I select any technical skill and save
+    And I click on "Add Leadership" button
+    And I select any leadership skill and save
+    And I click on "Add Sector" button
+    And I select any sector and save
+    And I click on "Add Qualification" button
+    And I select any qualification and save
     When I click on "Publish" button
-    And I click on "Accept" button
-    And I click on "Publish" button
-    And I click on "Accept" button
-    When I click on "Return to home" button
-    Then I should able to see "Home" screen
+    When I click on "Return to job" button
+    Then I should able to see "Dashboard" screen
 
-  Scenario: Verify edit company tile button from job page publish
+  Scenario: Verify edit job tile button from job page publish
     And I click on "Add a new job listing" button
     And I enter following details for job page
       | JobTitle       | Team              | Office Location     | MinSalary | MaxSalary | InfoTitle                      | Info                |
       | Automation Eng | Quality Assurance | London              | 3000000   | 3500000    | Looking for Automation Eng     | Selenium Cucumber   |
+    And I click on "Add Technical" button
+    And I select any technical skill and save
+    And I click on "Add Leadership" button
+    And I select any leadership skill and save
+    And I click on "Add Sector" button
+    And I select any sector and save
+    And I click on "Add Qualification" button
+    And I select any qualification and save
     When I click on "Publish" button
-    And I click on "Accept" button
-    When I click on "Edit company" button
-    Then I should able to see "Company edit" screen
+    When I click on "Edit tile" button
+    Then I should able to see "Job" screen
 
-  Scenario: Verify view company page button from job page publish
+  Scenario: Verify view job page button from job page publish
     And I click on "Add a new job listing" button
     And I enter following details for job page
       | JobTitle       | Team              | Office Location     | MinSalary | MaxSalary | InfoTitle                      | Info                |
       | Automation Eng | Quality Assurance | London              | 3000000   | 3500000    | Looking for Automation Eng     | Selenium Cucumber   |
+    And I click on "Add Technical" button
+    And I select any technical skill and save
+    And I click on "Add Leadership" button
+    And I select any leadership skill and save
+    And I click on "Add Sector" button
+    And I select any sector and save
+    And I click on "Add Qualification" button
+    And I select any qualification and save
     When I click on "Publish" button
-    And I click on "Accept" button
-    When I click on "View company" button
+    When I click on "About this job" button
     Then I should see company page

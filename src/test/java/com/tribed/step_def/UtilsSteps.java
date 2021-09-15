@@ -116,6 +116,9 @@ public class UtilsSteps extends DriverManager {
             case "T&C & privacy":
                 isValidScreen = termsConditionPage.isTermsAndConditionScreenOpen();
                 break;
+            case "Job":
+                isValidScreen = publishPage.isJobScreenDisplayed();
+                break;
 
             default:
                 throw new IllegalStateException("Unexpected service name: " + expScreenName);
@@ -244,6 +247,9 @@ public class UtilsSteps extends DriverManager {
             case "Return to home":
                 publishPage.clickOnReturnToHome();
                 break;
+            case "Return to job":
+                publishPage.clickOnReturnToJob();
+                break;
             case "Edit company":
                 publishPage.clickOnEditCompanyTileNow();
                 break;
@@ -360,6 +366,9 @@ public class UtilsSteps extends DriverManager {
                 break;
             case "Edit tile image":
                 myProfilePage.clickOnEditTileImage();
+                break;
+            case "Edit tile":
+                publishPage.clickOnEditTileJob();
                 break;
             case "Edit culture":
                 editTileImagePage.clickOnEditCulture();

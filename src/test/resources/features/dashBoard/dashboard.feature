@@ -34,8 +34,15 @@ Feature: Dashboard page
     And I enter following details for job page
       | JobTitle       | Team              | Office Location     | MinSalary | MaxSalary | InfoTitle                      | Info                |
       | Automation Eng | Quality Assurance | London              | 3000000   | 3500000    | Looking for Automation Eng     | Selenium Cucumber   |
+    And I click on "Add Technical" button
+    And I select any technical skill and save
+    And I click on "Add Leadership" button
+    And I select any leadership skill and save
+    And I click on "Add Sector" button
+    And I select any sector and save
+    And I click on "Add Qualification" button
+    And I select any qualification and save
     When I click on "Publish" button
-    And I click on "Accept" button
     Then I should able to see "Congratulations!" message
 
   Scenario: Verify next button on job slides

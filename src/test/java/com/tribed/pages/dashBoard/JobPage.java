@@ -77,10 +77,13 @@ public class JobPage extends DriverManager {
     @FindBy(xpath = "//div[text()='Add Technical']")
     public WebElement addTechnicalTile;
 
+    @FindBy(xpath = "//div[text()='Add or edit Technical']")
+    public WebElement addOrEditTechnicalTile;
+
     @FindBy(xpath = "//div[text()='Jira']")
     public WebElement jiraTech;
 
-    @FindBy(xpath = "//div[contains(@class,'modal')]//div[contains(@class,'Tag__Label')]/parent::div/parent::div[not(contains(@class,'selected'))]/div/div")
+    @FindBy(xpath = "//div[contains(@class,'modal')]//div[contains(@class,'SkillsModal__Items')]//div[contains(@class,'Tag__Label')]/parent::div/parent::div[not(contains(@class,'selected'))]/div/div")
     public WebElement notSelectedSkills;
 
     @FindBy(xpath = "//button[text()='Save and exit']")
@@ -89,17 +92,26 @@ public class JobPage extends DriverManager {
     @FindBy(xpath = "//div[text()='Add Leadership']")
     public WebElement addLeadershipTile;
 
+    @FindBy(xpath = "//div[text()='Add or edit Leadership']")
+    public WebElement addOrEditLeadershipTile;
+
     @FindBy(xpath = "//div[text()='Coaching']")
     public WebElement coachingShip;
 
     @FindBy(xpath = "//div[text()='Add Sectors']")
     public WebElement sectorTile;
 
+    @FindBy(xpath = "//div[text()='Add or edit Sectors']")
+    public WebElement editSectorTile;
+
     @FindBy(xpath = "//div[text()='Regions']")
     public WebElement regionsSector;
 
     @FindBy(xpath = "//div[text()='Add Qualifications']")
     public WebElement qualificationTile;
+
+    @FindBy(xpath = "//div[text()='Add or edit Qualifications']")
+    public WebElement editQualificationTile;
 
     @FindBy(xpath = "//div[text()='Amazon Web Services']")
     public WebElement amazonWebService;
@@ -175,20 +187,20 @@ public class JobPage extends DriverManager {
     public void clickAddLeaderShipSkill()
     {
         waitForElementVisibility(addLeadershipTile, 8, "Add Leadership Skill Tile not displayed");
-        scrollIntoViewSelenium(addTechnicalTile);
+        scrollIntoViewSelenium(addOrEditTechnicalTile);
         scrollWindowUp();
         clickOnElement(addLeadershipTile);
     }
 
     public void clickAddSector() {
         waitForElementVisibility(sectorTile, 8, "Add Sectors Tile not displayed");
-        scrollIntoViewSelenium(addTechnicalTile);
+        scrollIntoViewSelenium(addOrEditTechnicalTile);
         clickOnElement(sectorTile);
     }
 
     public void clickAddQualification() {
         waitForElementVisibility(qualificationTile, 8, "Add Qualification Tile not displayed");
-        scrollIntoViewSelenium(addTechnicalTile);
+        scrollIntoViewSelenium(addOrEditTechnicalTile);
         clickOnElement(qualificationTile);
     }
 
@@ -198,6 +210,7 @@ public class JobPage extends DriverManager {
         SendKeys(jobTitleTxt, jobTitle);
         clickOnElement(uploadImageLogo);
         uploadFile(JOB_LOGO);
+        Thread.sleep(3000);
         clickOnElement(saveImgBtn);
         SendKeys(basicsTeamTxt, team);
         SendKeys(basicsPreferencesOfficeLocationTxt, officeLocation);
