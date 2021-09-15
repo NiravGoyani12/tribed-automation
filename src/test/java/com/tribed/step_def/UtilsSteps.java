@@ -310,6 +310,9 @@ public class UtilsSteps extends DriverManager {
             case "Next icon":
                 dashboardPage.clickNextBtn();
                 break;
+            case "Back to dashboard":
+                dashboardPage.clickBackTODashbord();
+                break;
             case "Previous icon":
                 dashboardPage.clickPreviousBtn();
                 break;
