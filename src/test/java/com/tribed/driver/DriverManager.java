@@ -161,6 +161,11 @@ public class DriverManager {
         e.sendKeys(text);
     }
 
+    public void refreshBrowser()
+    {
+        driver.navigate().to("https://dev.app.tribed.io/dashboard");
+    }
+
     public void SendKeys(WebElement e, String text) {
         e.clear();
         e.sendKeys(text);
