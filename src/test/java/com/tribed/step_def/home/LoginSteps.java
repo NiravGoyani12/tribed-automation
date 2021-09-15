@@ -60,11 +60,6 @@ public class LoginSteps {
         assertThat(loginPage.isSignInButtonDisplayed(), is(true));
     }
 
-    @When("^I click on messages menu$")
-    public void iClickOnMessagesMenu() {
-        loginPage.clickonMessagemenu();
-    }
-
     @Then("^I should be able to open message screen$")
     public void iShouldBeAbleToOpenMessageScreen() {
         assertThat(loginPage.isMessageMenuOpen(), is(true));
@@ -114,4 +109,5 @@ public class LoginSteps {
     public void iEnterEmailForForgetPassword() {
         loginPage.enterEmailId();
     }
+
 }
