@@ -14,7 +14,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.awt.Robot;
+
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
@@ -29,8 +29,11 @@ public class DriverManager {
     public static String testDataPropertyFile = "testData.properties";
     private String browser = "chrome";
 
-    String username = System.getenv("qateam185");
-    String accessKey = System.getenv("U43eLsDGGubF1ioXzTfQ");
+    String username = System.getenv("nareshkhunt_Zv3sTi");
+    String accessKey = System.getenv("p5nExTSEmnPEmnnsGK1Y");
+
+    String username1 = "nareshkhunt_Zv3sTi";
+    String accessKey1 = "p5nExTSEmnPEmnnsGK1Y";
 
     public DriverManager() {
         PageFactory.initElements(driver, this);
@@ -61,12 +64,23 @@ public class DriverManager {
         log.info("Launched Chrome Instance");
     }
 
+    public void runOnBsLocally() throws MalformedURLException {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("os", "Windows");
+        capabilities.setCapability("os_version", "10");
+        capabilities.setCapability("browser", "Chrome");
+        capabilities.setCapability("browser_version", "latest");
+        capabilities.setCapability("browserstack.selenium_version", "3.14.0");
+        driver = new RemoteWebDriver(new URL("https://" + username1 + ":" + accessKey1 + "@hub-cloud.browserstack.com/wd/hub"), capabilities);
+
+    }
     public void runOnRemoteHost() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("os", "Windows");
         capabilities.setCapability("os_version", "10");
         capabilities.setCapability("browser", "Chrome");
         capabilities.setCapability("browser_version", "latest");
+        capabilities.setCapability("browserstack.selenium_version", "3.14.0");
         driver = new RemoteWebDriver(new URL("https://" + username + ":" + accessKey + "@hub-cloud.browserstack.com/wd/hub"), capabilities);
 
     }
@@ -135,10 +149,6 @@ public class DriverManager {
         e.click();
     }
 
-    public void refreshBrowser()
-    {
-        driver.get("https://dev.app.tribed.io/dashboard");
-    }
     public void moveOnElement(WebElement e) {
         Actions action = new Actions(driver);
         action.moveToElement(e).build().perform();

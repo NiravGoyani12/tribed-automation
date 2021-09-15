@@ -1,9 +1,11 @@
 package com.tribed;
+
 import com.tribed.driver.DriverManager;
 import com.tribed.utilities.CommonUtils;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+
 import java.net.MalformedURLException;
 
 public class Hooks {
@@ -13,9 +15,10 @@ public class Hooks {
 
     @Before
     public void setUp() throws MalformedURLException {
-        driverManager.openBrowser();
+//        driverManager.openBrowser();
 //        driverManager.runHeadless();
-//        driverManager.runOnRemoteHost();
+//        driverManager.runOnBsLocally();
+        driverManager.runOnRemoteHost();
         CommonUtils.loadTestDataProp(testDataPropertyFile);
         driverManager.navigateTo("https://dev.app.tribed.io/");
         driverManager.maxBroser();
