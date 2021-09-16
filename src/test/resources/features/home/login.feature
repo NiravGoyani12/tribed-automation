@@ -5,22 +5,23 @@ Feature: Login
     Given I am on the home page
     And I click on "SignIn" menu
 
-  Scenario Outline: Login with valid email and password
-    When I enter email and password for "<userType>"
+  Scenario: Login with valid email and password
+    When I enter email and password for "Valid User"
     And I click on "Login" button
-    Then I should be able to see "<loggedMessage>" for "<userType>"
+    Then I should able to see "Search" screen
 
-    Examples:
-      | userType     | loggedMessage       |
-      | Valid User   | My profile          |
+  Scenario: Login with invalid email and valid password
+    When I enter invalid email and password
+      | email           | password  |
+      | testingemail.com | test@123 |
+    Then I should be able to see validation message for inValidemail
 
-  Scenario Outline: Login with invalid email and password
-    When I enter email and password for "<userType>"
-    Then I should be able to see "<loggedMessage>" for "<userType>"
-
-    Examples:
-      | userType     | loggedMessage       |
-      | Invalid User | Password can only contain Latin letters. |
+  Scenario: Login with invalid valid email and incorrect password
+    When I enter invalid email and password
+      | email           | password  |
+      | testing@gmail.com | test@123 |
+    And I click on "Login" button
+    Then I should be able to see validation message for incorrectPassword
 
   Scenario: Default Login button should be Disabled
     Then Log in button should be "disabled"

@@ -67,9 +67,20 @@ public class LoginPage extends DriverManager {
     @FindBy(xpath = "//h2[text()='Reset password email sent']")
     public WebElement ResetPasswordEmailSentMsg;
 
+    @FindBy(xpath = "//label[text()='We were unable to log you in with those account details, please try again']")
+    public WebElement validationIncorrectPassword;
+
+    @FindBy(xpath = "//label[text()='Please enter a valid email']")
+    public WebElement validationIncorrectEmail;
+
     public void enterEmailAndPassword(String userType) {
         clearAndSendKeys(emmailField,getUserName(userType));
         clearAndSendKeys(passwordField,getPassword(userType));
+    }
+
+    public void enterEmailAndPassword(String username, String password) {
+        clearAndSendKeys(emmailField,username+Keys.TAB);
+        clearAndSendKeys(passwordField,password);
     }
 
     public void clickOnLogInBtn() throws InterruptedException {
@@ -211,5 +222,14 @@ public class LoginPage extends DriverManager {
     public boolean isSendResetLinkButtonWorking()
     {
         return ResetPasswordEmailSentMsg.isDisplayed();
+    }
+
+    public boolean isValidationDisplayIfPasswordIncorrect()
+    {
+        return validationIncorrectPassword.isDisplayed();
+    }
+    public boolean isValidationDisplayIfEmailIncorrect()
+    {
+        return validationIncorrectEmail.isDisplayed();
     }
 }

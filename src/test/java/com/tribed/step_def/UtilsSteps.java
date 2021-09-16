@@ -418,7 +418,9 @@ public class UtilsSteps extends DriverManager {
             case "T&C's & privacy":
                 termsConditionPage.clickOnTermsConditionTab();
                 break;
-
+            case "Duplicate job":
+                dashboardPage.clickOnDuplicateJob();
+                break;
             default:
                 throw new IllegalStateException("Unexpected service name: " + expButton);
         }

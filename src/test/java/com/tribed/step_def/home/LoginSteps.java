@@ -2,9 +2,13 @@ package com.tribed.step_def.home;
 
 import com.tribed.driver.DriverManager;
 import com.tribed.pages.home.LoginPage;
+import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
+import java.util.List;
+import java.util.Map;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
@@ -14,6 +18,7 @@ public class LoginSteps {
 
     DriverManager driverManager = new DriverManager();
     LoginPage loginPage=new LoginPage();
+    List<Map<String, String>> data;
 
     @And("^I click on log in button$")
     public void iClickOnLogInButton() throws InterruptedException {
@@ -110,4 +115,19 @@ public class LoginSteps {
         loginPage.enterEmailId();
     }
 
+    @When("^I enter invalid email and password$")
+    public void iEnterInvalidEmailAndPassword(DataTable dataTable) {
+        data =  dataTable.asMaps(String.class, String.class);
+        loginPage.enterEmailAndPassword(data.get(0).get("email"),data.get(0).get("password"));
+    }
+
+    @Then("^I should be able to see validation message for inValidemail$")
+    public void iShouldBeAbleToSeeValidationMessage() {
+        assertThat(loginPage.isValidationDisplayIfEmailIncorrect(), is(true));
+    }
+
+    @And("^I should be able to see validation message for incorrectPassword$")
+    public void iShouldBeAbleToSeeValidationMessageForIncorrectPassword() {
+        assertThat(loginPage.isValidationDisplayIfPasswordIncorrect(), is(true));
+    }
 }

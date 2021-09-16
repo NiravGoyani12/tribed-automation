@@ -59,6 +59,9 @@ public class DashboardPage extends DriverManager {
     @FindBy(xpath = "(//li[text()='Deactivate job'])[1]")
     public WebElement deactivateJobBtn;
 
+    @FindBy(xpath = "(//li[text()='Duplicate job'])[1]")
+    public WebElement duplicateJobBtn;
+
     @FindBy(xpath = "(//div[contains(@class,'JobTile__JobStatus')])[1]")
     public WebElement jobStatus;
 
@@ -89,6 +92,9 @@ public class DashboardPage extends DriverManager {
     @FindBy(xpath = "//button[contains(@class,'sc-dlnjwi fRayCF')]")
     public WebElement BackToDashboard;
 
+    @FindBy(xpath = "//input[@name='jobTitle']")
+    public WebElement jobTitleTxt;
+
     public static String jobName;
     public static String teamName;
 
@@ -105,6 +111,12 @@ public class DashboardPage extends DriverManager {
             return true;
         else
             return false;
+    }
+
+    public void updateJobTitle()
+    {
+        jobName=getRandomString(10);
+        clearAndSendKeys(jobTitleTxt,jobName);
     }
 
     public boolean isDashboardScreenOpen()
@@ -249,6 +261,12 @@ public class DashboardPage extends DriverManager {
         clickOnElement(BackToDashboard);
     }
 
+    public void clickOnDuplicateJob()
+    {
+
+        clickOnElement(duplicateJobBtn);
+    }
+
     public void selectAlphabetical()
     {
         clickOnElement(optionAlphabetical);
@@ -282,6 +300,11 @@ public class DashboardPage extends DriverManager {
         {
             return true;
         }
-
     }
+    public boolean isNewJobCreatedAndDisplayed()
+    {
+        WebElement element = driver.findElement(By.xpath("//h1[text()='"+jobName+"']"));
+        return element.isDisplayed();
+    }
+
 }

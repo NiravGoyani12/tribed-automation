@@ -1,6 +1,7 @@
 package com.tribed.step_def.dashBoard;
 
 import com.tribed.pages.dashBoard.DashboardPage;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -64,5 +65,20 @@ public class DashboardSteps {
     @Then("^Date Posted popup should get close with selected value$")
     public void datePostedPopupShouldGetCloseWithSelectedValue() {
         assertThat(dashboardPage.isDateSortedPopupClose(), is(true));
+    }
+
+    @Then("^New job page should open with same job details$")
+    public void newJobPageShouldOpenWithSameJobDetails() {
+        assertThat(dashboardPage.isEditJobScreenOpen(), is(true));
+    }
+
+    @And("^I update job title$")
+    public void iUpdateJobTitle() {
+        dashboardPage.updateJobTitle();
+    }
+
+    @Then("^New job should be created with given title$")
+    public void newJobShouldBeCreatedWithGivenTitle() {
+        assertThat(dashboardPage.isNewJobCreatedAndDisplayed(), is(true));
     }
 }

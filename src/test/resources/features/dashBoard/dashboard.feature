@@ -86,3 +86,16 @@ Feature: Dashboard page
     And I click on "Job inactive" button
     When I click on "Save Job Status" button
     Then Job Status popup should get close with selected value
+
+  Scenario: Verify duplicate job functionality
+    And I click on "Edit job" button
+    When I click on "Duplicate job" button
+    Then New job page should open with same job details
+
+  Scenario: Verify new job created from duplicate job
+    And I click on "Edit job" button
+    And I click on "Duplicate job" button
+    And I update job title
+    When I click on "Publish" button
+    And I click on "Return to job" button
+    Then New job should be created with given title
