@@ -2,6 +2,5 @@ image: maven:3.3.9
 pipelines:
   default:
     - step:
-        name:Build and Test
         script:
-          - mvn -version
+          - mvn test    # -B batch mode makes Maven less verbose
